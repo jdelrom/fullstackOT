@@ -30,9 +30,7 @@ class SignupForm extends React.Component {
         return (
             <>
                 <header className="signup-header">Sign Up</header>
-                <br/>
-                <Link to='/login'>Login</Link>
-                <br/>
+
                 <br/>
 
                 <form className="signupform" onSubmit={this.handleSubmit}>

@@ -32,10 +32,8 @@ class SessionForm extends React.Component {
         }
         return (
             <>
-                <header>Sign Up</header>
-                <br />
-                <Link to='/login'>Login</Link>
-                <br />
+                <header>Login</header>
+        
                 <br />
 
                 <form onSubmit={this.handleSubmit}>

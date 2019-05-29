@@ -16,8 +16,8 @@ const App = () => {
             <GreetingContainer />
         </header>
 
-            <AuthRoute path='/signup' component={SignupFormContainer} />
-            <AuthRoute path='/login' component={SessionFormContainer} />
+            {/* <AuthRoute path='/signup' component={SignupFormContainer} />
+            <AuthRoute path='/login' component={SessionFormContainer} /> */}
     </div>
     )
 };
