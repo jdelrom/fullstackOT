@@ -1,0 +1,41 @@
+.greet-intro {
+    display: flex;
+    justify-content: flex-end;
+
+}
+.greet-intro {
+    position: fixed;
+    top: 30px;
+    right: 0;
+}
+
+.greet-links {
+    display: flex;
+    padding: 2px;
+    height: 25px;
+    width: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 11px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 2px;
+}
+
+.greet-signup {
+    display: flex;
+    background-color: #237b98;
+    border-color: #1c627a;
+    color: white;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 11px;
+    font-weight: 200;
+    border-radius: 2px;
+}
