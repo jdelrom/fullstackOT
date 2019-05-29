@@ -19,11 +19,11 @@ class Greeting extends React.Component {
             )
         } else {
             content = (
-                <header className="greet-intro">
-                    <Link className="greet-signup" to="/signup">Sign up  </Link>
+                <nav className="greet-intro">
+                    <button onClick={() => this.props.openModal('signup')}> Sign up  </button>
 
-                    <Link className="greet-links" to="/login"  >Login</Link>
-                </header>
+                    <button onClick={() => this.props.openModal('login')} > Login </button>
+                </nav>
             )
         }
 
