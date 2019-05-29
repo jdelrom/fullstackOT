@@ -9,13 +9,12 @@ const App = () => {
     return (
     <div>
         <header>
-            <h1>openMesa</h1>
-            <h2>MUAHAHAHAHHAHA</h2>
+           <h1>openMesa</h1>
             <GreetingContainer />
         </header>
 
-            <Route path='/signup' component={SignupFormContainer} />
-            <Route path='/login' component={SessionFormContainer} />
+            <AuthRoute path='/signup' component={SignupFormContainer} />
+            <AuthRoute path='/login' component={SessionFormContainer} />
     </div>
     )
 };

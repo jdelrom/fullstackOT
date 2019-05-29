@@ -29,13 +29,13 @@ class SignupForm extends React.Component {
         }
         return (
             <>
-                <header>Sign Up</header>
+                <header className="signup-header">Sign Up</header>
                 <br/>
                 <Link to='/login'>Login</Link>
                 <br/>
                 <br/>
 
-                <form onSubmit={this.handleSubmit}>
+                <form className="signupform" onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="First Name *"
                         onChange={this.handleInput('fname')}
                     />
@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
                     <input type="submit" value="Create Account"/>                
                 </form>
 
-                <ul>
+                <ul className="errors">
                     {errors}
                 </ul>
             </>
