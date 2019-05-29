@@ -34,17 +34,27 @@ class SignupForm extends React.Component {
                 <Link to='/login'>Login</Link>
                 <br/>
                 <br/>
-                
+
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="First Name *"/>
+                    <input type="text" placeholder="First Name *"
+                        onChange={this.handleInput('fname')}
+                    />
                     <br/>
-                    <input type="text" placeholder="Last Name *"/>
+                    <input type="text" placeholder="Last Name *"
+                        onChange={this.handleInput('lname')}
+                    />
                     <br/>
-                    <input type="text" placeholder="Enter email *" />
+                    <input type="text" placeholder="Enter email *" 
+                        onChange={this.handleInput('email')}
+                    />
                     <br/>
-                    <input type="password" placeholder="Enter password *"/>
+                    <input type="password" placeholder="Enter password *"
+                        onChange={this.handleInput('password')}
+                    />
                     <br/>
-                    <input type="password" placeholder="Re-enter password *"/>
+                    <input type="password" placeholder="Re-enter password *"
+                        onChange={this.handleInput('password')}
+                    />
                     <br/>
                     <input type="submit" value="Create Account"/>                
                 </form>
