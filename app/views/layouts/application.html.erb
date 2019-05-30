@@ -9,6 +9,10 @@
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag 'fav_icon.png' %>
   </head>
+  
+  <script type="text/javascript">
+    window.splashURL = "<%= image_url('restaurant.png') %>"
+  </script>
 
   <body>
     <%= yield %>
