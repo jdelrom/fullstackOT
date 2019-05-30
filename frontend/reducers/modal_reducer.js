@@ -7,7 +7,7 @@ const modalReducer = (state = null, action) => {
         case CLOSE_MODAL:
             return null;
         default:
-            return state;
+            return null;
     }
 }
 

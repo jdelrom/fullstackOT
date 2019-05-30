@@ -10,7 +10,7 @@ import SessionFormContainer from './session/session_form_container';
 const App = () => {
     return (
     <div>
-        <Modal />
+        <div className='modal-parent'> <Modal /> </div>
         <header>
            <h1>openMesa</h1>
             <GreetingContainer />

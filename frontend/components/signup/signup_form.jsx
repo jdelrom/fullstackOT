@@ -21,6 +21,7 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        // const span = span = document.getElementsByClassName("close")[0];
         let errors;
         if (this.props.errors >= 1) {
             return this.props.errors.map( (error, index) => {
@@ -28,39 +29,37 @@ class SignupForm extends React.Component {
             })
         }
         return (
-            <>
-                <header className="signup-header">Sign Up</header>
-
-                <br/>
-
+            <div className="signup">
+               
                 <form className="signupform" onSubmit={this.handleSubmit}>
+                    <header className="signup-header">Welomce to openMesa! </header>
                     <input type="text" placeholder="First Name *"
                         onChange={this.handleInput('fname')}
                     />
-                    <br/>
+                   
                     <input type="text" placeholder="Last Name *"
                         onChange={this.handleInput('lname')}
                     />
-                    <br/>
+                   
                     <input type="text" placeholder="Enter email *" 
                         onChange={this.handleInput('email')}
                     />
-                    <br/>
+                   
                     <input type="password" placeholder="Enter password *"
                         onChange={this.handleInput('password')}
                     />
-                    <br/>
+                   
                     <input type="password" placeholder="Re-enter password *"
                         onChange={this.handleInput('password')}
                     />
-                    <br/>
-                    <input type="submit" value="Create Account"/>                
+                   
+                    <input id='signup-submit' type="submit" value="Create Account"/>                
                 </form>
 
                 <ul className="errors">
                     {errors}
                 </ul>
-            </>
+            </div>
         )
 
     }

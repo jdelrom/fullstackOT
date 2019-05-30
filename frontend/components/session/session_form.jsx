@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
             })
         }
         return (
-            <>
+            <div className="login-form">
                 <header>Login</header>
         
                 <br />
@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
                     <br/>
                     <input type="submit" value="Sign In"/>
                 </form>
-            </> 
+            </div>
             )   
         }
 }
