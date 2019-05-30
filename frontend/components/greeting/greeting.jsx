@@ -45,8 +45,8 @@ class Greeting extends React.Component {
             content = (
                 <div className="greet-intro">
                     {/* <h1 className="greet-h1">Hi, {this.props.currentUser.fname}</h1> */}
-                    <button onClick={this.dropDownClick} className="user-button">Hi, {this.props.currentUser.fname}
-                        <i className="fa fa-caret-down"></i>
+                    <button onClick={this.dropDownClick} className="user-button">Hi, {this.props.currentUser.fname} 
+                         <i className="fa fa-caret-down"></i>
                     </button>
                         <div id="user-dropdown" className={`dropdown-content ${toggle}`}>
                             {/* <a href="#" onClick={() => this.props.logout()}>My Profile</a>
