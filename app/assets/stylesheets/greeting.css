@@ -1,12 +1,10 @@
 .greet-intro {
     display: flex;
     justify-content: flex-end;
-
-}
-.greet-intro {
     position: fixed;
     top: 30px;
     right: 0;
+    padding-right: 45px;
 }
 
 .greet-links {
@@ -25,7 +23,7 @@
     border-radius: 2px;
 }
 
-.greet-signup {
+/* .greet-signup {
     display: flex;
     background-color: #237b98;
     border-color: #1c627a;
@@ -38,4 +36,58 @@
     padding: 0 11px;
     font-weight: 200;
     border-radius: 2px;
+} */
+
+.top-header {
+    display: flex;
+    padding-left: 30px;
+}
+
+div.logo {
+    content: url(https://media.licdn.com/dms/image/C560BAQFIOcTy8tdiVg/company-logo_200_200/0?e=2159024400&v=beta&t=S0WcfI0GpxVGFfhy2vFQOk3WCYlYhe6Md4KxjqZCO2Y);
+    height: 50px;
+    width: 50px;
+    padding-top: 15px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.signup-button {
+    background-color: #237b98;
+    border-color: #1c627a;
+    color: white;
+    width: 77px;
+    height: 32px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: .875rem;
+    font-weight: 300;
+}
+
+.login-button {
+    background-color: white;
+    border-color: white;
+    color: black;
+    width: 77px;
+    height: 32px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: .975rem;
+}
+
+input:focus {
+    border: 1px solid black;
+}
+
+.backgrounds {
+    background-image: url('restaurant.png');
+    height: 416px;
+    width: 100%;
+    opacity: 0.5;
 }

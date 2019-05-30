@@ -19,6 +19,16 @@ function Modal({ modal, closeModal }) {
         default:
             return null;
     }
+    // let winModal = document.getElementById('signup');
+    // let wModal = document.getElementById('modal-parent');
+    // window.onClick = (e) => {
+    //     if (e.target === winModal) {
+    //         winModal.style.display = "none";
+    //     }
+    //     if (e.target === wModal) {
+    //         wModal.style.display = "none";
+    //     }
+    // }
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>

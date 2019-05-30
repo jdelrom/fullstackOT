@@ -11,11 +11,11 @@ const App = () => {
     return (
     <div>
         <div className='modal-parent'> <Modal /> </div>
-        <header>
-           <h1>openMesa</h1>
+        <header className="top-header">
+           <div className='logo'></div><h1 className="title">openMesa</h1>
             <GreetingContainer />
         </header>
-
+        <div className="backgrounds"></div>
             {/* <AuthRoute path='/signup' component={SignupFormContainer} />
             <AuthRoute path='/login' component={SessionFormContainer} /> */}
     </div>

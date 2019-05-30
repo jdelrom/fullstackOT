@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { merge } from 'lodash';
+import { closeModal } from '../../actions/modal_actions';
+
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -17,22 +20,41 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signUp(this.state)
+        const { password, confirmPassword } = this.state;
+        if (password !== confirmPassword) {
+            this.props.displayConfirmError(["Passwords do not match"])
+        } else {
+            const newState = merge({}, this.state);
+            delete newState[confirmPassword];
+            this.props.closeModal();
+            this.props.signUp(newState)
+        }
+        // this.props.signUp(this.state);
     }
 
     render() {
+        // debugger
         // const span = span = document.getElementsByClassName("close")[0];
         let errors;
-        if (this.props.errors >= 1) {
-            return this.props.errors.map( (error, index) => {
+        if (this.props.errors) {
+             errors = this.props.errors.map( (error, index) => {
                 return <li key={index}> {error} </li>
             })
         }
+        // let wModal = document.getElementById('signup');
+        // window.onClick = (e) => {
+        //     if (e.target === wModal) {
+        //         wModal.style.display = "none";        
+        //     }
+        // }
         return (
-            <div className="signup">
-               
+            <div id="signup" className="signup">
+
                 <form className="signupform" onSubmit={this.handleSubmit}>
-                    <header className="signup-header">Welomce to openMesa! </header>
+                    <ul className="errors">
+                        {errors}
+                    </ul>
+                    <header className="signup-header">Welcome to openMesa! </header>
                     <input type="text" placeholder="First Name *"
                         onChange={this.handleInput('fname')}
                     />
@@ -41,7 +63,7 @@ class SignupForm extends React.Component {
                         onChange={this.handleInput('lname')}
                     />
                    
-                    <input type="text" placeholder="Enter email *" 
+                    <input type="email" placeholder="Enter email *" 
                         onChange={this.handleInput('email')}
                     />
                    
@@ -50,15 +72,11 @@ class SignupForm extends React.Component {
                     />
                    
                     <input type="password" placeholder="Re-enter password *"
-                        onChange={this.handleInput('password')}
+                        onChange={this.handleInput('confirmPassword')}
                     />
-                   
                     <input id='signup-submit' type="submit" value="Create Account"/>                
                 </form>
 
-                <ul className="errors">
-                    {errors}
-                </ul>
             </div>
         )
 

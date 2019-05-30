@@ -20,9 +20,9 @@ class Greeting extends React.Component {
         } else {
             content = (
                 <nav className="greet-intro">
-                    <button onClick={() => this.props.openModal('signup')}> Sign up  </button>
+                    <button className="signup-button" onClick={() => this.props.openModal('signup')}> Sign up  </button>
 
-                    <button onClick={() => this.props.openModal('login')} > Login </button>
+                    <button className="login-button" onClick={() => this.props.openModal('login')} > Login </button>
                 </nav>
             )
         }

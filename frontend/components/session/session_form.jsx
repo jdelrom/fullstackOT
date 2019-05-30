@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -20,6 +21,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.closeModal();
         this.props.login(this.state)
     }
 
@@ -32,16 +34,14 @@ class SessionForm extends React.Component {
         }
         return (
             <div className="login-form">
-                <header>Login</header>
-        
-                <br />
 
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Email" onChange={this.handleInput('email')}/>
-                    <br/>
-                    <input type="password" placeholder="password" onChange={this.handleInput('password')}/>
-                    <br/>
-                    <input type="submit" value="Sign In"/>
+                <form className="session-form" onSubmit={this.handleSubmit}>
+                    <header className='login-header'>Please sign in</header>
+                    <input type="email" placeholder="Email" onChange={this.handleInput('email')}/>
+        
+                    <input type="password" placeholder="Password" onChange={this.handleInput('password')}/>
+                    <a className="session-link" href="#">Forgot Password?</a>
+                    <input id="session-submit" type="submit" value="Sign In"/>
                 </form>
             </div>
             )   
