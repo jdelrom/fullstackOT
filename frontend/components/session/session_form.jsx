@@ -18,14 +18,13 @@ class SessionForm extends React.Component {
             return this.setState({ [key]: e.target.value })
         }
     }
-
+    
     handleSubmit(e) {
         e.preventDefault();
-        this.props.closeModal();
-        this.props.login(this.state)
+        this.props.login(this.state).then(() => this.props.closeModal())
         // this.props.receiveSessionErrors(this.errors);
     }
-
+    
     render() {
         const demoUser = { email: "userdemo@mock.com", password: "123456"}
         let errors;
@@ -38,7 +37,7 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form">
                 <form className="session-form" onSubmit={this.handleSubmit}>
-                    <ul>
+                    <ul className="errors">
                         {errors}
                     </ul>
                     <header className='login-header'>Please sign in</header>
@@ -47,11 +46,12 @@ class SessionForm extends React.Component {
                     <input type="password" placeholder="Password" onChange={this.handleInput('password')}/>
                     <a className="session-link" href="#">Forgot Password?</a>
                     <input id="session-submit" type="submit" value="Sign In"/>
-                    <button className="demo" onClick={() => this.props.login(demoUser)}>Demo Login</button>
+                    <button className="demo-button" onClick={() => this.props.login(demoUser).then(this.props.closeModal())}>Demo Login</button>
     
                 </form>
             </div>
             )   
         }
+    
 }
 export default SessionForm;

@@ -43,25 +43,28 @@ class Greeting extends React.Component {
         if (this.props.currentUser) {
             content = (
                 <div className="greet-intro">
-                    {/* <h1 className="greet-h1">Hi, {this.props.currentUser.fname}</h1> */}
-                    <button onClick={this.dropDownClick} className="user-button">Hi, {this.props.currentUser.fname} 
-                         <i className="fa fa-caret-down"></i>
+                    
+                    <button onClick={this.dropDownClick} className="user-button"><i className="far fa-calendar-alt"></i>Hi, {this.props.currentUser.fname}   
+                             <i className="fa fa-caret-down"> </i>
                     </button>
                         <div id="user-dropdown" className={`dropdown-content ${toggle}`}>
-                            {/* <a href="#" onClick={() => this.props.logout()}>My Profile</a>
-                            <a href="#" onClick={() => this.props.logout()}>My Dining History</a>
-                            <a href="#" onClick={() => this.props.logout()}>My Saved Restaurants</a> */}
-                            <a href="#" onClick={() => this.props.logout()}>Sign out</a>
+                            <div className="triangle"></div>
+                           <ul className="drop-down-list">
+                               <li><a href="#" onClick={() => this.props.logout()}>Sign out</a></li> 
+                               <li> <a href="#" onClick={() => this.props.logout()}>My Profile</a></li>
+                                {/* <a href="#" onClick={() => this.props.logout()}>My Dining History</a>
+                                <a href="#" onClick={() => this.props.logout()}>My Saved Restaurants</a> */}
+                            </ul> 
                         </div>
                     {/* <button className="greet-button" onClick={() => this.props.logout()}> Logout </button> */}
                </div>
             )
         } else {
             content = (
-                <nav className="greet-intro">
-                    <button className="signup-button" onClick={() => this.props.openModal('signup')}> Sign up  </button>
+                <nav className="greet-intro">   
+                    <button className="signup-button" onClick={() => this.props.openModal('signup')}>Sign up</button>
 
-                    <button className="login-button" onClick={() => this.props.openModal('login')} > Login </button>
+                    <button className="login-button" onClick={() => this.props.openModal('login')} >Login</button>
                 </nav>
             )
         }``

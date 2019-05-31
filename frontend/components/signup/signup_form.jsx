@@ -25,8 +25,7 @@ class SignupForm extends React.Component {
         } else {
             const newState = merge({}, this.state);
             delete newState[confirmPassword];
-            this.props.closeModal();
-            this.props.signUp(newState)
+            this.props.signUp(newState).then(() => this.props.closeModal())
         }
         // this.props.signUp(this.state);
     }

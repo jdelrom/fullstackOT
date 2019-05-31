@@ -43,7 +43,7 @@
     flex-direction: row-reverse;
 }
 
-#session-submit {
+#session-submit, .demo-button {
     background-color: #da3743;
     border-color: #b8222d;
     color: white;

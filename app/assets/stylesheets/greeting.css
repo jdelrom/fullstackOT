@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-end;
     position: fixed;
-    top: 42px;
+    top: 32px;
     right: 0;
     padding-right: 45px;
 }
@@ -29,18 +29,20 @@
 
 div.logo {
     content: url(https://media.licdn.com/dms/image/C560BAQFIOcTy8tdiVg/company-logo_200_200/0?e=2159024400&v=beta&t=S0WcfI0GpxVGFfhy2vFQOk3WCYlYhe6Md4KxjqZCO2Y);
-    height: 50px;
-    width: 50px;
-    padding-top: 15px;
+    height: 75px;
+    width: 75px;
+    padding-top: 3px;
 }
 
 .title {
     font-size: 30px;
+    cursor: default;
 }
 
 .signup-button {
     background-color: #237b98;
     border-color: #1c627a;
+    outline: none;
     color: white;
     width: 77px;
     height: 32px;
@@ -54,7 +56,8 @@ div.logo {
 
 .login-button {
     background-color: white;
-    border-color: white;
+    border: none;
+    outline: none;
     color: black;
     width: 77px;
     height: 32px;
@@ -91,6 +94,7 @@ input:focus {
     top: 190px;
     z-index: 1;
     left: 250px;
+    cursor: default;
 } 
 
 .greet-h1 {
@@ -110,6 +114,7 @@ input:focus {
     z-index: 1;
     text-transform: capitalize;
     outline: none;
+    padding-top: 12px;
 }
 
 .dropdown-content {
@@ -121,17 +126,17 @@ input:focus {
   overflow: visible;
 }
 
-.dropdown-content a {
+/* .dropdown-content a {
     position: absolute;
     color: black;
     padding-right: 14px;
     text-decoration: none;
     display: block;
     text-align: left;
-    top: 24px;
+    top: 36px;
     right: 6px;
     background-color: white;
-}
+} */
 
 .dropdown-content a:hover {
     background-color: none;
@@ -139,4 +144,68 @@ input:focus {
 
 .show {
     display: block;
+}
+
+html {
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+.drop-down-list {
+    display: flex;
+    z-index: 1;
+    flex-direction: column-reverse;
+    position: absolute;
+    height: 275px;
+    width: 236px;
+    background-color: white;
+    top: 44px;
+    right: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid lightgray;
+}
+
+.drop-down-list > li > a {
+    text-decoration: none;
+    font-size: 16px;
+    color: gray;
+    font-weight: bolder;
+}
+
+.drop-down-list > li {
+    margin-left: 14px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+
+.drop-down-list li:first-child {
+    padding-bottom: 11px;
+}
+
+
+/* .user-dropdown {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-top: 4px solid #e74c3c;
+} */
+
+.triangle {
+    position: absolute;
+    margin: auto;
+    top: 37px;
+    left: 0;
+    right: 0;
+    width: 13px;
+    height: 13px;
+    -webkit-transform: rotate(45deg);
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: none;
+    border-bottom: none;
+    background-color: white;
+    z-index: 10;
 }
