@@ -27,6 +27,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        const demoUser = { email: "userdemo@mock.com", password: "123456"}
         let errors;
         if (this.props.errors) {
             errors = this.props.errors.map((error, index) => {
@@ -46,6 +47,7 @@ class SessionForm extends React.Component {
                     <input type="password" placeholder="Password" onChange={this.handleInput('password')}/>
                     <a className="session-link" href="#">Forgot Password?</a>
                     <input id="session-submit" type="submit" value="Sign In"/>
+                    <button className="demo" onClick={() => this.props.login(demoUser)}>Demo Login</button>
     
                 </form>
             </div>

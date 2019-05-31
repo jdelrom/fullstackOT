@@ -39,7 +39,6 @@ class Greeting extends React.Component {
     render() {
         // debugger
         let toggle = this.state.toggle;
-
         let content;
         if (this.props.currentUser) {
             content = (
