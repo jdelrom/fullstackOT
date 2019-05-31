@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
                 return <li key={index}> {error} </li>
             })
         }
-        debugger
+        // debugger
         return (
             <div className="login-form">
                 <form className="session-form" onSubmit={this.handleSubmit}>

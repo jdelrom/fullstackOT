@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { merge } from 'lodash';
-import { closeModal } from '../../actions/modal_actions';
 
 
 class SignupForm extends React.Component {

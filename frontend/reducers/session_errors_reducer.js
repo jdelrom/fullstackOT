@@ -11,7 +11,7 @@ const sessionErrorsReducer = (state = [], action) => {
         case CLOSE_MODAL:
             return []
         default:
-            debugger
+            // debugger
             return state
     }
 }
