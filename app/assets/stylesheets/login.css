@@ -37,6 +37,10 @@
     padding: 8px;
     margin: 10px 0px;
 }
+
+.session-form > input::placeholder {
+    color: default;
+}
     
 .session-link {
     display: flex;
@@ -86,4 +90,4 @@ input:focus {
 }
 .errors-render::placeholder {
     color: red
-}   
+}
