@@ -7,3 +7,56 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create({ email: "userdemo@mock.com", password: "123456", fname: "demo", lname: "login"})
+
+restaurant1 = Restaurant.create( {
+    name: "Tony's", 
+    aboutme: "Elegant, fine dining, meets casual chic modern low key restaurant.  Authentic Italian food",
+    address: "123 Sogood Ave",
+    city: "New York",
+    state: "NY",
+    zipcode: "10018",
+    phone: "212-222-2122",
+    capacity: "50",
+    tag: "Italian",
+
+})
+
+restaurant1 = Restaurant.create( {
+    name: "Tony's", 
+    aboutme: "Elegant, fine dining, meets casual chic modern low key restaurant.  Authentic Italian food",
+    address: "123 Sogood Ave",
+    city: "New York",
+    state: "NY",
+    zipcode: "10018",
+    phone: "212-222-2122",
+    capacity: "50",
+    tag: "Italian",
+    
+})
+
+restaurant1 = Restaurant.create( {
+    name: "Tony's", 
+    aboutme: "Elegant, fine dining, meets casual chic modern low key restaurant.  Authentic Italian food",
+    address: "123 Sogood Ave",
+    city: "New York",
+    state: "NY",
+    zipcode: "10018",
+    phone: "212-222-2122",
+    capacity: "50",
+    tag: "Italian",
+    
+})
+
+restaurant1 = Restaurant.create( {
+    name: "Tony's", 
+    aboutme: "Elegant, fine dining, meets casual chic modern low key restaurant.  Authentic Italian food",
+    address: "123 Sogood Ave",
+    city: "New York",
+    state: "NY",
+    zipcode: "10018",
+    phone: "212-222-2122",
+    capacity: "50",
+    tag: "Italian",
+    
+})
+

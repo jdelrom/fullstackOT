@@ -22,6 +22,7 @@ class SignupForm extends React.Component {
         const { password, confirmPassword } = this.state;
         if (password !== confirmPassword) {
             this.props.displayConfirmError(["Passwords do not match"])
+            this.props.displayConfirmError(['Please re-enter your password'])
         } else {
             const newState = merge({}, this.state);
             delete newState[confirmPassword];
@@ -43,19 +44,30 @@ class SignupForm extends React.Component {
         if (this.props.errors.length > 0) {
             for (let i = 0; i < this.props.errors.length; i++) {
                 if (this.props.errors[i].includes("Email")) {
-                    emailInput = "errors-render"
+                     emailInput = "errors-render"
+                     this.props.errors[i] = this.props.errors[i].split(" ");
+                     this.props.errors[i] = this.props.errors[i].slice(1);
+                     this.props.errors[i] = this.props.errors[i].join(" ");
                 }
                 if (this.props.errors[i].includes('Password')) {
                     passwordInput = "errors-render"
+            
                 }
                 if (this.props.errors[i].includes('Fname')) {
                     fnameInput = "errors-render"
+                    this.props.errors[i] = this.props.errors[i].split(" ");
+                    this.props.errors[i] = this.props.errors[i].slice(1);
+                    this.props.errors[i] = this.props.errors[i].join(" ");
                 }
                 if (this.props.errors[i].includes('Lname')) {
                     lnameInput = "errors-render"
+                    this.props.errors[i] = this.props.errors[i].split(" ");
+                    this.props.errors[i] = this.props.errors[i].slice(1);
+                    this.props.errors[i] = this.props.errors[i].join(" ");
                 }
                 if (this.props.errors[i].includes('Password')) {
                     confirmPasswordInput = "errors-render"
+
                 }
             }
             errors = this.props.errors.map( (error, index) => {
