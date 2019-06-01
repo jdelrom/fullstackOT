@@ -60,14 +60,17 @@
 }
 
 .errors {
-    display: contents;
+    display: flex;
     list-style: none;
-    text: none;
+    flex-direction: column;
+    flex-flow: column;
+    padding: 0;
+    width: 100%;
+    margin: 0;
 }
 
 .errors > li {
     position: relative;
-    margin: 0;
     color: red;
 }
 
@@ -90,4 +93,8 @@ input:focus {
 }
 .errors-render::placeholder {
     color: red
+}
+
+.errors-render:focus {
+    color: black;
 }
