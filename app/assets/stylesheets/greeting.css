@@ -314,6 +314,8 @@ html {
     text-decoration: none;
 }
 
-
+button {
+    outline: none;
+}
 
 
