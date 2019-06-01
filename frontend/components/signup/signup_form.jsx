@@ -31,6 +31,7 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        // debugger
         let emailInput = "email-signup";
         let passwordInput = "password-signup";
         let fnameInput = "fname";
@@ -40,11 +41,23 @@ class SignupForm extends React.Component {
         // const span = span = document.getElementsByClassName("close")[0];
         let errors;
         if (this.props.errors.length > 0) {
-            emailInput = "errors-render"
-            passwordInput = "errors-render"
-            fnameInput = "errors-render"
-            lnameInput = "errors-render"
-            confirmPasswordInput = "errors-render"
+            for (let i = 0; i < this.props.errors.length; i++) {
+                if (this.props.errors[i].includes("Email")) {
+                    emailInput = "errors-render"
+                }
+                if (this.props.errors[i].includes('Password')) {
+                    passwordInput = "errors-render"
+                }
+                if (this.props.errors[i].includes('Fname')) {
+                    fnameInput = "errors-render"
+                }
+                if (this.props.errors[i].includes('Lname')) {
+                    lnameInput = "errors-render"
+                }
+                if (this.props.errors[i].includes('Password')) {
+                    confirmPasswordInput = "errors-render"
+                }
+            }
             errors = this.props.errors.map( (error, index) => {
                 return <li key={index}> {error} </li>
             })

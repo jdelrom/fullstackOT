@@ -32,8 +32,14 @@ class SessionForm extends React.Component {
         const demoUser = { email: "userdemo@mock.com", password: "123456"}
         let errors;
         if (this.props.errors.length > 0) {
-            emailInput = "errors-render"
-            passwordInput = "errors-render"
+            for (let i = 0; i < this.props.errors.length; i++) {
+                if (this.props.errors[i].includes("Email")) {
+                    emailInput = "errors-render"
+                }
+                if (this.props.errors[i].includes('Password')) {
+                    passwordInput = "errors-render"
+                }
+            }
             // debugger
             errors = this.props.errors.map((error, index) => {
                 return <li key={index}> {error} </li>
