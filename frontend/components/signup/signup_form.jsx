@@ -42,6 +42,8 @@ class SignupForm extends React.Component {
         // const span = span = document.getElementsByClassName("close")[0];
         let errors;
         if (this.props.errors.length > 0) {
+            // document.getElementById('disappear').classList.add('errors')
+            document.getElementById('errors').setAttribute("style", "display: block")
             for (let i = 0; i < this.props.errors.length; i++) {
                 if (this.props.errors[i].includes("Email")) {
                      emailInput = "errors-render"
@@ -84,10 +86,10 @@ class SignupForm extends React.Component {
             <div id="signup" className="signup">
 
                 <form className="signupform" onSubmit={this.handleSubmit}>
-                    <ul className="errors">
+                    <header className="signup-header">Welcome to openMesa! </header>
+                    <ul id="errors" className="errors">
                         {errors}
                     </ul>
-                    <header className="signup-header">Welcome to openMesa! </header>
                     
                     <input className={fnameInput} type="text" placeholder="First Name *"
                         onChange={this.handleInput('fname')}

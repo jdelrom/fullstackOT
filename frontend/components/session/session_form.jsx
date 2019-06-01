@@ -47,13 +47,14 @@ class SessionForm extends React.Component {
             })
         }
         // debugger
+       
         return (
             <div className="login-form">
                 <form className="session-form" onSubmit={this.handleSubmit}>
+                    <header className='login-header'>Please sign in</header>
                     <ul className="errors">
                         {errors}
                     </ul>
-                    <header className='login-header'>Please sign in</header>
                     <input className={emailInput} type="email" placeholder="Email" onChange={this.handleInput('email')}/>
         
                     <input className={passwordInput} type="password" placeholder="Password" onChange={this.handleInput('password')}/>
