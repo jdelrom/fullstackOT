@@ -21,14 +21,20 @@ class SessionForm extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state).then(() => this.props.closeModal())
-        // this.props.receiveSessionErrors(this.errors);
+            this.props.login(this.state).then(() => this.props.closeModal())
+            // this.props.receiveSessionErrors(this.errors);
     }
     
     render() {
+        // debugger
+        let emailInput = "email-input";
+        let passwordInput = "password-input";
         const demoUser = { email: "userdemo@mock.com", password: "123456"}
         let errors;
-        if (this.props.errors) {
+        if (this.props.errors.length > 0) {
+            emailInput = "errors-render"
+            passwordInput = "errors-render"
+            // debugger
             errors = this.props.errors.map((error, index) => {
                 return <li key={index}> {error} </li>
             })
@@ -41,12 +47,12 @@ class SessionForm extends React.Component {
                         {errors}
                     </ul>
                     <header className='login-header'>Please sign in</header>
-                    <input type="email" placeholder="Email" onChange={this.handleInput('email')}/>
+                    <input className={emailInput} type="email" placeholder="Email" onChange={this.handleInput('email')}/>
         
-                    <input type="password" placeholder="Password" onChange={this.handleInput('password')}/>
+                    <input className={passwordInput} type="password" placeholder="Password" onChange={this.handleInput('password')}/>
                     <a className="session-link" href="#">Forgot Password?</a>
-                    <input id="session-submit" type="submit" value="Sign In"/>
-                    <button className="demo-button" onClick={() => this.props.login(demoUser).then(this.props.closeModal())}>Demo Login</button>
+                    <button id="session-submit">Sign In</button>
+                    <button id="session-submit" onClick={() => this.props.login(demoUser).then(this.props.closeModal())}>Demo Login</button>
     
                 </form>
             </div>

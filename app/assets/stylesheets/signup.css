@@ -10,7 +10,7 @@
     display: flex;
     font-size: 20px;
     background-color: white;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid lightgray;
     padding-bottom: 8px;
 }
 
@@ -49,6 +49,12 @@
     font-size: 1.2rem;
     border-radius: 3px;
     font-weight: 400;
+    cursor: pointer;
+    transition: background-color 300ms ease-out;
+}
+
+#signup-submit:hover {
+    background-color: #b8222d;
 }
 
 .modal-background {

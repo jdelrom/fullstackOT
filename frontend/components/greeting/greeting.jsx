@@ -38,13 +38,13 @@ class Greeting extends React.Component {
 
     render() {
         // debugger
+        let hoy = new Date();
         let toggle = this.state.toggle;
         let content;
         if (this.props.currentUser) {
             content = (
                 <div className="greet-intro">
-                    
-                    <button onClick={this.dropDownClick} className="user-button"><i className="far fa-calendar-alt"></i>Hi, {this.props.currentUser.fname}   
+                    <button onClick={this.dropDownClick} className="user-button">Hi, {this.props.currentUser.fname}   
                              <i className="fa fa-caret-down"> </i>
                     </button>
                         <div id="user-dropdown" className={`dropdown-content ${toggle}`}>
@@ -68,10 +68,25 @@ class Greeting extends React.Component {
                 </nav>
             )
         }``
-
+        
+        // debugger
         return (
             <>
                 {content}
+                <div className="calendar">
+                    <input type="date" id="date" className="date" value={hoy} />
+                    <div className="styled-select slate">
+                        <select className="time">
+                            <option value="7:00PM">7:00 PM</option>
+                        </select>
+                        <select className="party-size">
+                            <option>2 people</option>
+                        </select>
+                    </div>
+                    <input className="search" type="search" />
+                    <button className="search-button">Let's go</button>
+                </div>
+               
             </>
             
         )

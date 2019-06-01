@@ -31,11 +31,21 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        let emailInput = "email-signup";
+        let passwordInput = "password-signup";
+        let fnameInput = "fname";
+        let lnameInput = "lname";
+        let confirmPasswordInput = "confirm-password-signup"
         // debugger
         // const span = span = document.getElementsByClassName("close")[0];
         let errors;
-        if (this.props.errors) {
-             errors = this.props.errors.map( (error, index) => {
+        if (this.props.errors.length > 0) {
+            emailInput = "errors-render"
+            passwordInput = "errors-render"
+            fnameInput = "errors-render"
+            lnameInput = "errors-render"
+            confirmPasswordInput = "errors-render"
+            errors = this.props.errors.map( (error, index) => {
                 return <li key={index}> {error} </li>
             })
         }
@@ -53,26 +63,27 @@ class SignupForm extends React.Component {
                         {errors}
                     </ul>
                     <header className="signup-header">Welcome to openMesa! </header>
-                    <input type="text" placeholder="First Name *"
+                    
+                    <input className={fnameInput} type="text" placeholder="First Name *"
                         onChange={this.handleInput('fname')}
                     />
                    
-                    <input type="text" placeholder="Last Name *"
+                    <input className={lnameInput} type="text" placeholder="Last Name *"
                         onChange={this.handleInput('lname')}
                     />
                    
-                    <input type="email" placeholder="Enter email *" 
+                    <input className={emailInput} type="email" placeholder="Enter email *" 
                         onChange={this.handleInput('email')}
                     />
                    
-                    <input type="password" placeholder="Enter password *"
+                    <input className={passwordInput} type="password" placeholder="Enter password *"
                         onChange={this.handleInput('password')}
                     />
                    
-                    <input type="password" placeholder="Re-enter password *"
+                    <input className={confirmPasswordInput} type="password" placeholder="Re-enter password *"
                         onChange={this.handleInput('confirmPassword')}
                     />
-                    <input id='signup-submit' type="submit" value="Create Account"/>                
+                    <button id='signup-submit' type="submit" >Create Account </button>              
                 </form>
 
             </div>

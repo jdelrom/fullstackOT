@@ -9,19 +9,35 @@ import SessionFormContainer from './session/session_form_container';
 
 const App = () => {
     return (
+        <>
+    <div className='modal-parent'> <Modal /> </div>
         <div className="root">
-        
-        <div className='modal-parent'> <Modal /> </div>
-        <header className="top-header">
-           <div className='logo'></div><h1 className="title">openMesa</h1>
-            <GreetingContainer />
-        </header>
-            <h1 className="background-header">Find your mesa for any occasion</h1>
+           
+             <header className="top-header">
+                 <ul className="logo-links">  
+                    <li>
+                        <a href="/">
+                            <div className='logo'></div>
+                        </a>
+                    </li> 
+                    <li>
+                       <a href="">
+                           <h1 className="title">openMesa</h1>
+                       </a> 
+                    </li>
+                        
+                </ul> 
+             </header>
+                    <GreetingContainer />
+             <div className="root-header">
+                <h1 className="background-header">Find your mesa for any occasion</h1>
+             </div>
             <img src={window.splashURL} />
                 {/* <img src={window.splashURL} /> */}
             {/* <AuthRoute path='/signup' component={SignupFormContainer} />
             <AuthRoute path='/login' component={SessionFormContainer} /> */}
-    </div>
+     </div>
+     </>
     )
 };
 

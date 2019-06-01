@@ -1,10 +1,12 @@
 .greet-intro {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     position: fixed;
     top: 32px;
     right: 0;
     padding-right: 45px;
+    z-index: 3;
 }
 
 /* .greet-signup {
@@ -33,10 +35,23 @@ div.logo {
     width: 75px;
     padding-top: 3px;
 }
+.logo-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-links > li {
+    text-decoration: none;
+}
 
 .title {
-    font-size: 30px;
+    font-size: 20px;
     cursor: default;
+    margin-top: 29px;
+    color: black;
 }
 
 .signup-button {
@@ -52,13 +67,19 @@ div.logo {
     border-radius: 3px;
     font-size: .775rem;
     font-weight: 300;
+    transition: background-color 200ms ease-in;
+}
+
+.signup-button:hover {
+    background-color: #1c577a;
+    color: white;
 }
 
 .login-button {
     background-color: white;
     border: none;
     outline: none;
-    color: black;
+    color: #333333;
     width: 77px;
     height: 32px;
     text-align: center;
@@ -66,6 +87,12 @@ div.logo {
     box-sizing: border-box;
     border-radius: 3px;
     font-size: .975rem;
+    transition: color 200ms ease-in;
+}
+
+.login-button:hover {
+    background-color: white;
+    color: black;
 }
 
 input:focus {
@@ -81,20 +108,16 @@ input:focus {
     /* background-image: url('restaurant.png'); */
     height: 416px;
     width: 100%;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: -1;
     position: relative;
 }
 .background-header {
-    position: absolute;
-    display: flex;
-    justify-content: center;
     color: white;
     font-size: 45px;
-    top: 190px;
     z-index: 1;
-    left: 250px;
     cursor: default;
+    margin-top: 112px;
 } 
 
 .greet-h1 {
@@ -122,7 +145,7 @@ input:focus {
   position: absolute;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 3;
   overflow: visible;
 }
 
@@ -153,7 +176,7 @@ html {
 
 .drop-down-list {
     display: flex;
-    z-index: 1;
+    z-index: 3;
     flex-direction: column-reverse;
     position: absolute;
     height: 275px;
@@ -172,12 +195,14 @@ html {
     font-size: 16px;
     color: gray;
     font-weight: bolder;
+    z-index: 3;
 }
 
 .drop-down-list > li {
     margin-left: 14px;
     margin-bottom: 10px;
     padding: 0px;
+    z-index: 3;
 }
 
 
@@ -209,3 +234,86 @@ html {
     background-color: white;
     z-index: 10;
 }
+
+.calendar {
+    height: 46px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 286px;
+    z-index: 2;
+}
+
+.calendar > input {
+    height: 46px;
+    width: 158px;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+.time {
+    height: 46px;
+    width: 158px;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+.party-size {
+    height: 46px;
+    width: 158px;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    margin-right: 25px;
+}
+
+
+.search-button {
+    margin-left: 10px;
+    background-color: #da3743;
+    border-color: #b8222d;
+    color: white;
+    height: 48px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 6px;
+    font-weight: 400;
+    width: 140px;
+    cursor: pointer;
+    transition: background-color 300ms ease-out;
+}
+
+.search-button:hover {
+    background-color: #cc313b;
+    color: white;
+}
+
+.root-header {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 416px;
+    width: 100%;
+    margin-right: 0;
+}
+
+.logo-links > li > a {
+    text-decoration: none;
+}
+
+
+
+

@@ -37,7 +37,7 @@
     padding: 8px;
     margin: 10px 0px;
 }
-
+    
 .session-link {
     display: flex;
     flex-direction: row-reverse;
@@ -52,6 +52,7 @@
     font-size: 1.2rem;
     border-radius: 3px;
     font-weight: 400;
+    margin: 4px 0px;
 }
 
 .errors {
@@ -70,3 +71,19 @@ input:focus {
     outline: none;
 }
 
+.errors-render {
+    border: 1px solid red;
+    color: red;
+    display: flex;
+    justify-content: center;
+    background: white;
+    /* align-content: center; */
+    align-items: center;
+    height: 35px;
+    font-size: 15px;
+    padding: 8px;
+    margin: 10px 0px;
+}
+.errors-render::placeholder {
+    color: red
+}   
