@@ -32,16 +32,19 @@
 .signupform input {
     display: flex;
     justify-content: center;
-    /* align-content: center; */
     align-items: center;
     height: 35px;
-    font-size: 15px;
-    padding: 8px;
-    
+    font-size: 13px;
+    padding: 8px 17px;
+    font-weight: 600;
+}
+
+.signupform input:focus {
+    outline: 1px solid darkgray;    
 }
 
 #signup-submit {
-   background-color: #da3743;
+    background-color: #da3743;
     border-color: #b8222d;
     color: white;
     height: 55px;
@@ -72,9 +75,6 @@
     box-shadow: 2px 2px 4px 4px;
 }
 
-input:focus {
-    border: 1px solid black;
-}
 
 .disappear {
     display: none;

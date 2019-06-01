@@ -5,12 +5,15 @@
 }
 
 .login-header {
-    position:relative;
+    position: relative;
     display: flex;
-    font-size: 20px;
+    font-size: 24px;
+    color: #5a5a5a;
     background-color: white;
-    border-bottom: 1px solid gray;
-    padding-bottom: 8px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    font-weight: 100;
 }
 
 .session-form {  
@@ -75,9 +78,9 @@
     color: red;
 }
 
-input:focus {
+/* input:focus {
     outline: none;
-}
+} */
 
 .errors-render {
     border: 1px solid red;
@@ -93,9 +96,13 @@ input:focus {
     margin: 10px 0px;
 }
 .errors-render::placeholder {
-    color: red
+    color: #f3a8a8;
+    
 }
 
 .errors-render:focus {
     color: black;
+    outline: 1px solid darkgray;
+    border: 1px solid gray;
+        opacity: 1 !important;
 }

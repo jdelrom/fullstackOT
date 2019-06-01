@@ -95,9 +95,9 @@ div.logo {
     color: black;
 }
 
-input:focus {
+/* input:focus {
     border: 1px solid black;
-}
+} */
 
 .backgrounds {
     display: flex;
