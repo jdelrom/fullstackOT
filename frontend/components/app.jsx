@@ -22,7 +22,7 @@ const App = () => {
                     </li> 
                     <li>
                        <a href="">
-                           <h1 className="title">openMesa</h1>
+                           <h1 className="title">OpenMesa</h1>
                        </a> 
                     </li>
                         

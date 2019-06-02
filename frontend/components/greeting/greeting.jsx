@@ -64,7 +64,7 @@ class Greeting extends React.Component {
                 <nav className="greet-intro">   
                     <button className="signup-button" onClick={() => this.props.openModal('signup')}>Sign up</button>
 
-                    <button className="login-button" onClick={() => this.props.openModal('login')} >Login</button>
+                    <button className="login-button" onClick={() => this.props.openModal('login')} >Sign in</button>
                 </nav>
             )
         }``

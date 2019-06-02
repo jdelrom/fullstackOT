@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: flex-end;
     position: fixed;
-    top: 40px;
+    top: 21px;
     right: 0;
     padding-right: 45px;
     z-index: 3;
@@ -31,9 +31,10 @@
 
 div.logo {
     content: url(https://media.licdn.com/dms/image/C560BAQFIOcTy8tdiVg/company-logo_200_200/0?e=2159024400&v=beta&t=S0WcfI0GpxVGFfhy2vFQOk3WCYlYhe6Md4KxjqZCO2Y);
-    height: 75px;
-    width: 75px;
-    padding-top: 3px;
+    height: 62px;
+    width: 62px;
+    padding-top: 5px;
+
 }
 .logo-links {
     display: flex;
@@ -52,10 +53,11 @@ div.logo {
     cursor: pointer;
     margin-top: 29px;
     color: black;
+    font-weight: bold;
 }
 
 .signup-button {
-    background-color: #237b98;
+    background-color: #20738f;
     border-color: #1c627a;
     outline: none;
     color: white;
@@ -65,10 +67,11 @@ div.logo {
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 3px;
-    font-size: .775rem;
-    font-weight: 300;
+    font-size: 0.8rem;
+    font-weight: 500;
     transition: background-color 200ms ease-in;
 }
+
 
 .signup-button:hover {
     background-color: #1c577a;
@@ -86,8 +89,9 @@ div.logo {
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 3px;
-    font-size: .975rem;
+    font-size: .950rem;
     transition: color 200ms ease-in;
+    font-weight: 500;
 }
 
 .login-button:hover {
