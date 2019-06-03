@@ -174,10 +174,6 @@ div.logo {
     display: block;
 }
 
-html {
-    font-family: 'PT Sans', sans-serif;
-    font-family: 'Nunito', sans-serif;
-}
 
 .drop-down-list {
     display: flex;
@@ -323,4 +319,11 @@ button {
     outline: none;
 }
 
+#root {
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    width: 100%;
+}
 

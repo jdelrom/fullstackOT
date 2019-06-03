@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
         this.state = {
             email: '',
             password: '',
+            toggle: 'hidden',
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -21,7 +22,7 @@ class SessionForm extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-            this.props.login(this.state).then(() => this.props.closeModal())
+            this.props.login(this.state).then(this.setState({toggle: 'hidden'}).then(() => this.props.closeModal()))
             // this.props.receiveSessionErrors(this.errors);
     }
     
@@ -60,7 +61,7 @@ class SessionForm extends React.Component {
                     <input className={passwordInput} type="password" placeholder="Password" onChange={this.handleInput('password')}/>
                     <a className="session-link" href="#">Forgot Password?</a>
                     <button id="session-submit">Sign In</button>
-                    <button id="session-submit" onClick={() => this.props.login(demoUser).then(this.props.closeModal())}>Demo Login</button>
+                    <button id="session-submit" onClick={() => this.props.login(demoUser).then(this.props.closeModal().then(this.setState({toggle: 'hidden'})))}>Demo Login</button>
     
                 </form>
             </div>

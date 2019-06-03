@@ -13,10 +13,10 @@ class Greeting extends React.Component {
     }
 
     dropDownClick() {
-        if (this.state.toggle === 'hidden') {
-            this.setState( {toggle: 'show'} )
+        if (this.state.toggle === 'show') {
+            this.setState( {toggle: 'hidden'} )
         }   else {
-            this.setState( {toggle: 'hidden' } );
+            this.setState( {toggle: 'show' } );
         }
 
         // document.getElementById("user-dropdown").classList.toggle("show");
@@ -50,8 +50,8 @@ class Greeting extends React.Component {
                         <div id="user-dropdown" className={`dropdown-content ${toggle}`}>
                             <div className="triangle"></div>
                            <ul className="drop-down-list">
-                               <li><a href="#" onClick={() => this.props.logout()}>Sign out</a></li> 
-                               <li> <a href="#" onClick={() => this.props.logout()}>My Profile</a></li>
+                            <li><a href="#" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>Sign out</a></li> 
+                               <li> <a href="#" onClick={() => this.props.logout().then(this.setState({toggle: 'hidden'}))}>My Profile</a></li>
                                 {/* <a href="#" onClick={() => this.props.logout()}>My Dining History</a>
                                 <a href="#" onClick={() => this.props.logout()}>My Saved Restaurants</a> */}
                             </ul> 
