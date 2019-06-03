@@ -121,7 +121,8 @@ div.logo {
     font-size: 45px;
     z-index: 1;
     cursor: default;
-    margin-top: 112px;
+    margin-top: 147px;
+    font-weight: bold;
 } 
 
 .greet-h1 {

@@ -72,6 +72,18 @@ class Greeting extends React.Component {
         // debugger
         return (
             <>
+                <ul className="logo-links">
+                    <li>
+                        <a href="/">
+                            <div className='logo'></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h1 className="title">OpenMesa</h1>
+                        </a>
+                    </li>
+                </ul> 
                 {content}
                 <div className="calendar">
                     <input type="date" id="date" className="date" value={hoy} />
@@ -86,12 +98,16 @@ class Greeting extends React.Component {
                     <input className="search" type="search" />
                     <button className="search-button">Let's go</button>
                 </div>
+                <div className="root-header">
+                    <h1 className="background-header">Find your mesa for any occasion</h1>
+                </div>
+                <img src={window.splashURL} />
                
             </>
             
-        )
+            )
+        }
+        
     }
-
-}
-
+    
 export default Greeting;
