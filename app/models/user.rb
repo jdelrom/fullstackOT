@@ -35,10 +35,9 @@ class User < ApplicationRecord
     end
 
     def password=(password)
-        if password.present?   
+        debugger
             @password = password
-            self.password_digest = BCrypt::Password.create(password)
-        end        
+            self.password_digest = BCrypt::Password.create(password)       
     end
 
     def is_password?(password)

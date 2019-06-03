@@ -20,12 +20,16 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const { password, confirmPassword } = this.state;
+        // debugger
         if (password !== confirmPassword) {
             this.props.displayConfirmError(["Passwords do not match"])
             this.props.displayConfirmError(['Please re-enter your password'])
         } else {
+            // debugger
             const newState = merge({}, this.state);
-            delete newState[confirmPassword];
+            // debugger
+            delete newState['confirmPassword'];
+            // debugger
             this.props.signUp(newState).then(() => this.props.closeModal())
         }
         // this.props.signUp(this.state);
