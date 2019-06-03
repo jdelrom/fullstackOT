@@ -69,7 +69,12 @@ class SignupForm extends React.Component {
                 }
                 if (this.props.errors[i].includes('Password')) {
                     confirmPasswordInput = "errors-render"
+                }
 
+                if (this.props.errors[i].includes('Password digest')) {
+                    this.props.errors[i] = this.props.errors[i].split(" ");
+                    this.props.errors[i] = this.props.errors[i].slice(2);
+                    this.props.errors[i] = this.props.errors[i].join(" ");
                 }
             }
             errors = this.props.errors.map( (error, index) => {

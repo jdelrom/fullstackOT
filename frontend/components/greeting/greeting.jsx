@@ -1,90 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import NavbarContainer from '../navbar/nav_bar_container';
 
 class Greeting extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            toggle: 'hidden',
-        }
-
-        this.dropDownClick = this.dropDownClick.bind(this);
+      
     }
 
-    dropDownClick() {
-        if (this.state.toggle === 'show') {
-            this.setState( {toggle: 'hidden'} )
-        }   else {
-            this.setState( {toggle: 'show' } );
-        }
+    // dropDownClick() {
+    //     if (this.state.toggle === 'show') {
+    //         this.setState({ toggle: 'hidden' })
+    //     } else {
+    //         this.setState({ toggle: 'show' });
+    //     }
 
-        // document.getElementById("user-dropdown").classList.toggle("show");
+    //     // document.getElementById("user-dropdown").classList.toggle("show");
 
-        window.onclick = (e) => {
-            if (!e.target.matches('.user-button')) {
-                let dropDowns = document.getElementsByClassName("dropdown-content");
-                let i;
-                for (i = 0; i < dropDowns.length; i++) {
-                    let openDropdown = dropDowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.add('hidden');
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    }
+    //     window.onclick = (e) => {
+    //         if (!e.target.matches('.user-button')) {
+    //             let dropDowns = document.getElementsByClassName("dropdown-content");
+    //             let i;
+    //             for (i = 0; i < dropDowns.length; i++) {
+    //                 let openDropdown = dropDowns[i];
+    //                 if (openDropdown.classList.contains('show')) {
+    //                     openDropdown.classList.add('hidden');
+    //                     openDropdown.classList.remove('show');
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    
 
     render() {
         // debugger
         let hoy = new Date();
-        let toggle = this.state.toggle;
-        let content;
-        if (this.props.currentUser) {
-            content = (
-                <div className="greet-intro">
-                    <button onClick={this.dropDownClick} className="user-button">Hi, {this.props.currentUser.fname}   
-                             <i className="fa fa-caret-down"> </i>
-                    </button>
-                        <div id="user-dropdown" className={`dropdown-content ${toggle}`}>
-                            <div className="triangle"></div>
-                           <ul className="drop-down-list">
-                            <li><a href="#" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>Sign out</a></li> 
-                               <li> <a href="#" onClick={() => this.props.logout().then(this.setState({toggle: 'hidden'}))}>My Profile</a></li>
-                                {/* <a href="#" onClick={() => this.props.logout()}>My Dining History</a>
-                                <a href="#" onClick={() => this.props.logout()}>My Saved Restaurants</a> */}
-                            </ul> 
-                        </div>
-                    {/* <button className="greet-button" onClick={() => this.props.logout()}> Logout </button> */}
-               </div>
-            )
-        } else {
-            content = (
-                <nav className="greet-intro">   
-                    <button className="signup-button" onClick={() => this.props.openModal('signup')}>Sign up</button>
-
-                    <button className="login-button" onClick={() => this.props.openModal('login')} >Sign in</button>
-                </nav>
-            )
-        }``
+        
+        
         
         // debugger
         return (
             <>
-                <ul className="logo-links">
-                    <li>
-                        <a href="/">
-                            <div className='logo'></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <h1 className="title">OpenMesa</h1>
-                        </a>
-                    </li>
-                </ul> 
-                {content}
                 <div className="calendar">
                     <input type="date" id="date" className="date" value={hoy} />
                     <div className="styled-select slate">
@@ -96,12 +55,16 @@ class Greeting extends React.Component {
                         </select>
                     </div>
                     <input className="search" type="search" />
-                    <button className="search-button">Let's go</button>
+                    {/* <button className="search-button">Let's go</button> */}
+                    <Link to="/restaurants" className="search-button">Let's go</Link>
                 </div>
                 <div className="root-header">
-                    <h1 className="background-header">Find your mesa for any occasion</h1>
+                     <NavbarContainer /> 
+                    
+                    <div className='background-header'><h1>Find your mesa for any occasion</h1></div>
                 </div>
                 <img src={window.splashURL} />
+
                
             </>
             

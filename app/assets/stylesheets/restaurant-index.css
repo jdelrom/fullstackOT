@@ -38,7 +38,8 @@
 
 .rest-index-items {
     height: 100%;
-    padding: 4px 0px;
+    padding: 22px 0px;
+    border-bottom: 1px solid lightgray;
 }
 
 .rest-index-items > li {
@@ -52,4 +53,17 @@
 
 .rest-ul li + li {
     padding-top: 10px;
+}
+.rest-list {
+    height: 100%;
+}
+
+.rest-container {
+    height: 100%;
+}
+
+.fa-star {
+    color: #fdae07;
+    padding-right: 2px;
+    font-size: 18px;
 }

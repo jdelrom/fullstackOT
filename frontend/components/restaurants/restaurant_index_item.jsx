@@ -1,16 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RestaurantIndexItem = ({restaurant}) => {
     // debugger
+    let rand = Math.floor(Math.random() * 1000)
     return (
        
-        <ul className='rest-index-items'>  <a href="/" className='rest-index-names'>{restaurant.name}</a>
+        <ul className='rest-index-items'><Link to={`/restaurants/${restaurant.id}`} className='rest-index-names'>{restaurant.name}</Link>
             <li>
                 <i class="fa fa-star" aria-hidden="true"></i> 
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
-                (202)
+                ({rand})
             </li>
             <li className="tag" >{restaurant.tag}</li>
            <ul className="time-slots">

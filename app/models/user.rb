@@ -16,7 +16,7 @@ class User < ApplicationRecord
     validates_presence_of :email, message: "Please enter your email"
     validates_presence_of :fname, message: "Please enter your first name"
     validates_presence_of :lname, message: "Please enter your last name"
-    validates :password_digest, presence: true
+    validates_presence_of :password_digest, message: "Plesae enter your password"
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: {minimum: 6, maximum: 20, allow_nil: true }
 

@@ -1,0 +1,7 @@
+.rest-show-nav {
+    position: sticky;
+}
+
+.rest-show-ul-nav {
+    display: flex;
+}
