@@ -19,7 +19,7 @@ class User < ApplicationRecord
     validates_presence_of :password_digest, message: "Plesae enter your password"
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: {minimum: 6, maximum: 20, allow_nil: true }
-
+    
     after_initialize :ensure_session_token
 
     attr_reader :password
