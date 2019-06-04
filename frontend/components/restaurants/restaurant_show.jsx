@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarContainer from '../navbar/nav_bar_container';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -13,7 +14,11 @@ class RestaurantShow extends React.Component {
     render() {
         // debugger
         return (
+           
+                
+        
             <div className='rest-show-div'>
+                <NavbarContainer />
                 <div className="rest-show-nav-container">
                     <nav className='rest-show-nav'>
                         <ul className='rest-show-ul-nav'>
@@ -42,26 +47,25 @@ class RestaurantShow extends React.Component {
                             {this.props.restaurant.aboutme}
                         </p> 
                     </div>
-                    <div className='rest-reservation-container'>
-                        <h2>Make a Reservation</h2>
-                        <div className="rest-reserve-options">
-                            <label for="rest-reserve-party"></label>
-                            <select name="rest-reserve-party" id="rest-reserve-party" className="rest-reserve-party">
-                                <option value="2 people">For 2 people</option>
-                            </select>
-                            <label for="rest-reserve-date">Date</label>
-                            <input className='rest-reserve-date' type="date"/>
-                            <label for="rest-reserve-time">Time</label>
-                            <input className="rest-reserve-time" type="time"/>
-                           
+                        <div className="rest-show-photos">
+                            <h2>Photos</h2>
                         </div>
+                        <div className="rest-show-menu">
+                            <h2>Menu</h2>
+                        </div>              
+                </div>
+                <div className='rest-reservation-container'>
+                    <h2>Make a Reservation</h2>
+                    <div className="rest-reserve-options">
+                        <label for="rest-reserve-party"></label>
+                        <select name="rest-reserve-party" id="rest-reserve-party" className="rest-reserve-party">
+                            <option value="2 people">For 2 people</option>
+                        </select>
+                        <label for="rest-reserve-date">Date</label>
+                        <input className='rest-reserve-date' type="date" />
+                        <label for="rest-reserve-time">Time</label>
+                        <input className="rest-reserve-time" type="time" />
 
-                            <div className="rest-show-photos">
-                                <h2>Photos</h2>
-                            </div>
-                            <div className="rest-show-menu">
-                                <h2>Menu</h2>
-                            </div>
                     </div>
                 </div>
                 <div className="rest-show-review">

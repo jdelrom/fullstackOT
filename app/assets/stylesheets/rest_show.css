@@ -5,3 +5,26 @@
 .rest-show-ul-nav {
     display: flex;
 }
+
+.rest-show-ul-nav > li {
+    padding-right: 8px;
+}
+.rest-show-div {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 85%;
+    margin-left: 120px;
+    height: 100%;
+    margin-top: 210px;
+}
+
+.rest-show-nav-container {
+    width: 74%;
+}
+
+.rest-reservation.container {
+    width: 320px;
+    height: 359px;
+    
+}
