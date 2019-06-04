@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-            this.props.login(this.state).then(this.setState({toggle: 'hidden'}).then(() => this.props.closeModal()))
+            this.props.login(this.state).then(this.props.closeModal())
             // this.props.receiveSessionErrors(this.errors);
     }
     
