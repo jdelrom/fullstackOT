@@ -38,9 +38,16 @@ class RestaurantShow extends React.Component {
                         </nav>
                     </div>
                     <div className="restaurant-info">
-                        <h1>{this.props.restaurant.name}</h1>
+                        <h1 className="restaurant-info-name">{this.props.restaurant.name}</h1>
                         <ul>
-                            <li>{this.props.restaurant.tag}</li>
+                            <li>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i> 
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                {this.props.restaurant.tag}
+                            </li>
                         </ul>
                         <div className="rest-aboutme">
                             <p className='p-aboutme'>
@@ -56,7 +63,9 @@ class RestaurantShow extends React.Component {
                     </div>
                     
                     <div className="rest-show-review">
-                        <h2>What People Are Saying</h2>
+                        <h1>What People Are Saying</h1>
+                        <h2>Overall ratings and reviews</h2>
+                        <h3>Reviews can only be made by diners who have eaten at this restaurant</h3>
                     </div>
 
                 </div>
