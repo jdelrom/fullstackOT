@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/nav_bar_container';
+import ReservationForm from '../reservations/reservation_form';
 import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container'
 
 class RestaurantShow extends React.Component {
@@ -14,6 +15,12 @@ class RestaurantShow extends React.Component {
 
     render() {
         // debugger
+        let form = <ReservationForm restaurant={this.props.restaurants} />
+        let bookings;
+        if (this.props.restaurant.reservations) {
+            bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
+        }
+        debugger
         return (
            
             <div className='rest-show-uncle'>
@@ -36,6 +43,7 @@ class RestaurantShow extends React.Component {
                                         <li>
                                             Reviews
                                         </li>
+                                        {bookings}
                                     </ul>
                                 </nav>
                             </div>
@@ -63,7 +71,7 @@ class RestaurantShow extends React.Component {
                                         <h2>Menu</h2>
                                     </div>              
                             </div>
-                            
+                           {form}
                             <div className="rest-show-review">
                                 <h1>What People Are Saying</h1>
                                 <h2>Overall ratings and reviews</h2>
@@ -71,7 +79,8 @@ class RestaurantShow extends React.Component {
                             </div>
 
                         </div>
-                        <div className='rest-reservation-container'>
+                        
+                    {/* <div className='rest-reservation-container'>
                         <div className='rest-show-h2'><h2>Make a reservation</h2></div> 
                         <div className="rest-reserve-options">
                         <div className='rest-reserve-party-container'>
@@ -93,7 +102,7 @@ class RestaurantShow extends React.Component {
                              </div>
                         </dir>
                     </div>
-                </div>
+                </div> */}
                 </div>
             </div>
         )
