@@ -10,4 +10,26 @@ class Api::RestaurantsController < ApplicationController
         render :show
     end
 
+    def create
+        @restaurant = Restaurant.create(restaurant_params)
+    end
+
+    private
+
+    def restaurant_params
+        params.require(:restaurant).permit(
+            :id, 
+            :name, 
+            :aboutme, 
+            :address, 
+            :city, 
+            :zipcode, 
+            :phone, 
+            :capacity, 
+            :tag, 
+            :state, 
+            photos: []
+            )
+    end
+
 end

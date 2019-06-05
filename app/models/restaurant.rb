@@ -19,5 +19,5 @@
 class Restaurant < ApplicationRecord
     validates :name, :aboutme, :address, :city, :zipcode, :phone, :capacity, :tag, presence: true
 
-    has_one_attached :photo
+    has_many_attached :photos
 end

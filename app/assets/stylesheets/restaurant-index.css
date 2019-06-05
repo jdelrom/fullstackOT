@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin: 50px;
+    margin-top: 150px;
 }
 
 .rest-ul > li {
@@ -66,4 +67,16 @@
     color: #fdae07;
     padding-right: 2px;
     font-size: 18px;
+}
+
+.rest-index-items-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+.rest-index-img {
+    height: 181px;
+    width: 181px;
+    padding-right: 20px;
 }

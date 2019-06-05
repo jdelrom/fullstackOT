@@ -9,21 +9,6 @@
     z-index: 3;
 }
 
-/* .greet-signup {
-    display: flex;
-    background-color: #237b98;
-    border-color: #1c627a;
-    color: white;
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    padding: 0 11px;
-    font-weight: 200;
-    border-radius: 2px;
-} */
-
 .top-header {
     display: flex;
     padding-left: 30px;
@@ -326,8 +311,6 @@ button {
 }
 
 .root {
-    font-family: 'PT Sans', sans-serif;
-    font-family: 'Nunito', sans-serif;
     -webkit-font-smoothing: antialiased;
     position: absolute;
     top: 0;
@@ -353,4 +336,9 @@ button {
     left: 0;
     padding-left: 34px;
     z-index: 3;
+}
+
+* {
+    font-family: 'PT Sans', sans-serif !important;
+    font-family: 'Nunito', sans-serif !important;
 }
