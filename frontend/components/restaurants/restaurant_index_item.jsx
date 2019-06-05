@@ -6,10 +6,10 @@ const RestaurantIndexItem = ({restaurant}) => {
     let rand = Math.floor(Math.random() * 1000)
     return (
         <div className="rest-index-items-container">
-
+            
             <div>
                 <Link to={`/restaurants/${restaurant.id}`}> 
-                    <img className="rest-index-img" src={restaurant.photoUrl}/>
+                    <img className="rest-index-img" src={restaurant.photoUrl[Math.floor((Math.random() * restaurant.photoUrl.length))]}/>
                 </Link>
             </div>
             <ul className='rest-index-items'><Link to={`/restaurants/${restaurant.id}`} className='rest-index-names'>{restaurant.name}</Link>

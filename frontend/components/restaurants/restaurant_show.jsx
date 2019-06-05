@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/nav_bar_container';
+import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container'
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -16,9 +17,7 @@ class RestaurantShow extends React.Component {
         return (
            
             <div className='rest-show-uncle'>
-            <div className="rest-show-img-container">
-                <img src={this.props.restaurant.photoUrl} className='rest-show-img'/>
-            </div>
+                <RestShowNavContainer />
                 <div className='rest-show-parent'>
                     <NavbarContainer />
                         <div className='rest-show-div'>

@@ -1,0 +1,30 @@
+.rest-show-img-container {
+    display: flex;
+    width: 100%;
+    margin-left: 50px;
+}
+
+.img-duo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.duo-img {
+    height: 142px;
+    width: 142px;
+}
+
+.img-duo-brother {
+    height: 288px;
+    width: 288px;
+}
+
+.duo-img > img {
+    height: 142px;
+    width: 142px;
+}
+
+.img-duo-brother > img {
+    height: 288px;
+    width: 288px;
+}

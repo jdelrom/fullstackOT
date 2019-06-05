@@ -1,0 +1,88 @@
+.more-container {
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+    margin: 0 10px;
+}
+
+.carousel-rest-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0px;
+    margin-left: 83px;
+}
+
+.carousel-rest-div {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+}
+
+.carousel-img {
+    height: 132px;
+    width: 132px;
+}
+
+.carousel-img > img {
+    height: 132px;
+    width: 236px;
+}
+
+.fafa > i {
+    color: #da3743;
+    font-size: 14px;
+    padding-left: 8px;
+}
+
+.carousel-return > h1 {
+    font-weight: bold;
+    padding: 8px 0px 5px 8px;
+}
+
+h1 > a {
+    text-decoration: none;
+    color: black;
+}
+
+.carousel-tag {
+    font-size: 14px;
+    color: #4a4848;
+    padding: 5px 0 0 8px;
+}
+
+.fasend-right {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    -webkit-transform: rotate(45deg);
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    z-index: 2;
+    /* position: absolute; */
+    /* right: 0; */
+    display: flex;
+    margin-top: 120px;
+}
+
+.fasend-left {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    -webkit-transform: rotate(45deg);
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    z-index: 2;
+    /* position: absolute; */
+    /* right: 0; */
+    display: flex;
+    margin-top: 120px;
+}
+
+
+
+
+
+

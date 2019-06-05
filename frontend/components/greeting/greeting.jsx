@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from '../navbar/nav_bar_container';
+import RestCarousel from '../carousel/carousel';
 
 class Greeting extends React.Component {
 
@@ -63,9 +64,8 @@ class Greeting extends React.Component {
                     
                     <div className='background-header'><h1>Find your mesa for any occasion</h1></div>
                 </div>
-                <img src={window.splashURL} />
-
-               
+                <img src={window.splashURL} /> 
+                <RestCarousel />              
             </>
             
             )

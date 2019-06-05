@@ -11,7 +11,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
-
+        
     end
 
     def destroy

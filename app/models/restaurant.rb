@@ -17,10 +17,13 @@
 #
 
 class Restaurant < ApplicationRecord
+    include PgSearch
     validates :name, :aboutme, :address, :city, :zipcode, :phone, :capacity, :tag, presence: true
     
     has_many :reservations,
         class_name: :Reservation
         
     has_many_attached :photos
+
+    pg_search_scope :search_by_keyword
 end

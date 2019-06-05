@@ -27,7 +27,7 @@ urls = [
 # files = urls.map {|url| open(url) }
 # User.create({email: "userdemo@mock.com", password: "123456"})
 10.times do 
-        Restaurant.create({
+        rest = Restaurant.create({
             name: Faker::Restaurant.name, 
             aboutme: Faker::Restaurant.description,
             address: Faker::Address.street_address,
