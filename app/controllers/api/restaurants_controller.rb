@@ -9,11 +9,7 @@ class Api::RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
         render :show
     end
-
-    def create
-        @restaurant = Restaurant.create(restaurant_params)
-    end
-
+    
     private
 
     def restaurant_params

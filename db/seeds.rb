@@ -37,8 +37,12 @@ urls = [
             phone: Faker::PhoneNumber.phone_number,
             capacity: rand(1..100).to_s,
             tag: Faker::Restaurant.type,
-            photos: [],
+            # photos: [],
             }) 
+            urls.each_with_index do |url, i|
+                file = open(url)
+                rest.photos.attach(io: file, filename: "pic_#{i + 1}")
+            end
         end
 
 # files = urls.map { |url| open(url) }
@@ -46,5 +50,4 @@ urls = [
 
         
 # debugger
-# rest.photos.attach(io: files, filename: 'randopic')
 
