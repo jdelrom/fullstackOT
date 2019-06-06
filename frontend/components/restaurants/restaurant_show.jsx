@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/nav_bar_container';
+import ReservationForm from '../reservations/reservation_form';
 import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container'
 
 class RestaurantShow extends React.Component {
@@ -13,7 +14,13 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
+        let form = <ReservationForm restaurant={this.props.restaurants} />
+        // let bookings;
+        // if (this.props.restaurant) {
+        //     if (this.props.restaurant.reservations.length > 0) bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
+        // }
+        debugger
         return (
            
             <div className='rest-show-uncle'>
@@ -36,6 +43,7 @@ class RestaurantShow extends React.Component {
                                         <li>
                                             Reviews
                                         </li>
+                                        {/* {bookings} */}
                                     </ul>
                                 </nav>
                             </div>
@@ -63,7 +71,6 @@ class RestaurantShow extends React.Component {
                                         <h2>Menu</h2>
                                     </div>              
                             </div>
-                            
                             <div className="rest-show-review">
                                 <h1>What People Are Saying</h1>
                                 <h2>Overall ratings and reviews</h2>
@@ -71,29 +78,7 @@ class RestaurantShow extends React.Component {
                             </div>
 
                         </div>
-                        <div className='rest-reservation-container'>
-                        <div className='rest-show-h2'><h2>Make a reservation</h2></div> 
-                        <div className="rest-reserve-options">
-                        <div className='rest-reserve-party-container'>
-                            <label for="rest-reserve-party-select">Party Size</label>
-                            <select name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
-                                <option value="2 people">For 2</option>
-                            </select>
-                        </div>
-                        <dir className="rest-reserve-datetime-container">
-                            <div className="rest-reserve-date-container">  
-                                <label for="rest-reserve-date">Date</label>
-                                <input className='rest-reserve-date' type="date" />
-                            </div> 
-                            <div className="rest-reserve-time-container">
-                                <label for="rest-reserve-time">Time</label>
-                                <select className="rest-reserve-time" > 
-                                    <option value="7pM">7:00 PM</option>
-                                </select>
-                             </div>
-                        </dir>
-                    </div>
-                </div>
+                    {form}
                 </div>
             </div>
         )
@@ -101,3 +86,26 @@ class RestaurantShow extends React.Component {
 }
 
 export default RestaurantShow;
+{/* <div className='rest-reservation-container'>
+    <div className='rest-show-h2'><h2>Make a reservation</h2></div> 
+    <div className="rest-reserve-options">
+    <div className='rest-reserve-party-container'>
+        <label for="rest-reserve-party-select">Party Size</label>
+        <select name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+            <option value="2 people">For 2</option>
+        </select>
+    </div>
+    <dir className="rest-reserve-datetime-container">
+        <div className="rest-reserve-date-container">  
+            <label for="rest-reserve-date">Date</label>
+            <input className='rest-reserve-date' type="date" />
+        </div> 
+        <div className="rest-reserve-time-container">
+            <label for="rest-reserve-time">Time</label>
+            <select className="rest-reserve-time" > 
+                <option value="7pM">7:00 PM</option>
+            </select>
+         </div>
+    </dir>
+</div>
+</div> */}

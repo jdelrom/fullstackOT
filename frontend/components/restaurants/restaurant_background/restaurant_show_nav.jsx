@@ -12,10 +12,10 @@ class RestShowNav extends React.Component {
     //     this.props.fetchRestaurant(this.props.match.params.id)
     // }
 
-    componentDidMount() {
-        // debugger
-        this.props.fetchRestaurant(this.props.match.params.id)
-    }
+    // componentDidMount() {
+    //     // debugger
+    //     this.props.fetchRestaurant(this.props.match.params.id)
+    // }
 
     render() {
         // debugger

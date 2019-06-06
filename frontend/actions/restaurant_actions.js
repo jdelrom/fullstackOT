@@ -9,9 +9,9 @@ export const receiveRestaurants = (restaurants) => ({
     restaurants
 })
 
-export const receiveRestaurant = (restaurant) => ({
+export const receiveRestaurant = (data) => ({
     type: RECEIVE_RESTAURANT,
-    restaurant
+    data
 })
 
 export const fetchRestaurants = () => (dispatch) => {

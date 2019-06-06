@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
     def index
-        @users = User.all
+        @users = User.all.includes(:restaurants)
     end
 
     def create
@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
         else
             render json: @user.errors.full_messages, status: 422
         end
-
+        
     end
 
     private

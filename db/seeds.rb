@@ -9,8 +9,18 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 Restaurant.delete_all
 User.delete_all
+Reservation.delete_all
 
 User.create({ email: "userdemo@mock.com", password: "123456", fname: 'user', lname: 'demo'})
+
+9.times do 
+    User.create({
+        email: Faker::Internet.email,
+        password: '123456',
+        fname: Faker::Name.first_name,
+        lname: Faker::Name.last_name
+    })
+end
 
 urls = [
     "https://open-mesa-seeds.s3.amazonaws.com/bbc.jpg",

@@ -9,7 +9,8 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
-
+bundle.js
+bundle.js.map
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

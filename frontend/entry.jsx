@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
+import { createReservation, deleteReservation } from './actions/reservation_actions';
+
 // import { login, logout, signUp } from './actions/session_actions';
-import { fetchRestaurants, fetchRestaurant } from './actions/restaurant_actions';
+// import { fetchRestaurants, fetchRestaurant } from './actions/restaurant_actions';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,8 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //TESTING START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchRestaurant = fetchRestaurant;
-    window.fetchRestaurants = fetchRestaurants;
+    window.createReservation = createReservation
+    window.deleteReservation = deleteReservation
+    // window.fetchRestaurant = fetchRestaurant;
+    // window.fetchRestaurants = fetchRestaurants;
     // window.login = login;
     // window.logout = logout;
     // window.signUp = signUp;

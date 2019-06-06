@@ -157,5 +157,5 @@ class RestCarousel extends React.Component {
         }
     }
 }
-<i class="material-icons"> arrow_forward_ios </i>
+
 export default withRouter(connect(mSP, mDP)(RestCarousel))
