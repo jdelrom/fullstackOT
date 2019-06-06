@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
-import {createReservation} from './actions/reservation_actions';
+import { createReservation, deleteReservation } from './actions/reservation_actions';
 
 // import { login, logout, signUp } from './actions/session_actions';
 // import { fetchRestaurants, fetchRestaurant } from './actions/restaurant_actions';
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.createReservation = createReservation
+    window.deleteReservation = deleteReservation
     // window.fetchRestaurant = fetchRestaurant;
     // window.fetchRestaurants = fetchRestaurants;
     // window.login = login;

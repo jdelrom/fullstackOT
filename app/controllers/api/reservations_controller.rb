@@ -19,7 +19,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def destroy
-        @reservation = Reservation.find[params[:id]]
+        @reservation = Reservation.find(params[:id])
 
         if @reservation.destroy
             render :show

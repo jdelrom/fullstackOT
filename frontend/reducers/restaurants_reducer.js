@@ -1,5 +1,5 @@
 import { RECEIVE_RESTAURANTS, RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
-import {RECEIVE_RESERVATION } from '../actions/reservation_actions';
+import {RECEIVE_RESERVATION, REMOVE_RESERVATION } from '../actions/reservation_actions';
 import { merge } from 'lodash';
 
 const restaurantsReducer = (state = {}, action) => {
@@ -8,7 +8,8 @@ const restaurantsReducer = (state = {}, action) => {
         case RECEIVE_RESTAURANTS:
             return action.restaurants;
         case RECEIVE_RESTAURANT:
-            return action.restaurant;
+            debugger
+            return action.data.restaurant;
         case RECEIVE_RESERVATION:
             // debugger
             const newState = merge({}, state);
@@ -16,6 +17,9 @@ const restaurantsReducer = (state = {}, action) => {
             newState[action.reservation.restaurant_id].reservations = [action.reservation.restaurant_id]
             // debugger
             return merge({}, state, newState)
+        // case REMOVE_RESERVATION:
+        //     const nwState = merge({}, state);
+            // debugger
         default:
             return state
     }
