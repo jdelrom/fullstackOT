@@ -8,7 +8,8 @@ export const mSP = (state, ownProps) => {
     return (
         { 
             restaurant: state.entities.restaurants[ownProps.match.params.id],
-            user: state.entities.users[state.session.id],
+            userReservations: state.entities.users[state.session.id].reservations,
+            userId: state.session.id
         }
     )
 }
@@ -27,10 +28,14 @@ class ReservationForm extends React.Component {
             reservation_time: '',
             reservation_date: '',
             restaurant_id: this.props.match.params.id,
-            user_id: this.props.user.id,
+            user_id: this.props.userId,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentDidUpdate() {
+        debugger
     }
 
     handleSubmit(e) {
@@ -55,110 +60,160 @@ class ReservationForm extends React.Component {
         //if the reservation user id === session id && reservation restaurant id === restaurant id
         // if (Object.values(this.props.restaurant).length === 0) { return null }
         let hoy = new Date().toISOString().substring(0, 10);
-        // let content;
-        // if (this.props.restaurant && this.props.reservations.length > 0) {
-        //         debugger
-        //         for (let i = 0; i < this.props.reservations.length; i++) {
-        //             let rezzo = this.props.reservations[i]
-        //             debugger
-        //             if (this.props.reservations[i].user_id === this.props.user) {
-        //                 debugger
-        //                 content = (
-        //                     <div className='rest-reservation-container'>
-        //                         <div className='rest-show-h2'><h2>Make a reservation</h2></div>
-        //                         <div className="rest-reserve-options">
-        //                             <div className='rest-reserve-party-container'>
-        //                                 <label for="rest-reserve-party-select">Party Size</label>
-        //                                 <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
-        //                                     <option name='2' value="2" >For 2</option>
-        //                                     <option name='3' value="3">For 3</option>
-        //                                     <option name='4' value="4">For 4</option>
-        //                                     <option name='5' value="5">For 5</option>
-        //                                     <option name='6' value="6">For 6</option>
-        //                                     <option name='7' value="7">For 7</option>
-        //                                     <option name='8' value="8">For 8</option>
-        //                                     <option name='9' value="9">For 9</option>
-        //                                     <option name='10' value="10">For 10</option>
-        //                                 </select>
-        //                             </div>
-        //                             <dir className="rest-reserve-datetime-container">
-        //                                 <div className="rest-reserve-date-container">
-        //                                     <label for="rest-reserve-date">Date</label>
-        //                                     <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
-        //                                 </div>
-        //                                 <div className="rest-reserve-time-container">
-        //                                     <label for="rest-reserve-time">Time</label>
-        //                                     <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
-        //                                         <option value="12:00 PM" >12:00 PM</option>
-        //                                         <option value="1:00 PM">1:00 PM</option>
-        //                                         <option value="2:00 PM">2:00 PM</option>
-        //                                         <option value="3:00 PM">3:00 PM</option>
-        //                                         <option value="4:00 PM">4:00 PM</option>
-        //                                         <option value="5:00 PM">5:00 PM</option>
-        //                                         <option value="6:00 PM">6:00 PM</option>
-        //                                         <option value="7:00 PM">7:00 PM</option>
-        //                                         <option value="8:00 PM">8:00 PM</option>
-        //                                         <option value="9:00 PM">9:00 PM</option>
-        //                                         <option value="10:00 PM">10:00 PM</option>
-        //                                     </select>
-        //                                 </div>
-        //                             </dir>
-        //                             <button onClick={() => this.props.deleteReservation(rezzo.id)} type='submit'>Delete Reservation</button>
-        //                         </div>
-        //                     </div>
-        //                 )
-        //             }
+        let content;
+        debugger
+        if (this.props.restaurant && this.props.restaurant.reservations) {
+                debugger
+                // for (let i = 0; i < this.props.reservations.length; i++) {
+                //     let rezzo = this.props.reservations[i]
+                    debugger
+                    if (this.props.userReservations && this.props.userReservations[this.props.restaurant.id]) {
+                        debugger
+                        // const rezzo = this.props.user.reservations[this.props.restaurant.id]
+                        content = (
+                            <div className='rest-reservation-container'>
+                                <div className='rest-show-h2'><h2>Make a reservation</h2></div>
+                                <div className="rest-reserve-options">
+                                    <div className='rest-reserve-party-container'>
+                                        <label for="rest-reserve-party-select">Party Size</label>
+                                        <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+                                            <option name='2' value="2" >For 2</option>
+                                            <option name='3' value="3">For 3</option>
+                                            <option name='4' value="4">For 4</option>
+                                            <option name='5' value="5">For 5</option>
+                                            <option name='6' value="6">For 6</option>
+                                            <option name='7' value="7">For 7</option>
+                                            <option name='8' value="8">For 8</option>
+                                            <option name='9' value="9">For 9</option>
+                                            <option name='10' value="10">For 10</option>
+                                        </select>
+                                    </div>
+                                    <dir className="rest-reserve-datetime-container">
+                                        <div className="rest-reserve-date-container">
+                                            <label for="rest-reserve-date">Date</label>
+                                            <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
+                                        </div>
+                                        <div className="rest-reserve-time-container">
+                                            <label for="rest-reserve-time">Time</label>
+                                            <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
+                                                <option value="12:00 PM" >12:00 PM</option>
+                                                <option value="1:00 PM">1:00 PM</option>
+                                                <option value="2:00 PM">2:00 PM</option>
+                                                <option value="3:00 PM">3:00 PM</option>
+                                                <option value="4:00 PM">4:00 PM</option>
+                                                <option value="5:00 PM">5:00 PM</option>
+                                                <option value="6:00 PM">6:00 PM</option>
+                                                <option value="7:00 PM">7:00 PM</option>
+                                                <option value="8:00 PM">8:00 PM</option>
+                                                <option value="9:00 PM">9:00 PM</option>
+                                                <option value="10:00 PM">10:00 PM</option>
+                                            </select>
+                                        </div>
+                                    </dir>
+                                    <button onClick={() => this.props.deleteReservation(this.props.userReservations[this.props.restaurant.id])} type='submit'>Delete Reservation</button>
+                                </div>
+                            </div>
+                        )
+                    } else {
+                        debugger
+                        content = (
+                            <form onSubmit={this.handleSubmit}>
+                                <div className='rest-reservation-container'>
+                                    <div className='rest-show-h2'><h2>Make a reservation</h2></div>
+                                    <div className="rest-reserve-options">
+                                        <div className='rest-reserve-party-container'>
+                                            <label for="rest-reserve-party-select">Party Size</label>
+                                            <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+                                                <option name='2' value="2" >For 2</option>
+                                                <option name='3' value="3">For 3</option>
+                                                <option name='4' value="4">For 4</option>
+                                                <option name='5' value="5">For 5</option>
+                                                <option name='6' value="6">For 6</option>
+                                                <option name='7' value="7">For 7</option>
+                                                <option name='8' value="8">For 8</option>
+                                                <option name='9' value="9">For 9</option>
+                                                <option name='10' value="10">For 10</option>
+                                            </select>
+                                        </div>
+                                        <dir className="rest-reserve-datetime-container">
+                                            <div className="rest-reserve-date-container">
+                                                <label for="rest-reserve-date">Date</label>
+                                                <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
+                                            </div>
+                                            <div className="rest-reserve-time-container">
+                                                <label for="rest-reserve-time">Time</label>
+                                                <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
+                                                    <option value="12:00 PM" >12:00 PM</option>
+                                                    <option value="1:00 PM">1:00 PM</option>
+                                                    <option value="2:00 PM">2:00 PM</option>
+                                                    <option value="3:00 PM">3:00 PM</option>
+                                                    <option value="4:00 PM">4:00 PM</option>
+                                                    <option value="5:00 PM">5:00 PM</option>
+                                                    <option value="6:00 PM">6:00 PM</option>
+                                                    <option value="7:00 PM">7:00 PM</option>
+                                                    <option value="8:00 PM">8:00 PM</option>
+                                                    <option value="9:00 PM">9:00 PM</option>
+                                                    <option value="10:00 PM">10:00 PM</option>
+                                                </select>
+                                            </div>
+                                        </dir>
+                                        <button type='submit'>Find a Table</button>
+                                    </div>
+                                </div>
+                            </form>
+                        )
+                    }
 
-        //         }
-        // } else {
-        //     debugger
-        //     content = (
-        //         <form onSubmit={this.handleSubmit}>
-        //             <div className='rest-reservation-container'>
-        //                 <div className='rest-show-h2'><h2>Make a reservation</h2></div>
-        //                 <div className="rest-reserve-options">
-        //                     <div className='rest-reserve-party-container'>
-        //                         <label for="rest-reserve-party-select">Party Size</label>
-        //                         <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
-        //                             <option name='2' value="2" >For 2</option>
-        //                             <option name='3' value="3">For 3</option>
-        //                             <option name='4' value="4">For 4</option>
-        //                             <option name='5' value="5">For 5</option>
-        //                             <option name='6' value="6">For 6</option>
-        //                             <option name='7' value="7">For 7</option>
-        //                             <option name='8' value="8">For 8</option>
-        //                             <option name='9' value="9">For 9</option>
-        //                             <option name='10' value="10">For 10</option>
-        //                         </select>
-        //                     </div>
-        //                     <dir className="rest-reserve-datetime-container">
-        //                         <div className="rest-reserve-date-container">
-        //                             <label for="rest-reserve-date">Date</label>
-        //                             <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
-        //                         </div>
-        //                         <div className="rest-reserve-time-container">
-        //                             <label for="rest-reserve-time">Time</label>
-        //                             <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
-        //                                 <option value="12:00 PM" >12:00 PM</option>
-        //                                 <option value="1:00 PM">1:00 PM</option>
-        //                                 <option value="2:00 PM">2:00 PM</option>
-        //                                 <option value="3:00 PM">3:00 PM</option>
-        //                                 <option value="4:00 PM">4:00 PM</option>
-        //                                 <option value="5:00 PM">5:00 PM</option>
-        //                                 <option value="6:00 PM">6:00 PM</option>
-        //                                 <option value="7:00 PM">7:00 PM</option>
-        //                                 <option value="8:00 PM">8:00 PM</option>
-        //                                 <option value="9:00 PM">9:00 PM</option>
-        //                                 <option value="10:00 PM">10:00 PM</option>
-        //                             </select>
-        //                         </div>
-        //                     </dir>
-        //                     <button type='submit'>Find a Table</button>
-        //                 </div>
-        //             </div>
-        //         </form>
-        //     )
-        // }
+                // }
+        } else {
+            debugger
+            content = (
+                <form onSubmit={this.handleSubmit}>
+                    <div className='rest-reservation-container'>
+                        <div className='rest-show-h2'><h2>Make a reservation</h2></div>
+                        <div className="rest-reserve-options">
+                            <div className='rest-reserve-party-container'>
+                                <label for="rest-reserve-party-select">Party Size</label>
+                                <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+                                    <option name='2' value="2" >For 2</option>
+                                    <option name='3' value="3">For 3</option>
+                                    <option name='4' value="4">For 4</option>
+                                    <option name='5' value="5">For 5</option>
+                                    <option name='6' value="6">For 6</option>
+                                    <option name='7' value="7">For 7</option>
+                                    <option name='8' value="8">For 8</option>
+                                    <option name='9' value="9">For 9</option>
+                                    <option name='10' value="10">For 10</option>
+                                </select>
+                            </div>
+                            <dir className="rest-reserve-datetime-container">
+                                <div className="rest-reserve-date-container">
+                                    <label for="rest-reserve-date">Date</label>
+                                    <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
+                                </div>
+                                <div className="rest-reserve-time-container">
+                                    <label for="rest-reserve-time">Time</label>
+                                    <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
+                                        <option value="12:00 PM" >12:00 PM</option>
+                                        <option value="1:00 PM">1:00 PM</option>
+                                        <option value="2:00 PM">2:00 PM</option>
+                                        <option value="3:00 PM">3:00 PM</option>
+                                        <option value="4:00 PM">4:00 PM</option>
+                                        <option value="5:00 PM">5:00 PM</option>
+                                        <option value="6:00 PM">6:00 PM</option>
+                                        <option value="7:00 PM">7:00 PM</option>
+                                        <option value="8:00 PM">8:00 PM</option>
+                                        <option value="9:00 PM">9:00 PM</option>
+                                        <option value="10:00 PM">10:00 PM</option>
+                                    </select>
+                                </div>
+                            </dir>
+                            <button type='submit'>Find a Table</button>
+                        </div>
+                    </div>
+                </form>
+            )
+        }
     //     let button;
     //     if (this.props.restaurant){
     //         debugger
@@ -184,51 +239,54 @@ class ReservationForm extends React.Component {
                 // hoy = hoy[1] + '/' + hoy[2] + '/' + hoy[0]
         debugger
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className='rest-reservation-container'>
-                    <div className='rest-show-h2'><h2>Make a reservation</h2></div>
-                    <div className="rest-reserve-options">
-                        <div className='rest-reserve-party-container'>
-                            <label for="rest-reserve-party-select">Party Size</label>
-                            <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
-                                <option name='2' value="2" >For 2</option>
-                                <option name='3' value="3">For 3</option>
-                                <option name='4' value="4">For 4</option>
-                                <option name='5' value="5">For 5</option>
-                                <option name='6' value="6">For 6</option>
-                                <option name='7' value="7">For 7</option>
-                                <option name='8' value="8">For 8</option>
-                                <option name='9' value="9">For 9</option>
-                                <option name='10' value="10">For 10</option>
-                            </select>
-                        </div>
-                        <dir className="rest-reserve-datetime-container">
-                            <div className="rest-reserve-date-container">
-                                <label for="rest-reserve-date">Date</label>
-                                <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date"  />
-                            </div>
-                            <div className="rest-reserve-time-container">
-                                <label for="rest-reserve-time">Time</label>
-                                <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
-                                    <option value="12:00 PM" >12:00 PM</option>
-                                    <option value="1:00 PM">1:00 PM</option>
-                                    <option value="2:00 PM">2:00 PM</option>
-                                    <option value="3:00 PM">3:00 PM</option>
-                                    <option value="4:00 PM">4:00 PM</option>
-                                    <option value="5:00 PM">5:00 PM</option>
-                                    <option value="6:00 PM">6:00 PM</option>
-                                    <option value="7:00 PM">7:00 PM</option>
-                                    <option value="8:00 PM">8:00 PM</option>
-                                    <option value="9:00 PM">9:00 PM</option>
-                                    <option value="10:00 PM">10:00 PM</option>
-                                </select>
-                            </div>
-                        </dir>
-                        <button type='submit'>Find a Table</button>
+            <>
+                { content }
+            </>
+            // <form onSubmit={this.handleSubmit}>
+            //     <div className='rest-reservation-container'>
+            //         <div className='rest-show-h2'><h2>Make a reservation</h2></div>
+            //         <div className="rest-reserve-options">
+            //             <div className='rest-reserve-party-container'>
+            //                 <label for="rest-reserve-party-select">Party Size</label>
+            //                 <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+            //                     <option name='2' value="2" >For 2</option>
+            //                     <option name='3' value="3">For 3</option>
+            //                     <option name='4' value="4">For 4</option>
+            //                     <option name='5' value="5">For 5</option>
+            //                     <option name='6' value="6">For 6</option>
+            //                     <option name='7' value="7">For 7</option>
+            //                     <option name='8' value="8">For 8</option>
+            //                     <option name='9' value="9">For 9</option>
+            //                     <option name='10' value="10">For 10</option>
+            //                 </select>
+            //             </div>
+            //             <dir className="rest-reserve-datetime-container">
+            //                 <div className="rest-reserve-date-container">
+            //                     <label for="rest-reserve-date">Date</label>
+            //                     <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date"  />
+            //                 </div>
+            //                 <div className="rest-reserve-time-container">
+            //                     <label for="rest-reserve-time">Time</label>
+            //                     <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
+            //                         <option value="12:00 PM" >12:00 PM</option>
+            //                         <option value="1:00 PM">1:00 PM</option>
+            //                         <option value="2:00 PM">2:00 PM</option>
+            //                         <option value="3:00 PM">3:00 PM</option>
+            //                         <option value="4:00 PM">4:00 PM</option>
+            //                         <option value="5:00 PM">5:00 PM</option>
+            //                         <option value="6:00 PM">6:00 PM</option>
+            //                         <option value="7:00 PM">7:00 PM</option>
+            //                         <option value="8:00 PM">8:00 PM</option>
+            //                         <option value="9:00 PM">9:00 PM</option>
+            //                         <option value="10:00 PM">10:00 PM</option>
+            //                     </select>
+            //                 </div>
+            //             </dir>
+            //             <button type='submit'>Find a Table</button>
                         
-                    </div>
-                </div>
-            </form>
+            //         </div>
+            //     </div>
+            // </form>
         )
     }
 }

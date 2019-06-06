@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_RESERVATION } from '../actions/reservation_actions';
+import { RECEIVE_RESERVATION, REMOVE_RESERVATION } from '../actions/reservation_actions';
 import { merge } from 'lodash';
 
 const usersReducer = (state = {}, action) => {
@@ -12,11 +12,13 @@ const usersReducer = (state = {}, action) => {
             return merge({}, state, newState)
         case RECEIVE_RESERVATION:
             // debugger
-            const nwState = merge({}, state);
-            // debugger
-            nwState[action.reservation.user_id].reservations = [action.reservation.user_id]
-            // debugger
+            const nwInfo = {[action.reservation.restaurant_id]: action.reservation.id }
+            const nwState = {[action.reservation.user_id]: {reservations: nwInfo }}
             return merge({}, state, nwState)
+        case REMOVE_RESERVATION:
+            debugger
+            const nState = merge({}, state);
+            
         default:
             return state 
     }

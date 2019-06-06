@@ -18,7 +18,7 @@ class RestaurantShow extends React.Component {
         let form = <ReservationForm restaurant={this.props.restaurants} />
         // let bookings;
         // if (this.props.restaurant) {
-        //     if (this.props.restaurant.reservations.length > 0) bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
+        //     if (this.props.restaurant) bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
         // }
         debugger
         return (

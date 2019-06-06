@@ -22,6 +22,10 @@ class Restaurant < ApplicationRecord
     
     has_many :reservations,
         class_name: :Reservation
+
+    has_many :users,
+        through: :reservations,
+        source: :user
         
     has_many_attached :photos
 
