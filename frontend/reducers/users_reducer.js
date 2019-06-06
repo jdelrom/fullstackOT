@@ -18,7 +18,9 @@ const usersReducer = (state = {}, action) => {
         case REMOVE_RESERVATION:
             debugger
             const nState = merge({}, state);
-            
+            debugger
+            delete nState[action.id.user_id]["reservations"][action.id.restaurant_id]
+            return nState;
         default:
             return state 
     }
