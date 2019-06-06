@@ -20,7 +20,7 @@ class RestaurantShow extends React.Component {
         if (this.props.restaurant.reservations) {
             bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
         }
-        debugger
+        // debugger
         return (
            
             <div className='rest-show-uncle'>
@@ -71,7 +71,6 @@ class RestaurantShow extends React.Component {
                                         <h2>Menu</h2>
                                     </div>              
                             </div>
-                           {form}
                             <div className="rest-show-review">
                                 <h1>What People Are Saying</h1>
                                 <h2>Overall ratings and reviews</h2>
@@ -79,6 +78,7 @@ class RestaurantShow extends React.Component {
                             </div>
 
                         </div>
+                           {form}
                         
                     {/* <div className='rest-reservation-container'>
                         <div className='rest-show-h2'><h2>Make a reservation</h2></div> 

@@ -37,8 +37,9 @@ class Greeting extends React.Component {
     
 
     render() {
-        // debugger
-        let hoy = new Date();
+        debugger
+        let hoy = new Date().toISOString().substring(0, 10);
+        // hoy = hoy[1] + '/' + hoy[2] + '/' + hoy[0]
         
         
         
@@ -46,7 +47,7 @@ class Greeting extends React.Component {
         return (
             <>
                 <div className="calendar">
-                    <input type="date" id="date" className="date" value={hoy} />
+                    <input type="date" id="date" className="date" />
                     <div className="styled-select slate">
                         <select className="time">
                             <option value="7:00PM">7:00 PM</option>

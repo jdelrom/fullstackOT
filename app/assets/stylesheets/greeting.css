@@ -133,7 +133,7 @@ div.logo {
     text-transform: capitalize;
     outline: none;
     padding-top: 12px;
-    background
+    background-color: transparent;
 }
 
 .dropdown-content {
