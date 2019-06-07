@@ -23,11 +23,13 @@
 .carousel-img {
     height: 132px;
     width: 132px;
+    object-fit: fill;
 }
 
 .carousel-img > img {
     height: 132px;
     width: 236px;
+    object-fit: fill;
 }
 
 .fafa > i {

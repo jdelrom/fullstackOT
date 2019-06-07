@@ -1,7 +1,6 @@
 .rest-show-img-container {
     display: flex;
     width: 100%;
-    margin-left: 50px;
 }
 
 .img-duo-container {
@@ -12,6 +11,7 @@
 .duo-img {
     height: 142px;
     width: 142px;
+    object-fit: fill;
 }
 
 .img-duo-brother {
@@ -22,9 +22,11 @@
 .duo-img > img {
     height: 142px;
     width: 142px;
+    object-fit: fill
 }
 
 .img-duo-brother > img {
     height: 288px;
     width: 288px;
+    object-fit: fill
 }

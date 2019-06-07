@@ -2,6 +2,8 @@ import React from 'react';
 import NavbarContainer from '../navbar/nav_bar_container';
 import ReservationForm from '../reservations/reservation_form';
 import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container'
+import Footer from '../footer/footer';
+import Reviews from '../reviews/reviews';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -15,7 +17,7 @@ class RestaurantShow extends React.Component {
 
     render() {
         debugger
-        let form = <ReservationForm restaurant={this.props.restaurants} />
+        let form = <ReservationForm restaurant={this.props.restaurants} />;
         // let bookings;
         // if (this.props.restaurant) {
         //     if (this.props.restaurant) bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
@@ -75,11 +77,13 @@ class RestaurantShow extends React.Component {
                                 <h1>What People Are Saying</h1>
                                 <h2>Overall ratings and reviews</h2>
                                 <h3>Reviews can only be made by diners who have eaten at this restaurant</h3>
+                                <Reviews />
                             </div>
 
                         </div>
                     {form}
                 </div>
+                <Footer />
             </div>
         )
     }

@@ -5,6 +5,7 @@ import Modal from './modal/modal';
 import GreetingContainer from './greeting/greeting_container';
 import RestaurantContainer from './restaurants/restaurant_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
+import Footer from './footer/footer'
 import navBar from './navbar/nav_bar';
 
 
@@ -24,6 +25,7 @@ const App = () => {
                 {/* <img src={window.splashURL} /> */}
             {/* <AuthRoute path='/signup' component={SignupFormContainer} />
             <AuthRoute path='/login' component={SessionFormContainer} /> */}
+            
      </div>
      </>
     )

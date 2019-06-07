@@ -5,10 +5,16 @@ import {createReservation, deleteReservation } from '../../actions/reservation_a
 
 export const mSP = (state, ownProps) => {
     debugger
+    let usRes;
+    if (state.session.id !== null) {
+        usRes = state.entities.users[state.session.id].reservations
+    } else {
+        usRes = {}
+    }
     return (
         { 
             restaurant: state.entities.restaurants[ownProps.match.params.id],
-            userReservations: state.entities.users[state.session.id].reservations,
+            userReservations: usRes,
             userId: state.session.id
         }
     )

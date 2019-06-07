@@ -100,23 +100,23 @@ class SignupForm extends React.Component {
                         {errors}
                     </ul>
                     
-                    <input className={fnameInput} type="text" placeholder="First Name *"
+                    <input id='fnameInput' className={fnameInput} type="text" placeholder="First Name *"
                         onChange={this.handleInput('fname')}
                     />
                    
-                    <input className={lnameInput} type="text" placeholder="Last Name *"
+                    <input id='lnameInput' className={lnameInput} type="text" placeholder="Last Name *"
                         onChange={this.handleInput('lname')}
                     />
                    
-                    <input className={emailInput} type="email" placeholder="Enter email *" 
+                    <input id='emailInput' className={emailInput} type="email" placeholder="Enter email *" 
                         onChange={this.handleInput('email')}
                     />
                    
-                    <input className={passwordInput} type="password" placeholder="Enter password *"
+                    <input id='passwordInput' className={passwordInput} type="password" placeholder="Enter password *"
                         onChange={this.handleInput('password')}
                     />
                    
-                    <input className={confirmPasswordInput} type="password" placeholder="Re-enter password *"
+                    <input id='cpasswordInput' className={confirmPasswordInput} type="password" placeholder="Re-enter password *"
                         onChange={this.handleInput('confirmPassword')}
                     />
                     <button id='signup-submit' type="submit" >Create Account </button>              

@@ -17,7 +17,7 @@
 #
 
 class Restaurant < ApplicationRecord
-    # include PgSearch
+    include PgSearch
     validates :name, :aboutme, :address, :city, :zipcode, :phone, :capacity, :tag, presence: true
     
     has_many :reservations,
@@ -29,5 +29,14 @@ class Restaurant < ApplicationRecord
         
     has_many_attached :photos
 
-    # pg_search_scope :search_by_keyword
+    pg_search_scope :search_by_keyword, against: [
+        :name, 
+        :aboutme, 
+        :address, 
+        :city, 
+        :zipcode, 
+        :phone, 
+        :capacity, 
+        :tag
+    ]
 end

@@ -1,6 +1,7 @@
 import React from 'react';
 import RestaurantIndexItem from './restaurant_index_item';
 import NavbarContainer from '../navbar/nav_bar_container';
+import Footer from '../footer/footer';
 
 class Restaurant extends React.Component {
     constructor(props) {
@@ -30,9 +31,9 @@ class Restaurant extends React.Component {
                 <div className="rest-list">
                     <ul className='rest-ul'>
                         {listRest}
+                <Footer />
                     </ul>
                 </div>
-
             </div>
         
         )

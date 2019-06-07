@@ -39,7 +39,23 @@
     font-weight: 600;
 }
 
-.signupform input:focus {
+#fnameInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#lnameInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#emailInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#passwordInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#cpasswordInput:focus {
     outline: 1px solid darkgray;    
 }
 

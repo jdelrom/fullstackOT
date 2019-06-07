@@ -100,9 +100,29 @@
     
 }
 
-.errors-render:focus {
+/* .errors-render:focus {
     color: black;
     outline: 1px solid darkgray;
     border: 1px solid gray;
         opacity: 1 !important;
+} */
+
+#fnameInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#lnameInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#emailInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#passwordInput:focus {
+    outline: 1px solid darkgray;    
+}
+
+#cpasswordInput:focus {
+    outline: 1px solid darkgray;    
 }
