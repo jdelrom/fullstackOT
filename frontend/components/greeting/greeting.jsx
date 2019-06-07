@@ -39,7 +39,7 @@ class Greeting extends React.Component {
     
 
     render() {
-        debugger
+        // debugger
         let hoy = new Date().toISOString().substring(0, 10);
         // hoy = hoy[1] + '/' + hoy[2] + '/' + hoy[0]
         

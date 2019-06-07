@@ -101,6 +101,7 @@ div.logo {
     z-index: -1;
     position: relative;
     top: 70px;
+    object-fit: cover;
 }
 
 .background-header {
