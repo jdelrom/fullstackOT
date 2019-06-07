@@ -77,7 +77,7 @@ class ReservationForm extends React.Component {
                         debugger
                         // const rezzo = this.props.user.reservations[this.props.restaurant.id]
                         content = (
-                            <div className='rest-reservation-container'>
+                            <div className='rest-reservation-container2'>
                                 <div className='rest-show-h2'><h2>Make a reservation</h2></div>
                                 <div className="rest-reserve-options">
                                     <div className='rest-reserve-party-container'>
