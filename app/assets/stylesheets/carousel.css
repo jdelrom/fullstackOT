@@ -52,6 +52,7 @@ h1 > a {
     font-size: 14px;
     color: #4a4848;
     padding: 5px 0 0 8px;
+    cursor: default;
 }
 
 .fasend-right {
