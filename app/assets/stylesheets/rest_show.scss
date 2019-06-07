@@ -43,6 +43,7 @@
     flex-direction: column;
     max-width: 400px;
     width: 335px;
+    position: fixed;
 }
 
 
@@ -75,6 +76,7 @@
 .rest-show-img-container {
     margin-top: 85px;
     width: 100%;
+    justify-content: center;
 }
 
 .rest-show-img {
@@ -230,4 +232,12 @@ input[type=date]::-webkit-outer-spin-button {
     font-weight: bold;
     font-size: 16px;
     margin: 50px 20px;
+    transition: background-color 200ms ease-in;
+    cursor: pointer;
+    
+}
+
+.rest-reserve-options > button:hover {
+    background-color: #cc313b;
+    color: white;
 }
