@@ -60,6 +60,13 @@
     border-radius: 3px;
     font-weight: 400;
     margin: 4px 0px;
+    transition: background-color 200ms ease-in;
+    cursor: pointer;
+}
+
+#session-submit:hover, .demo-button:hover {
+     background-color: #cc313b;
+     color: white;
 }
 
 .errors {
