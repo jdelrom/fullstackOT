@@ -1,13 +1,20 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
-import { parseInput } from "./search_bar_helper";
+// import { parseInput } from "./search_bar_helper";
+import { searchRestaurants } from '../../actions/restaurant_actions';
 
 const mSP = (state, ownProps) => {
     return {
         // errors: state.errors.restaurant,
         loggedIn: Boolean(state.session.currentUser),
         currentUser: state.entities.users[state.session.id]
+    };
+};
+
+const mDP = (dispatch) => {
+    return {
+        searchRestaurants: (search) => dispatch(searchRestaurants(search))
     };
 };
 
@@ -22,11 +29,28 @@ class SearchBar extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componenetDidUpdate() {
+    //     debugger
+    //     if (prevProps.location !== this.props.location) {
+    //         debugger
+    //         const searchString = this.props.location.search.slice(9)
+    //         const searchWords = searchString.split("%20")
+    //         debugger
+    //         const keywords = { keyword: searchWords.join(" ") }
+    //         debugger
+    //         this.props.searchRestaurants(keywords) || this.props.fetchRestaurants();
+    //     }
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
         // debugger
-        this.props.history.push(`/search?search=${this.state.search}`);
-    
+        if (this.state === "") {
+            this.props.history.push('/restaurants')
+        } else {
+            this.props.history.push(`/search?search=${this.state.search}`);
+            this.props.searchRestaurants(this.state)
+        }
     }
 
     updateField(field) {
@@ -42,7 +66,7 @@ class SearchBar extends React.Component {
                     cssClass : cssClass + "-index-view"
             );
         };
-
+        
         // debugger
         return (
             <div className={cssClassName("restaurant-search-container")}>
@@ -51,7 +75,7 @@ class SearchBar extends React.Component {
                     <input className="search"
                         value={search}
                         onChange={this.updateField("search")}
-                        placeholder="Search for a restaurant!">
+                        placeholder="Search for a restaurant">
 
                     </input>
 
@@ -65,4 +89,4 @@ class SearchBar extends React.Component {
     }
 }
 
-export default withRouter(connect(mSP)(SearchBar));
+export default withRouter(connect(mSP, mDP)(SearchBar));

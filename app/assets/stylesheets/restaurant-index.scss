@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     margin: 50px;
-    margin-top: 150px;
 }
 
 .rest-ul > li {
@@ -57,7 +56,30 @@
 }
 .rest-list {
     height: 100%;
+
+    .search-bar-in-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 75px;
+        background-color: #666;
+        padding: 10px;
+        
+        input {
+            height: 46px;
+            width: 301px;
+            border-radius: 4px;
+            border: 1px solid lightgrey;
+            outline: none;
+            font-size: 15px;
+            
+        }
+        input::placeholder {
+            font-size: 20px;
+        }
+    }
 }
+
 
 .rest-container {
     height: 100%;

@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBar from '../search_bar/search_bar';
+// import SearchBar from '../search_bar/search_bar';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -10,6 +10,20 @@ class Navbar extends React.Component {
         }
 
         this.dropDownClick = this.dropDownClick.bind(this);
+    }
+
+
+    componenetDidUpdate() {
+        // debugger
+        if (prevProps.location !== this.props.location) {
+            // debugger
+            const searchString = this.props.location.search.slice(9)
+            const searchWords = searchString.split("%20")
+            // debugger
+            const keywords = { keyword: searchWords.join(" ") }
+            // debugger
+            this.props.searchRestaurants(keywords) || this.props.fetchRestaurants();
+        }
     }
 
 
@@ -39,10 +53,10 @@ dropDownClick() {
 render() {
     let toggle = 'hidden'
     let content;
-    let searchBar = null;
-    if (this.props.page !== "greeting") {
-         searchBar = <SearchBar />
-    }
+    // let searchBar = null;
+    // if (this.props.page !== "greeting") {
+    //      searchBar = <SearchBar />
+    // }
     if (this.props.currentUser) {
         // debugger
         content = (
@@ -86,10 +100,10 @@ render() {
                     </a>
                 </li>
             </ul> 
-            <div className='search-bar-in-nav'>
-                {searchBar}
-            </div>
             <div>
+                {/* <div className='search-bar-in-nav'>
+                    {searchBar}
+                </div> */}
                 {content}
             </div>
         </div>
