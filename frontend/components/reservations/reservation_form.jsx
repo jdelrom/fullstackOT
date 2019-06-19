@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {createReservation, deleteReservation } from '../../actions/reservation_actions';
 
 export const mSP = (state, ownProps) => {
-    debugger
+    // debugger
     let usRes;
     if (state.session.id !== null) {
         usRes = state.entities.users[state.session.id].reservations
@@ -41,7 +41,7 @@ class ReservationForm extends React.Component {
     }
 
     componentDidUpdate() {
-        debugger
+        // debugger
     }
 
     handleSubmit(e) {
@@ -67,14 +67,14 @@ class ReservationForm extends React.Component {
         // if (Object.values(this.props.restaurant).length === 0) { return null }
         let hoy = new Date().toISOString().substring(0, 10);
         let content;
-        debugger
+        // debugger
         if (this.props.restaurant && this.props.restaurant.reservations) {
-                debugger
+                // debugger
                 // for (let i = 0; i < this.props.reservations.length; i++) {
                 //     let rezzo = this.props.reservations[i]
-                    debugger
+                    // debugger
                     if (this.props.userReservations && this.props.userReservations[this.props.restaurant.id]) {
-                        debugger
+                        // debugger
                         // const rezzo = this.props.user.reservations[this.props.restaurant.id]
                         content = (
                             <div className='rest-reservation-container2'>
@@ -121,7 +121,7 @@ class ReservationForm extends React.Component {
                             </div>
                         )
                     } else {
-                        debugger
+                        // debugger
                         content = (
                             <form onSubmit={this.handleSubmit}>
                                 <div className='rest-reservation-container'>
@@ -172,7 +172,7 @@ class ReservationForm extends React.Component {
 
                 // }
         } else {
-            debugger
+            // debugger
             content = (
                 <form onSubmit={this.handleSubmit}>
                     <div className='rest-reservation-container'>
@@ -243,7 +243,7 @@ class ReservationForm extends React.Component {
     //     }
     // }
                 // hoy = hoy[1] + '/' + hoy[2] + '/' + hoy[0]
-        debugger
+        // debugger
         return (
             <>
                 { content }

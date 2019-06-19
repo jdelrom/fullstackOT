@@ -5,7 +5,7 @@ class Api::RestaurantsController < ApplicationController
         if params[:search]
             # debugger
             @restaurants = Restaurant.search(params[:search])
-            debugger
+            # debugger
             render :index
         else
             # debugger
@@ -15,7 +15,7 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show
-        debugger
+        # debugger
         @restaurant = Restaurant.find(params[:id])
         render :show
     end

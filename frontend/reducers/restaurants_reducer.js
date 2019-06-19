@@ -8,7 +8,7 @@ const restaurantsReducer = (state = {}, action) => {
         case RECEIVE_RESTAURANTS:
             return action.restaurants;
         case RECEIVE_RESTAURANT:
-            debugger
+            // debugger
             return action.data.restaurant;
         case RECEIVE_RESERVATION:
             // debugger

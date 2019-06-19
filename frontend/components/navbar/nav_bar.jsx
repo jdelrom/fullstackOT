@@ -1,8 +1,10 @@
 import React from 'react'
+import SearchBar from '../search_bar/search_bar';
 
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
+        // debugger
         this.state = {
             toggle: 'hidden',
         }
@@ -37,6 +39,10 @@ dropDownClick() {
 render() {
     let toggle = 'hidden'
     let content;
+    let searchBar = null;
+    if (this.props.page !== "greeting") {
+         searchBar = <SearchBar />
+    }
     if (this.props.currentUser) {
         // debugger
         content = (
@@ -68,19 +74,24 @@ render() {
     return (
         <>
         <div className="static-nav">
-        <ul className="logo-links">
-            <li>
-                <a href="/">
-                    <div className='logo'></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <h1 className="title">OpenMesa</h1>
-                </a>
-            </li>
-        </ul> 
-            <div>{content}</div>
+            <ul className="logo-links">
+                <li>
+                    <a href="/">
+                        <div className='logo'></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h1 className="title">OpenMesa</h1>
+                    </a>
+                </li>
+            </ul> 
+            <div className='search-bar-in-nav'>
+                {searchBar}
+            </div>
+            <div>
+                {content}
+            </div>
         </div>
         </>
     )

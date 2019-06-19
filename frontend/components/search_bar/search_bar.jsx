@@ -48,15 +48,15 @@ class SearchBar extends React.Component {
             <div className={cssClassName("restaurant-search-container")}>
         
                 <form className={cssClassName("restaurant-search-bar")} onSubmit={this.handleSubmit}>
-                    <input className="restaurant-search-input"
+                    <input className="search"
                         value={search}
                         onChange={this.updateField("search")}
                         placeholder="Search for a restaurant!">
 
                     </input>
 
-                    <button className="restaurant-search-submit">
-                            Find a Table
+                    <button className="search-button">
+                            Let's go
                     </button>
 
                 </form>

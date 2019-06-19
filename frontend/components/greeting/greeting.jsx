@@ -69,7 +69,7 @@ class Greeting extends React.Component {
                 </div> */}
                 <SearchBar />
                 <div className="root-header">
-                     <NavbarContainer /> 
+                     <NavbarContainer page='greeting' /> 
                     {/* <GreetBackground /> */}
                     
                     <div className='background-header'><h1>Find your mesa for any occasion</h1></div>

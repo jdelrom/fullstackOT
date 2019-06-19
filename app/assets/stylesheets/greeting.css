@@ -228,7 +228,7 @@ div.logo {
     z-index: 10;
 }
 
-.calendar {
+.restaurant-search-container {
     height: 46px;
     width: 100%;
     position: absolute;
@@ -239,15 +239,17 @@ div.logo {
     z-index: 2;
 }
 
-.calendar > input {
-    height: 46px;
-    width: 158px;
-    box-sizing: border-box;
+.restaurant-search-bar > input {
+    height: 37px;
+    width: 288px;
+    /* box-sizing: border-box; */
     font-size: 100%;
-    border-radius: 1px;
+    border-radius: 4px;
     cursor: pointer;
     font-family: 'PT Sans', sans-serif;
     font-family: 'Nunito', sans-serif;
+    cursor: default;
+    outline: none;
 }
 
 .time {
@@ -276,6 +278,8 @@ div.logo {
 
 .search-button {
     margin-left: 10px;
+    height: 48px;
+    width: 144px;
     background-color: #da3743;
     border-color: #b8222d;
     color: white;
@@ -288,7 +292,6 @@ div.logo {
     transition: background-color 300ms ease-out;
     text-align: center;
     text-decoration: none;
-    padding: 15px 44px;
 }
 
 .search-button:hover {
@@ -339,6 +342,9 @@ button {
     left: 0;
     padding-left: 34px;
     z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 * {
