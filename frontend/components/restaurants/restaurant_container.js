@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {fetchRestaurants} from '../../actions/restaurant_actions';
+import { searchRestaurants, fetchRestaurants} from '../../actions/restaurant_actions';
 import Restaurant from './restaurant';
 
 export const mSP = (state, ownProps) => ({   
@@ -9,6 +9,7 @@ export const mSP = (state, ownProps) => ({
 
 export const mDP = (dispatch) => ({
     fetchRestaurants: () => dispatch(fetchRestaurants()),
+    searchRestaurants: (search) => dispatch(searchRestaurants(search))
 })
 
 export default withRouter(connect(mSP, mDP)(Restaurant));

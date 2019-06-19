@@ -18,6 +18,7 @@ const App = () => {
                 
                 
              </header>
+                <Route path='/search' component={RestaurantContainer} />
                 <Route path='/restaurants/:id' component={RestaurantShowContainer} />
                 <Route exact path='/restaurants' component={RestaurantContainer} />
                 <Route exact path="/" component={GreetingContainer} />

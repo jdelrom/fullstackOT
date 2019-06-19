@@ -17,7 +17,7 @@
 #
 
 class Restaurant < ApplicationRecord
-    include PgSearch
+    # include PgSearch
     validates :name, :aboutme, :address, :city, :zipcode, :phone, :capacity, :tag, presence: true
     
     has_many :reservations,
@@ -29,14 +29,30 @@ class Restaurant < ApplicationRecord
         
     has_many_attached :photos
 
-    pg_search_scope :search_by_keyword, against: [
-        :name, 
-        :aboutme, 
-        :address, 
-        :city, 
-        :zipcode, 
-        :phone, 
-        :capacity, 
-        :tag
-    ]
+    # pg_search_scope :find_by_type, against: [
+    #     :name, 
+    #     :aboutme, 
+    #     :address, 
+    #     :city, 
+    #     :zipcode, 
+    #     :phone, 
+    #     :capacity, 
+    #     :tag
+    # ], using: {
+    #         tsearch: { 
+    #             prefix: true,
+    #             any_word: true,
+    #         }
+    #     }
+
+    def self.search(params)
+        str = "%#{params}%"
+        @restaurants = Restaurant
+            .joins("LEFT OUTER JOIN reservations ON reservations.restaurant_id = restaurants.id")
+            .where("UPPER(restaurants.name) LIKE UPPER(:query) OR 
+                    UPPER(restaurants.city) LIKE UPPER(:query) OR
+                    UPPER(restaurants.tag) LIKE UPPER(:query) OR
+                    restaurants.zipcode = :query", query: str)
+            # @restaurants = @restaurants.uniq
+    end
 end

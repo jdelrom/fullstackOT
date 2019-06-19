@@ -4,10 +4,14 @@ export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
 
 
-export const receiveRestaurants = (restaurants) => ({
-    type: RECEIVE_RESTAURANTS,
-    restaurants
-})
+export const receiveRestaurants = (restaurants) => {
+    // debugger
+    return (
+    {
+        type: RECEIVE_RESTAURANTS,
+        restaurants
+    })
+}
 
 export const receiveRestaurant = (data) => ({
     type: RECEIVE_RESTAURANT,
@@ -23,5 +27,13 @@ export const fetchRestaurants = () => (dispatch) => {
 export const fetchRestaurant = (id) => (dispatch) => {
     return RestaurantApiUtil.fetchRestaurant(id).then(restaurant => {
         return dispatch(receiveRestaurant(restaurant))
+    })
+}
+
+export const searchRestaurants = (search) => (dispatch) => {
+    // debugger
+    return RestaurantApiUtil.searchRestaurants(search).then(response => {
+        // debugger
+        return dispatch(receiveRestaurants(response));
     })
 }

@@ -4,6 +4,7 @@ import NavbarContainer from '../navbar/nav_bar_container';
 import RestCarousel from '../carousel/carousel';
 import Footer from '../footer/footer';
 import GreetBackground from './greeting-background';
+import SearchBar from '../search_bar/search_bar';
 
 class Greeting extends React.Component {
 
@@ -36,6 +37,11 @@ class Greeting extends React.Component {
     //     }
     // }
 
+    componentDidMount() {
+        // debugger
+        this.props.fetchRestaurants()
+        // debugger
+    }
     
 
     render() {
@@ -48,7 +54,7 @@ class Greeting extends React.Component {
         // debugger
         return (
             <>
-                <div className="calendar">
+                {/* <div className="calendar">
                     <input type="date" id="date" className="date" />
                     <div className="styled-select slate">
                         <select className="time">
@@ -59,16 +65,16 @@ class Greeting extends React.Component {
                         </select>
                     </div>
                     <input className="search" type="search" />
-                    {/* <button className="search-button">Let's go</button> */}
                     <Link to="/restaurants" className="search-button">Let's go</Link>
-                </div>
+                </div> */}
+                <SearchBar />
                 <div className="root-header">
                      <NavbarContainer /> 
                     {/* <GreetBackground /> */}
                     
                     <div className='background-header'><h1>Find your mesa for any occasion</h1></div>
                 </div>
-                <img src={window.splashURL} /> 
+                <img src="https://open-mesa-seeds.s3.amazonaws.com/restaurant.png" /> 
                 <RestCarousel />      
                 <Footer />        
             </>

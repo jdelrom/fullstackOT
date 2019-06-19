@@ -9,7 +9,26 @@ class Restaurant extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchRestaurants();
+        // debugger
+        const searchString = this.props.location.search.slice(8);
+        // debugger
+        const searchWords = searchString.split("%20");
+        // debugger
+        const keywords = { search: searchWords.join(" ") }
+
+        this.props.searchRestaurants(keywords) || this.props.fetchRestaurants();
+    }
+
+    componenetDidUpdate() {
+        // debugger
+        if (prevProps.location !== this.props.location) {
+            // debugger
+            const searchString = this.props.location.search.slice(9)
+            const searchWords = searchString.split("%20")
+            const keywords = { keyword: searchWords.join(" ") }
+
+            this.props.searchRestaurants(keywords) || this.props.fetchRestaurants();
+        }
     }
 
     render() {
@@ -24,7 +43,7 @@ class Restaurant extends React.Component {
                 </>
             )
         })
-
+        // debugger
         return (
             <div className="rest-container">
                 <NavbarContainer />
