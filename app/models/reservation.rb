@@ -6,7 +6,7 @@
 #  user_id          :integer          not null
 #  restaurant_id    :integer          not null
 #  party_size       :integer          not null
-#  reservation_time :datetime         not null
+#  reservation_time :string           not null
 #  reservation_date :date             not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

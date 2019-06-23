@@ -1,6 +1,6 @@
 class Api::ReservationsController < ApplicationController
     before_action :ensure_logged_in
-    # before_action :ensure_auth_user, only: :destroy
+    before_action :ensure_auth_user, only: :destroy
 
 
     def create
