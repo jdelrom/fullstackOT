@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 // import { createReservation, deleteReservation } from './actions/reservation_actions';
-// import { createReview, deleteReview } from './actions/review_actions';
+import { createReview, deleteReview, fetchReview } from './actions/review_actions';
 // import {createReview, deleteReview, fetchReview } from './util/review_utils';
 // import { login, logout, signUp } from './actions/session_actions';
 // import { fetchRestaurants, fetchRestaurant } from './actions/restaurant_actions';
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch;
     // window.createReview = createReview;
     // window.deleteReview = deleteReview;
-    // window.fetchReview = fetchReview;
+    window.fetchReview = fetchReview;
     // window.createReservation = createReservation
     // window.deleteReservation = deleteReservation
     // window.fetchRestaurant = fetchRestaurant;

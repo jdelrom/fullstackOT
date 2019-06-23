@@ -1,5 +1,5 @@
 class Api::ReservationsController < ApplicationController
-    before_action :ensure_logged_in
+    # before_action :ensure_logged_in
     before_action :ensure_auth_user, only: :destroy
 
 
@@ -16,6 +16,11 @@ class Api::ReservationsController < ApplicationController
         else
             render json: @reservation.errors.full_messages, status: 422
         end
+    end
+
+    def show
+        @reservation = Reservation.find(params[:id])
+        render :show
     end
 
     def destroy

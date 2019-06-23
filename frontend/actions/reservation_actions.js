@@ -23,10 +23,16 @@ export const createReservation = (reservation) => (dispatch) => {
     return ReservationApiUtil.createReservation(reservation).then(response => {
         return dispatch(receiveReservation(response))
     }, response => dispatch(receiveReservationErrors(response)) )
-}
+};
+
+export const fetchReservation = (id) => (dispatch) => {
+    return ReservationApiUtil.fetchReservation(id).then(response => {
+        return dispatch(receiveReservation(response))
+    }, response => dispatch(receiveReservationErrors(response)))
+};
 
 export const deleteReservation = (id) => (dispatch) => {
     return ReservationApiUtil.deleteReservation(id).then(response => {
         return dispatch(removeReservation(response))
     })
-}
+};

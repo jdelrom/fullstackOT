@@ -1,7 +1,8 @@
 import React from 'react';
 import NavbarContainer from '../navbar/nav_bar_container';
 import ReservationForm from '../reservations/reservation_form';
-import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container'
+import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container';
+import ReviewForm from '../reviews/review_form';
 import Footer from '../footer/footer';
 import Reviews from '../reviews/reviews';
 
@@ -11,8 +12,8 @@ class RestaurantShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchRestaurant(this.props.match.params.id)
+        // debugger
     }
 
     render() {
@@ -28,6 +29,18 @@ class RestaurantShow extends React.Component {
                 return null;
             }
         }
+        // debugger
+        let reviewList;
+        if (this.props.reviews !== undefined) {
+            let reviewItems = Object.values(this.props.reviews)
+            reviewList = reviewItems.map(item => {
+                return (
+                    <Reviews review={item} />
+                )
+            })
+        } else {
+            reviewList = <div></div>
+        } 
         // debugger
         return (
            
@@ -83,9 +96,14 @@ class RestaurantShow extends React.Component {
                                 <h1>What People Are Saying</h1>
                                 <h2>Overall ratings and reviews</h2>
                                 <h3>Reviews can only be made by diners who have eaten at this restaurant</h3>
-                                <Reviews />
+                               
                             </div>
-
+                            <div className='show-review-form'>>
+                                <ReviewForm />
+                            </div>
+                            <div className='review-list-container'>
+                                {reviewList}
+                            </div>
                         </div>
                     {form}
                 </div>

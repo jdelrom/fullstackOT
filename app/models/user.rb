@@ -25,6 +25,9 @@ class User < ApplicationRecord
     has_many :reservations,
         class_name: :Reservation
 
+    has_many :rate_reviews,
+        class_name: :RatesReview
+
     attr_reader :password
 
     def self.find_by_credentials(email, password)

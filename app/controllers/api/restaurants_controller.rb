@@ -4,19 +4,19 @@ class Api::RestaurantsController < ApplicationController
         # debugger
         if params[:search]
             # debugger
-            @restaurants = Restaurant.search(params[:search])
+            @restaurants = Restaurant.search(params[:search]).includes(:reservations, :rate_reviews)
             # debugger
             render :index
         else
             # debugger
-            @restaurants = Restaurant.all.includes(:reservations)
+            @restaurants = Restaurant.all.includes(:reservations, :rate_reviews)
             render :index
         end
     end
 
     def show
         # debugger
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.includes(:reservations, :rate_reviews).find(params[:id])
         render :show
     end
     

@@ -25,6 +25,12 @@ export const createReview = (review) => (dispatch) => {
     }, response => dispatch(receiveReviewErrors(response)));
 };
 
+export const fetchReview = (id) => (dispatch) => {
+    return ReviewApiUtil.fetchReview(id).then(response => {
+        return dispatch(receiveReview(response))
+    }, response => dispatch(receiveReviewErrors(response)))
+};
+
 export const deleteReview = (id) => (dispatch) => {
     return ReviewApiUtil.deleteReview(id).then(response => {
         return dispatch(removeReview(response))

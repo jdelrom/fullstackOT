@@ -6,6 +6,13 @@ export const createReservation = (reservation) => {
     })
 }
 
+export const fetchReservation = (id) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/reservations/${id}`
+    })
+}
+
 export const deleteReservation = (id) => {
     return $.ajax({
         method: 'DELETE',

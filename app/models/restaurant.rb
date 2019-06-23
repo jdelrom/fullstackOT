@@ -22,6 +22,9 @@ class Restaurant < ApplicationRecord
     
     has_many :reservations,
         class_name: :Reservation
+    
+    has_many :rate_reviews,
+        class_name: :RatesReview
 
     has_many :users,
         through: :reservations,

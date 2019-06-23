@@ -8,7 +8,7 @@ const reservationReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_RESERVATION:
             // debugger
-            return merge({}, state, { [action.reservation.id]: action.reservation } )
+            return merge({}, state, {[action.reservation.id]: action.reservation} )
         case REMOVE_RESERVATION:
             // debugger
             const newState = merge({}, state);
