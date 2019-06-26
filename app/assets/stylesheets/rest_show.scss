@@ -182,7 +182,17 @@ input[type=date]::-webkit-outer-spin-button {
     font-size: 12.5px;
     padding-bottom: 9px;
 }
+.restaurant-info {
 
+    ul {
+        display: flex;
+    }
+
+    ul > li {
+        padding-right: 5px;
+    }
+
+}
 .restaurant-info-name {
     font-size: 40px;
     font-weight: bolder;
@@ -190,6 +200,7 @@ input[type=date]::-webkit-outer-spin-button {
     border-bottom: 1px solid lightgray;
     margin-bottom: 10px;
     margin-left: 10px;
+
 }
 
 .rest-aboutme {
@@ -254,4 +265,13 @@ input[type=date]::-webkit-outer-spin-button {
     width: 335px;
     position: fixed;
     right: 130px;
+}
+
+.restaurant-info-tag {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+       padding-right: 5px; 
+    }
 }

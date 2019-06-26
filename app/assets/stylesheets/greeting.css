@@ -5,7 +5,7 @@
     /* position: fixed;
     top: 21px;
     right: 0; */
-    padding-right: 45px;
+    /* padding-right: 45px; */
     z-index: 3;
     margin-top: 25px;
 }
@@ -341,7 +341,7 @@ button {
     position: absolute;
     top: 0px;
     left: 0;
-    padding-left: 34px;
+    /* padding-left: 34px; */
     z-index: 3;
     width: 100%;
     display: flex;
@@ -351,4 +351,8 @@ button {
 * {
     font-family: 'PT Sans', sans-serif !important;
     font-family: 'Nunito', sans-serif !important;
+}
+
+.root {
+    margin: 0 35px;
 }

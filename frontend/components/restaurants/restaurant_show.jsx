@@ -71,7 +71,11 @@ class RestaurantShow extends React.Component {
                                 <nav className='rest-show-nav'>
                                     <ul className='rest-show-ul-nav'>
                                         <li>
-                                            Overview
+                                            <a href="#restaurant-info">
+                                                <label htmlFor="restaurant-info">
+                                                    Overview
+                                                </label>
+                                            </a>
                                         </li>
                                         <li>
                                             Photos
@@ -86,7 +90,7 @@ class RestaurantShow extends React.Component {
                                     </ul>
                                 </nav>
                             </div>
-                            <div className="restaurant-info">
+                            <div id='restaurant-info' name='restaurant-info' className="restaurant-info">
                                 <h1 className="restaurant-info-name">{this.props.restaurant.name}</h1>
                                 <ul>
                                     <li>
@@ -96,7 +100,10 @@ class RestaurantShow extends React.Component {
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star-half-o" aria-hidden="true"></i> */}
-                                        {this.props.restaurant.tag}
+                                    </li>
+                                    <li className="restaurant-info-tag">
+                                        <p><i className="fas fa-utensils"></i></p>               
+                                        <p>{this.props.restaurant.tag}</p>    
                                     </li>
                                 </ul>
                                 <div className="rest-aboutme">

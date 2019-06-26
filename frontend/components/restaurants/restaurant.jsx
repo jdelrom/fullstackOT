@@ -49,8 +49,9 @@ class Restaurant extends React.Component {
         })
         // debugger
         return (
+            <>
+            <NavbarContainer />
             <div className="rest-container">
-                <NavbarContainer />
                 <div className="rest-list">
                     <div className='search-bar-in-nav'>
                         <SearchBar />
@@ -61,6 +62,7 @@ class Restaurant extends React.Component {
                     </ul>
                 </div>
             </div>
+            </>
 
         )
     }

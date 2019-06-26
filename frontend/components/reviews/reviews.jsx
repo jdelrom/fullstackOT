@@ -24,7 +24,7 @@ class Reviews extends React.Component {
                 </div> */}
                 <div className="review-others">
                     <div className="review-user">
-                        <div className='reivew-username'>
+                        <div className='review-username'>
                             <p>{review.author}</p>
                         </div>
                         <div className='review-body'>
