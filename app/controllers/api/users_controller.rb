@@ -1,11 +1,11 @@
 class Api::UsersController < ApplicationController
 
     def index
-        @users = User.all.includes(:restaurants)
+        @users = User.all.includes(:restaurants, :reservations, :rates_reviews)
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.includes(:reservations, :rates_reviews).find(params[:id])
         render :show
     end
 

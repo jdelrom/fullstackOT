@@ -6,7 +6,7 @@ import { fetchReservation } from '../../actions/reservation_actions'
 import RestaurantShow from './restaurant_show';
 
 export const mSP = (state, ownProps) => {
-    // debugger
+    debugger
     return (
         {
             restaurant: state.entities.restaurants[ownProps.match.params.id] || {},

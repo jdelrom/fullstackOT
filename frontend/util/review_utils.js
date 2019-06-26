@@ -14,6 +14,15 @@ export const fetchReview = (id) => {
     })
 }
 
+export const updateReview = (review) => {
+    debugger
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/rates_reviews/${review.id}`,
+        data: {review}
+    });
+};
+
 export const deleteReview = (id) => {
     return $.ajax({
         method: 'DELETE',

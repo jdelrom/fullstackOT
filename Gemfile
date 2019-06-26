@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor'
 gem "aws-sdk-s3"
+# gem 'compass-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'

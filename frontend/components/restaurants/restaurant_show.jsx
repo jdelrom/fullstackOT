@@ -5,6 +5,7 @@ import RestShowNavContainer from './restaurant_background/restaurant_show_nav_co
 import ReviewForm from '../reviews/review_form';
 import Footer from '../footer/footer';
 import Reviews from '../reviews/reviews';
+import { times } from 'lodash';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -17,8 +18,12 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
+        const {reviews} = this.props;
         let form = <ReservationForm restaurant={this.props.restaurants} />;
+        // let faStars = _.times(this.props.restaurant.rating, () => {
+        //     return (<i className="fa fa-star"></i>)
+        // })
         let bookings;
         if (this.props.restaurant) {
             // debugger
@@ -72,11 +77,11 @@ class RestaurantShow extends React.Component {
                                 <h1 className="restaurant-info-name">{this.props.restaurant.name}</h1>
                                 <ul>
                                     <li>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i> 
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star-half-o" aria-hidden="true"></i>
                                         {this.props.restaurant.tag}
                                     </li>
                                 </ul>
@@ -98,7 +103,7 @@ class RestaurantShow extends React.Component {
                                 <h3>Reviews can only be made by diners who have eaten at this restaurant</h3>
                                
                             </div>
-                            <div className='show-review-form'>>
+                            <div className='show-review-form'>
                                 <ReviewForm />
                             </div>
                             <div className='review-list-container'>

@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { searchRestaurants } from '../../actions/restaurant_actions';
 
 const mSP = (state, ownProps) => {
-    return {
+    return ({
         // errors: state.errors.restaurant,
-        loggedIn: Boolean(state.session.currentUser),
+        loggedIn: Boolean(state.session.id),
         currentUser: state.entities.users[state.session.id]
-    };
+    });
 };
 
 const mDP = (dispatch) => {

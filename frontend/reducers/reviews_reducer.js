@@ -6,6 +6,7 @@ const reviewReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_REVIEW:
+            debugger
             return merge({}, state, {
                 [action.review.id]: action.review
             })

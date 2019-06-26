@@ -74,7 +74,7 @@ end
     })
 end
 
-10.times do
+30.times do
     RatesReview.create({
         user_id: rand(1..10),
         restaurant_id: rand(1..10),

@@ -12,32 +12,33 @@ class Reviews extends React.Component {
     render() {
         const { review } = this.props;
         let faStars = _.times(review.rating, () => {
-            return <i class="fas fa-star"></i>
+            return (<i className="fa fa-star"></i>)
         })
         
         debugger
         return (
             <div className="review-parent">
               
-                <div className="review-restaurant">
+                {/* <div className="review-restaurant">
 
-                </div>
+                </div> */}
                 <div className="review-others">
                     <div className="review-user">
                         <div className='reivew-username'>
                             <p>{review.author}</p>
                         </div>
                         <div className='review-body'>
-                            <h2>
-                                {faStars}
-                                {/* <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> */}
-                            </h2>
-                                <h3>Overall {review.rating}</h3>
+                            <div className='review-div1'> 
+                                <p>Overall {review.rating}</p>
+                                <p>
+                                    {faStars}
+                                    {/* <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i> */}
+                                </p>
 
-                            
+                            </div>   
 
                             <p>{review.review}</p>
                         </div>

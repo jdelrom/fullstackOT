@@ -12,7 +12,7 @@ json.restaurant do
     end
     json.reviews do
     #   json.review_ids @restaurant.reviews.map(&:id)
-        @restaurant.rate_reviews.each do |review|
+        @restaurant.rates_reviews.each do |review|
             json.set! review.id do
                 json.partial! 'api/rates_reviews/rates_review', rates_review: review
             end
