@@ -18,8 +18,21 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
+        const {reviews, restaurant} = this.props;
+        // debugger
+        let amountStars = 0;
+        let faStars;
         debugger
-        const {reviews} = this.props;
+        if (this.props.reviews !== undefined) {
+            let reviewArr = Object.values(reviews);
+            for (let i = 0; i < reviewArr.length; i++) {
+                amountStars += reviewArr[i].rating
+            }
+            amountStars = Math.floor(amountStars / reviewArr.length)
+            debugger
+            faStars = _.times(amountStars, () => {
+                return (<i className="fa fa-star"></i>)
+        })}
         let form = <ReservationForm restaurant={this.props.restaurants} />;
         // let faStars = _.times(this.props.restaurant.rating, () => {
         //     return (<i className="fa fa-star"></i>)
@@ -77,11 +90,12 @@ class RestaurantShow extends React.Component {
                                 <h1 className="restaurant-info-name">{this.props.restaurant.name}</h1>
                                 <ul>
                                     <li>
+                                        {faStars}
+                                        {/* <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star-half-o" aria-hidden="true"></i>
+                                        <i className="fa fa-star-half-o" aria-hidden="true"></i> */}
                                         {this.props.restaurant.tag}
                                     </li>
                                 </ul>
