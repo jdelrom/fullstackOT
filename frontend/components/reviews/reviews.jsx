@@ -29,7 +29,7 @@ class Reviews extends React.Component {
                         </div>
                         <div className='review-body'>
                             <div className='review-div1'> 
-                                <p>Overall {review.rating}</p>
+                                <p className='review-p'>Overall: {review.rating}</p>
                                 <p>
                                     {faStars}
                                     {/* <i class="fas fa-star"></i>
