@@ -62,12 +62,13 @@ urls = [
         rest.photos.attach(io: file, filename: "pic_#{i + 1}")
     end
 end
-
+restaurant_ids = Restaurant.all.map { |r| r.id }
+user_ids = User.all.map { |u| u.id }
 10.times do
     rando = random_date_in_year(2017..2019).to_s.split('-').join('/')
     Reservation.create({
-        user_id: rand(1..10),
-        restaurant_id: rand(1..10),
+        user_id: user_ids.sample,
+        restaurant_id: restaurant_ids.sample,
         party_size: rand(2..14),
         reservation_date: rando,
         reservation_time: (Time.now - rand(10000)).strftime("%I:" + minutes.sample + "%p")
@@ -76,8 +77,8 @@ end
 
 30.times do
     RatesReview.create({
-        user_id: rand(1..10),
-        restaurant_id: rand(1..10),
+        user_id: user_ids.sample,
+        restaurant_id: restaurant_ids.sample,
         rating: rand(1..5),
         review: Faker::Restaurant.review
     })
