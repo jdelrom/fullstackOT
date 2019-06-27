@@ -61,7 +61,7 @@ class RestaurantShow extends React.Component {
         } 
         // debugger
         return (
-           
+           <>
             <div className='rest-show-uncle'>
                 <RestShowNavContainer />
                 <div className='rest-show-parent'>
@@ -71,11 +71,11 @@ class RestaurantShow extends React.Component {
                                 <nav className='rest-show-nav'>
                                     <ul className='rest-show-ul-nav'>
                                         <li>
-                                            <a href="#restaurant-info">
+                                          
                                                 <label htmlFor="restaurant-info">
                                                     Overview
                                                 </label>
-                                            </a>
+                                         
                                         </li>
                                         <li>
                                             Photos
@@ -102,6 +102,9 @@ class RestaurantShow extends React.Component {
                                         <i className="fa fa-star-half-o" aria-hidden="true"></i> */}
                                     </li>
                                     <li className="restaurant-info-tag">
+                                        <p><i class="far fa-comment-alt"></i>
+                                        </p>
+                                        <p> {this.props.restaurant.reviews.length} reviews</p>
                                         <p><i className="fas fa-utensils"></i></p>               
                                         <p>{this.props.restaurant.tag}</p>    
                                     </li>
@@ -133,8 +136,9 @@ class RestaurantShow extends React.Component {
                         </div>
                     {form}
                 </div>
-                <Footer />
+            <Footer />
             </div>
+            </>
         )
     }
 }

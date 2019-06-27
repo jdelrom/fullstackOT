@@ -7,12 +7,12 @@
 .img-duo-container {
     display: flex;
     flex-direction: column;
-    width: 100%
+    width: 144px
 }
 
 .duo-img {
     height: 144px;
-    width: 100%;
+    width: 144px;
     object-fit: fill;
 }
 
@@ -23,7 +23,7 @@
 
 .duo-img > img {
     height: 144px;
-    width: 100%;
+    width: 144px;
     object-fit: fill
 }
 

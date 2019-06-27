@@ -42,12 +42,12 @@ class RestCarousel extends React.Component {
                 <div className='carousel-return'>
                     <h1><a href={`#/restaurants/${restaurant.id}`}>{restaurant.name}</a></h1>
                     <div className='carousel-deets'>
-                        <p className='fafa'>
+                        {/* <p className='fafa'>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
-                        </p>
+                        </p> */}
                         <p className='carousel-tag'>{restaurant.tag}</p>
                     </div>
                 </div>
@@ -61,44 +61,44 @@ class RestCarousel extends React.Component {
                 <section className="more-container">
                     <div className='carousel-rest-container'>
                     <div onClick={this.handleClick} className="fasend-left"></div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div1'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt=""/>
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[0]} alt=""/>
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[0]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div2'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[1]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[1]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div3'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[2]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[2]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div4'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[3]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[3]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div5'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[4]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[4]}
                             </div>
                         </div>
                         <div onClick={this.handleClick} className="fasend-right"></div>
@@ -107,47 +107,47 @@ class RestCarousel extends React.Component {
             )
         } else {
             return (
-                <section className="more-container">
+                <section className="less-container">
                     <div className='carousel-rest-container'>
                     <div onClick={this.handleClick} className="fasend-left"></div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div1'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[5]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[5]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div2'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[6]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[6]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div3'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[7]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[7]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div4'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[8]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[8]}
                             </div>
                         </div>
-                        <div className='carousel-rest-div'>
+                        <div className='carousel-rest-div5'>
                             <div className='carousel-img'>
-                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[Math.floor(Math.random() * this.props.restaurants.length)]} alt="" />
+                                <img src={this.props.restaurants[Math.floor(Math.random() * this.props.restaurants.length)].photoUrl[9]} alt="" />
                             </div>
                             <div className='carousel-info'>
-                                {restaurants[Math.floor(Math.random() * this.props.restaurants.length)]}
+                                {restaurants[9]}
                             </div>
                         </div>
                         <div onClick={this.handleClick} className="fasend-right"></div>

@@ -2,27 +2,123 @@
     display: flex;
     width: 100%;
     padding-top: 100px;
+    transition: ease-in .5s;
+}
+
+.less-container {
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+    transition: ease-in .5s;
 }
 
 .carousel-rest-container {
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
     margin: 0px;
-    margin-left: 83px;
+    /* margin-left: 83px; */
 }
 
-.carousel-rest-div {
+.carousel-rest-div1 {
     display: flex;
     flex-direction: column;
     height: 264px;
     width: 236px;
     border: 1px solid lightgray;
+    transition: all .3s;
+}
+
+.carousel-rest-div2 {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transition: all .3s;
+}
+
+.carousel-rest-div3 {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transition: all .3s;
+}
+
+.carousel-rest-div4 {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transition: all .3s;
+}
+
+.carousel-rest-div5 {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transition: all .3s;
+}
+
+.carousel-rest-div1:hover {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transform: translate(0, -10px);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+
+.carousel-rest-div2:hover {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transform: translate(0, -10px);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+
+.carousel-rest-div3:hover {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transform: translate(0, -10px);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+
+.carousel-rest-div4:hover {
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transform: translate(0, -10px);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+
+.carousel-rest-div5:hover {
+    position: initial;
+    display: flex;
+    flex-direction: column;
+    height: 264px;
+    width: 236px;
+    border: 1px solid lightgray;
+    transform: translate(0, -10px);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
 }
 
 .carousel-img {
     height: 132px;
-    width: 132px;
+    width: 100%;
     object-fit: fill;
 }
 

@@ -7,11 +7,12 @@
     flex-direction: column-reverse;
     margin-top: 50px;
     background-color: #333;
+    position: inherit;
+    bottom: 0;
 }
 
 .footer-container {
-  width: 80%;
-  margin: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 

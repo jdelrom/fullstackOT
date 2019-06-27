@@ -58,8 +58,8 @@ class Restaurant extends React.Component {
                     </div>
                     <ul className='rest-ul'>
                         {listRest}
-                        <Footer />
                     </ul>
+                    <Footer />
                 </div>
             </div>
             </>

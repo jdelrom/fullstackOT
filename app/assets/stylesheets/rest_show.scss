@@ -31,6 +31,7 @@
     background-color: white;
     padding: 15px;
     text-align: left;
+    border-bottom: 1px solid lightgray;
 }
 
 .rest-reservation-container {
@@ -264,7 +265,6 @@ input[type=date]::-webkit-outer-spin-button {
     max-width: 400px;
     width: 335px;
     position: fixed;
-    right: 130px;
 }
 
 .restaurant-info-tag {
