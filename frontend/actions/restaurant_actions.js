@@ -13,10 +13,15 @@ export const receiveRestaurants = (restaurants) => {
     })
 }
 
-export const receiveRestaurant = (data) => ({
-    type: RECEIVE_RESTAURANT,
-    data
-})
+export const receiveRestaurant = ({restaurant, reservations, reviews}) => 
+    {   debugger
+        return (
+        {
+            type: RECEIVE_RESTAURANT,
+            restaurant,
+            reservations,
+            reviews
+        })}
 
 export const fetchRestaurants = () => (dispatch) => {
     return RestaurantApiUtil.fetchRestaurants().then(restaurants => {

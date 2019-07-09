@@ -18,9 +18,10 @@ class Api::ReservationsController < ApplicationController
         end
     end
 
-    def show
-        @reservation = Reservation.find(params[:id])
-        render :show
+    def index
+        # debuggerq
+        @reservations = Reservation.where(restaurant_id: params[:restaurant_id])
+        render :index
     end
 
     def destroy

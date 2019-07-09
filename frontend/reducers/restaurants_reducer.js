@@ -11,13 +11,13 @@ const restaurantsReducer = (state = {}, action) => {
         case RECEIVE_RESTAURANT:
             // debugger
             return action.data.restaurant;
-        case RECEIVE_RESERVATION:
-            // debugger
-            const newState = merge({}, state);
-            // debugger
-            newState[action.reservation.restaurant_id].reservations = [action.reservation.restaurant_id]
-            // debugger
-            return merge({}, state, newState)
+        // case RECEIVE_RESERVATION:
+        //     // debugger
+        //     const newState = merge({}, state);
+        //     // debugger
+        //     newState[action.reservation.restaurant_id].reservations = [action.reservation.restaurant_id]
+        //     // debugger
+        //     return merge({}, state, newState)
         case RECEIVE_REVIEW:
             const nState = merge({}, state);
             debugger
