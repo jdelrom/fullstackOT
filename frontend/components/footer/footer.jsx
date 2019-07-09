@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-blurb">
-                    <p>openMesa was built by JD Romero.  React/Redux used for the frontend and Ruby used on Rails/PostgreSQL for backend.  Aim to function like OpenTable</p>
+                    <p>openMesa was built by JD Romero.  Aimed to function like OpenTable</p>
                 </div>
                 <div>
                     <ul className="footer-links">

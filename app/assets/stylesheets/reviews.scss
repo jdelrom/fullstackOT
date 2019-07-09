@@ -83,7 +83,7 @@
 
 
 .review-form .stars {
-  background: url("https://open-mesa-seeds.s3.amazonaws.com/stars.png") repeat-x 0 0;
+  background: url("https://open-mesa-seeds.s3.amazonaws.com/stars2.png") repeat-x 0 0;
   width: 150px;
   margin: 0 auto;
 }
@@ -108,6 +108,7 @@
 .review-form .stars input[type="radio"].star-1:checked ~ span {
   width: 20%;
 }
+
 .review-form .stars label {
   display: block;
   width: 30px;
@@ -125,19 +126,19 @@
   background-position: 0 -30px;
 }
 .review-form .stars label.star-5:hover ~ span {
-  width: 100% !important;
+  width: 100% ;
 }
 .review-form .stars label.star-4:hover ~ span {
-  width: 80% !important;
+  width: 80% ;
 }
 .review-form .stars label.star-3:hover ~ span {
-  width: 60% !important;
+  width: 60% ;
 }
 .review-form .stars label.star-2:hover ~ span {
-  width: 40% !important;
+  width: 40% ;
 }
 .review-form .stars label.star-1:hover ~ span {
-  width: 20% !important;
+  width: 20% ;
 }
 
 .review-form .stars span {
@@ -147,7 +148,7 @@
   top: 0;
   left: 0;
   height: 30px;
-  background: url("https://open-mesa-seeds.s3.amazonaws.com/stars.png") repeat-x 0 -60px;
+  background: url("https://open-mesa-seeds.s3.amazonaws.com/stars2.png") repeat-x 0 -60px;
 //   -webkit-transition: -webkit-width 0.5s;
 //   -moz-transition: -moz-width 0.5s;
 //   -ms-transition: -ms-width 0.5s;

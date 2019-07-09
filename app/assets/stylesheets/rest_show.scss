@@ -44,7 +44,8 @@
     flex-direction: column;
     max-width: 400px;
     width: 335px;
-    position: fixed;
+    position: sticky;
+    top: 0;
 }
 
 
@@ -264,7 +265,8 @@ input[type=date]::-webkit-outer-spin-button {
     flex-direction: column;
     max-width: 400px;
     width: 335px;
-    position: fixed;
+    position: sticky;
+    top: 0;
 }
 
 .restaurant-info-tag {

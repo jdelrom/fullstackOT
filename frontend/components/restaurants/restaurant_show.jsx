@@ -102,7 +102,7 @@ class RestaurantShow extends React.Component {
                                         <i className="fa fa-star-half-o" aria-hidden="true"></i> */}
                                     </li>
                                     <li className="restaurant-info-tag">
-                                        <p><i class="far fa-comment-alt"></i>
+                                        <p><i className="far fa-comment-alt"></i>
                                         </p>
                                         <p> {this.props.restaurant.reviews.length} reviews</p>
                                         <p><i className="fas fa-utensils"></i></p>               

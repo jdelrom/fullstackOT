@@ -15,7 +15,8 @@ export const mSP = (state, ownProps) => {
         { 
             restaurant: state.entities.restaurants[ownProps.match.params.id],
             userReservations: usRes,
-            userId: state.session.id
+            userId: state.session.id,
+            loggedIn: Boolean(state.session.id)
         }
     )
 }
@@ -68,11 +69,13 @@ class ReservationForm extends React.Component {
         let hoy = new Date().toISOString().substring(0, 10);
         let content;
         // debugger
+        if (this.props.loggedIn) {
         if (this.props.restaurant && this.props.restaurant.reservations) {
                 // debugger
                 // for (let i = 0; i < this.props.reservations.length; i++) {
                 //     let rezzo = this.props.reservations[i]
                     // debugger
+                
                     if (this.props.userReservations && this.props.userReservations[this.props.restaurant.id]) {
                         // debugger
                         // const rezzo = this.props.user.reservations[this.props.restaurant.id]
@@ -130,7 +133,7 @@ class ReservationForm extends React.Component {
                                     <div className='rest-show-h2'><h2>Make a reservation</h2></div>
                                     <div className="rest-reserve-options">
                                         <div className='rest-reserve-party-container'>
-                                            <label for="rest-reserve-party-select">Party Size</label>
+                                            <label htmlFor="rest-reserve-party-select">Party Size</label>
                                             <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
                                                 <option name='2' value="2" >For 2</option>
                                                 <option name='3' value="3">For 3</option>
@@ -145,11 +148,11 @@ class ReservationForm extends React.Component {
                                         </div>
                                         <dir className="rest-reserve-datetime-container">
                                             <div className="rest-reserve-date-container">
-                                                <label for="rest-reserve-date">Date</label>
+                                                <label htmlFor="rest-reserve-date">Date</label>
                                                 <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
                                             </div>
                                             <div className="rest-reserve-time-container">
-                                                <label for="rest-reserve-time">Time</label>
+                                                <label htmlFor="rest-reserve-time">Time</label>
                                                 <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
                                                     <option value="12:00 PM" >12:00 PM</option>
                                                     <option value="1:00 PM">1:00 PM</option>
@@ -181,7 +184,7 @@ class ReservationForm extends React.Component {
                         <div className='rest-show-h2'><h2>Make a reservation</h2></div>
                         <div className="rest-reserve-options">
                             <div className='rest-reserve-party-container'>
-                                <label for="rest-reserve-party-select">Party Size</label>
+                                <label htmlFor="rest-reserve-party-select">Party Size</label>
                                 <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
                                     <option name='2' value="2" >For 2</option>
                                     <option name='3' value="3">For 3</option>
@@ -196,11 +199,11 @@ class ReservationForm extends React.Component {
                             </div>
                             <dir className="rest-reserve-datetime-container">
                                 <div className="rest-reserve-date-container">
-                                    <label for="rest-reserve-date">Date</label>
+                                    <label htmlFor="rest-reserve-date">Date</label>
                                     <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
                                 </div>
                                 <div className="rest-reserve-time-container">
-                                    <label for="rest-reserve-time">Time</label>
+                                    <label htmlFor="rest-reserve-time">Time</label>
                                     <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
                                         <option value="12:00 PM" >12:00 PM</option>
                                         <option value="1:00 PM">1:00 PM</option>
@@ -221,7 +224,7 @@ class ReservationForm extends React.Component {
                     </div>
                 </form>
             )
-        }
+        }}
     //     let button;
     //     if (this.props.restaurant){
     //         debugger
@@ -255,7 +258,7 @@ class ReservationForm extends React.Component {
             //         <div className='rest-show-h2'><h2>Make a reservation</h2></div>
             //         <div className="rest-reserve-options">
             //             <div className='rest-reserve-party-container'>
-            //                 <label for="rest-reserve-party-select">Party Size</label>
+            //                 <label htmlFor="rest-reserve-party-select">Party Size</label>
             //                 <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
             //                     <option name='2' value="2" >For 2</option>
             //                     <option name='3' value="3">For 3</option>
@@ -270,11 +273,11 @@ class ReservationForm extends React.Component {
             //             </div>
             //             <dir className="rest-reserve-datetime-container">
             //                 <div className="rest-reserve-date-container">
-            //                     <label for="rest-reserve-date">Date</label>
+            //                     <label htmlFor="rest-reserve-date">Date</label>
             //                     <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date"  />
             //                 </div>
             //                 <div className="rest-reserve-time-container">
-            //                     <label for="rest-reserve-time">Time</label>
+            //                     <label htmlFor="rest-reserve-time">Time</label>
             //                     <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
             //                         <option value="12:00 PM" >12:00 PM</option>
             //                         <option value="1:00 PM">1:00 PM</option>
