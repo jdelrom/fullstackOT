@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RestaurantIndexItem = ({restaurant}) => {
-    // debugger
+    debugger
     let rand = restaurant.reviews.length
     let amountStars = 0;
     debugger

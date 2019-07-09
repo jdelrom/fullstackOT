@@ -40,14 +40,23 @@ class Restaurant extends React.Component {
         // const listRestItems = this.props.restaurants.map(restaurant => {
         //     return <RestaurantIndexItem restaurant={restaurant} />
         // })
-        const listRest = this.props.restaurants.map(restaurant => {
-            return (
+        let listRest;
+        if (this.props.restaurants.length > 0) {
+            listRest = this.props.restaurants.map(restaurant => {
+                return (
+                    <>
+                        <RestaurantIndexItem restaurant={restaurant} />
+                    </>
+                )
+            })
+        } else {
+            listRest = (
                 <>
-                    <RestaurantIndexItem restaurant={restaurant} />
+                    <h1>Sorry, no restaurants match your search!</h1>
                 </>
             )
-        })
-        // debugger
+        }
+        debugger
         return (
             <>
             <NavbarContainer />
