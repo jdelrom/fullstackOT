@@ -13,7 +13,7 @@
 .duo-img {
     height: 144px;
     width: 144px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .img-duo-brother {
@@ -24,11 +24,11 @@
 .duo-img > img {
     height: 144px;
     width: 144px;
-    object-fit: fill
+    object-fit: cover;
 }
 
 .img-duo-brother > img {
     height: 288px;
     width: 288px;
-    object-fit: fill
+    object-fit: cover;
 }
