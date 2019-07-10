@@ -75,8 +75,12 @@ class Greeting extends React.Component {
                     <div className='background-header'><h1>Find your mesa for any occasion</h1></div>
                 </div>
                 <img src="https://open-mesa-seeds.s3.amazonaws.com/restaurant.png" /> 
-                <RestCarousel />      
-                <Footer />        
+                <div>
+                    <RestCarousel /> 
+                </div>    
+                <div>
+                    <Footer />  
+                </div>     
             </>
             
             )
