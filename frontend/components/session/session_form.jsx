@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
     }
     
     render() {
-        // debugger
+        
         let emailInput = "email-input";
         let passwordInput = "password-input";
         const demoUser = { email: "userdemo@mock.com", password: "123456"}
@@ -42,12 +42,12 @@ class SessionForm extends React.Component {
                     passwordInput = "errors-render"
                 }
             }
-            // debugger
+            
             errors = this.props.errors.map((error, index) => {
                 return <li key={index}> {error} </li>
             })
         }
-        // debugger
+        
        
         return (
             <div className="login-form">

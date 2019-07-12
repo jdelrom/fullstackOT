@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RestaurantIndexItem = ({restaurant}) => {
-    debugger
+    
     let rand = restaurant.reviews.length
     let amountStars = 0;
-    debugger
+    
     for (let i = 0; i < restaurant.reviews.length; i++) {
         amountStars += restaurant.reviews[i].rating
     }
@@ -13,7 +13,7 @@ const RestaurantIndexItem = ({restaurant}) => {
     let faStars = _.times(amountStars, () => {
         return (<i className="fa fa-star"></i>)
     })
-    debugger
+    
     return (
         <div className="rest-index-items-container">
             

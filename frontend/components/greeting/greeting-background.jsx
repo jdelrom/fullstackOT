@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {fetchRestaurants} from '../../actions/restaurant_actions';
 
 export const mSP = (state, ownProps) => {
-    // debugger
+    
     return (
         {
             restaurants: state.entities.restaurants

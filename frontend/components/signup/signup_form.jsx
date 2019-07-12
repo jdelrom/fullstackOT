@@ -20,29 +20,29 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const { password, confirmPassword } = this.state;
-        // debugger
+        
         if (password !== confirmPassword) {
             this.props.displayConfirmError(["Passwords do not match"])
             this.props.displayConfirmError(['Please re-enter your password'])
         } else {
-            // debugger
+            
             const newState = merge({}, this.state);
-            // debugger
+            
             delete newState['confirmPassword'];
-            // debugger
+            
             this.props.signUp(newState).then(() => this.props.closeModal())
         }
         // this.props.signUp(this.state);
     }
 
     render() {
-        // debugger
+        
         let emailInput = "email-signup";
         let passwordInput = "password-signup";
         let fnameInput = "fname";
         let lnameInput = "lname";
         let confirmPasswordInput = "confirm-password-signup"
-        // debugger
+        
         // const span = span = document.getElementsByClassName("close")[0];
         let errors;
         if (this.props.errors.length > 0) {

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { createReview, deleteReview, updateReview } from '../../actions/review_actions';
 
 export const mSP = (state, ownProps) => {
-    // debugger
+    
     return (
         {
             restaurant: state.entities.restaurants[ownProps.match.params.id],
@@ -25,7 +25,7 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
         let defReview;
-        // debugger
+        
         for (let i = 0; i < this.props.restReviews.length; i++) {
             if (this.props.restReviews[i].user_id === this.props.userId) {
                 this.state = {
@@ -54,7 +54,7 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
+        
         this.props.createReview(this.state)
         this.setState({
             review: '',
@@ -64,7 +64,7 @@ class ReviewForm extends React.Component {
 
     handleEdit(e) {
         e.preventDefault();
-        // debugger
+        
         this.props.updateReview(this.state)
         this.setState({
             review: '',
@@ -74,18 +74,18 @@ class ReviewForm extends React.Component {
     
 
     handleRadio(key) {
-        // debugger
+        
         return (e) => {
             this.setState({ [key]: e.target.innerText })
-            debugger
+            
         }
     }
     
     handleChange(key) {
-        debugger
+        
         return (e) => {
             this.setState({ [key]: e.target.value })
-            debugger
+            
         }
     }
 
@@ -101,9 +101,9 @@ class ReviewForm extends React.Component {
 
         let revForm;
         if (loggedIn) {
-            // debugger
+            
             for (let i = 0; i < restReviews.length; i++) {
-                // debugger
+                
                 if (restReviews[i].user_id === userId) {
                     revForm = (
                         <div className='review-form-container'>
@@ -160,7 +160,7 @@ class ReviewForm extends React.Component {
             )
             
         }
-        // debugger
+        
             let rating = [];
              for (let i = 1; i < 6; i++) {
                 if (this.state.rating >= i) {

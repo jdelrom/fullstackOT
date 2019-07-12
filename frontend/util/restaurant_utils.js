@@ -13,7 +13,7 @@ export const fetchRestaurant = (id) => {
 }
 
 export const searchRestaurants = (search) => {
-    // debugger
+    
     return $.ajax({
         method: "GET",
         url: "/api/restaurants",

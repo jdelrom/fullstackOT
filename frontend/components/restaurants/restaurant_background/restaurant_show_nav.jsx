@@ -8,17 +8,17 @@ class RestShowNav extends React.Component {
     }
 
     // componentDidUpdate() {
-    //     debugger
+    
     //     this.props.fetchRestaurant(this.props.match.params.id)
     // }
 
     // componentDidMount() {
-    //     // debugger
+    
     //     this.props.fetchRestaurant(this.props.match.params.id)
     // }
 
     render() {
-        // debugger
+        
         if (Object.values(this.props.restaurant).length === 0) { return null }
         return (
             <div className="rest-show-img-container">

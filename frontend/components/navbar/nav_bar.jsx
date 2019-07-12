@@ -4,7 +4,7 @@ import React from 'react'
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
+       
         this.state = {
             toggle: 'hidden',
         }
@@ -14,14 +14,14 @@ class Navbar extends React.Component {
 
 
     componenetDidUpdate() {
-        // debugger
+       
         if (prevProps.location !== this.props.location) {
-            // debugger
+           
             const searchString = this.props.location.search.slice(9)
             const searchWords = searchString.split("%20")
-            // debugger
+           
             const keywords = { keyword: searchWords.join(" ") }
-            // debugger
+           
             this.props.searchRestaurants(keywords) || this.props.fetchRestaurants();
         }
     }
@@ -58,7 +58,7 @@ render() {
     //      searchBar = <SearchBar />
     // }
     if (this.props.currentUser) {
-        // debugger
+       
         content = (
                 <div className="greet-intro">
                     <button onClick={this.dropDownClick} className="user-button">Hi, {this.props.currentUser.fname}

@@ -22,7 +22,7 @@ class RestCarousel extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
+        
         this.props.fetchRestaurants()
     }
 
@@ -56,7 +56,7 @@ class RestCarousel extends React.Component {
         if (restaurants.length === 0) {
             return null
         } else if (this.state.mode === 'more') {
-            // debugger
+            
             return (
                 <section className="more-container">
                     <div className='carousel-rest-container'>

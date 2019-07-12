@@ -4,7 +4,7 @@ import { searchRestaurants, fetchRestaurants} from '../../actions/restaurant_act
 import Restaurant from './restaurant';
 
 export const mSP = (state, ownProps) => {   
-    // debugger
+    
     return {
         restaurants: Object.values(state.entities.restaurants),    
     }

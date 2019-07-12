@@ -15,10 +15,10 @@ class Api::RatesReviewsController < ApplicationController
 
     ##@
     def create
-        # debugger
+        
         @rates_review = RatesReview.new(rates_review_params)
         @rates_review.user_id = current_user.id
-        # debugger
+        
         if @rates_review.save!
             render :show
         else
@@ -29,7 +29,7 @@ class Api::RatesReviewsController < ApplicationController
 
     def update
         @rates_review = RatesReview.find_by(id: params[:id])
-        # debugger 
+         
         if @rates_review.update(rates_review_params)
             render :show
         else

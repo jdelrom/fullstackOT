@@ -15,7 +15,7 @@ class Reviews extends React.Component {
             return (<i className="fa fa-star"></i>)
         })
         
-        debugger
+        
         return (
             <div className="review-parent">
               

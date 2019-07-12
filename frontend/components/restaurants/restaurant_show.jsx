@@ -14,22 +14,22 @@ class RestaurantShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchRestaurant(this.props.match.params.id)
-        // debugger
+        
     }
 
     render() {
         const {reviews, restaurant} = this.props;
-        // debugger
+        
         let amountStars = 0;
         let faStars;
-        debugger
+        
         if (this.props.reviews !== undefined) {
             let reviewArr = Object.values(reviews);
             for (let i = 0; i < reviewArr.length; i++) {
                 amountStars += reviewArr[i].rating
             }
             amountStars = Math.floor(amountStars / reviewArr.length)
-            debugger
+            
             faStars = _.times(amountStars, () => {
                 return (<i className="fa fa-star"></i>)
         })}
@@ -39,7 +39,7 @@ class RestaurantShow extends React.Component {
         // })
         let bookings;
         if (this.props.restaurant) {
-            // debugger
+            
             if (this.props.restaurant.reservations) {
                 if (this.props.restaurant.reservations.length > 0 )
                 bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
@@ -47,7 +47,7 @@ class RestaurantShow extends React.Component {
                 return null;
             }
         }
-        // debugger
+        
         let reviewList;
         if (this.props.reviews !== undefined) {
             let reviewItems = Object.values(this.props.reviews)
@@ -59,7 +59,7 @@ class RestaurantShow extends React.Component {
         } else {
             reviewList = <div></div>
         } 
-        // debugger
+        
         return (
            <>
             <div className='rest-show-uncle'>

@@ -38,20 +38,20 @@ class Greeting extends React.Component {
     // }
 
     componentDidMount() {
-        // debugger
+        
         this.props.fetchRestaurants()
-        // debugger
+        
     }
     
 
     render() {
-        // debugger
+        
         let hoy = new Date().toISOString().substring(0, 10);
         // hoy = hoy[1] + '/' + hoy[2] + '/' + hoy[0]
         
         
         
-        // debugger
+        
         return (
             <>
                 {/* <div className="calendar">

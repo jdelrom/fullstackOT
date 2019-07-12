@@ -5,9 +5,9 @@ class Api::ReservationsController < ApplicationController
 
     def create
         @reservation = Reservation.new(reservation_params)
-        # debugger
+        
         @reservation.user_id = current_user.id
-        # debugger
+        
         if @reservation.save!
             #push reservation id onto user and restaurant
             #set up an array with user and restaurant to take in 
@@ -19,7 +19,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def index
-        # debuggerq
+        
         @reservations = Reservation.where(restaurant_id: params[:restaurant_id])
         render :index
     end
@@ -38,7 +38,7 @@ class Api::ReservationsController < ApplicationController
     private
 
     def reservation_params
-        # debugger
+        
         params.require(:reservation).permit(
             :party_size,
             :reservation_time,

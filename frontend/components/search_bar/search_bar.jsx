@@ -30,21 +30,21 @@ class SearchBar extends React.Component {
     }
 
     // componenetDidUpdate() {
-    //     debugger
+   
     //     if (prevProps.location !== this.props.location) {
-    //         debugger
+    
     //         const searchString = this.props.location.search.slice(9)
     //         const searchWords = searchString.split("%20")
-    //         debugger
+    
     //         const keywords = { keyword: searchWords.join(" ") }
-    //         debugger
+    
     //         this.props.searchRestaurants(keywords) || this.props.fetchRestaurants();
     //     }
     // }
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
+        
         if (this.state === "") {
             this.props.history.push('/restaurants')
         } else {
@@ -67,7 +67,7 @@ class SearchBar extends React.Component {
             );
         };
         
-        // debugger
+        
         return (
             <div className={cssClassName("restaurant-search-container")}>
         
