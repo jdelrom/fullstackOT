@@ -11,6 +11,7 @@ Restaurant.delete_all
 User.delete_all
 Reservation.delete_all
 RatesReview.delete_all
+Favorite.delete_all
 
 minutes = ['00', '15', '30', '45']
 def random_date_in_year(year)
@@ -28,6 +29,8 @@ User.create({ email: "userdemo@mock.com", password: "123456", fname: 'user', lna
         lname: Faker::Name.last_name
     })
 end
+
+
 
 
 urls = [
@@ -81,6 +84,13 @@ end
         restaurant_id: restaurant_ids.sample,
         rating: rand(1..5),
         review: Faker::Restaurant.review
+    })
+end
+
+10.times do
+    Favorite.create({
+        user_id: user_ids.sample,
+        restaurant_id: restaurant_ids.sample
     })
 end
 # files = urls.map { |url| open(url) }

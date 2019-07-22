@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 // import { createReservation, deleteReservation } from './actions/reservation_actions';
-import { createReview, deleteReview, fetchReview, updateReview } from './actions/review_actions';
+// import { createReview, deleteReview, fetchReview, updateReview } from './actions/review_actions';
 // import {createReview, deleteReview, fetchReview } from './util/review_utils';
 // import { login, logout, signUp } from './actions/session_actions';
 // import { fetchRestaurants, fetchRestaurant } from './actions/restaurant_actions';
+import { createFavorite, deleteFavorite, fetchFavorite } from './util/favorite_utils';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,9 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     //TESTING START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.createFavorite = createFavorite;
+    window.deleteFavorite = deleteFavorite;
+    window.fetchFavorite = fetchFavorite;
     // window.createReview = createReview;
-    window.deleteReview = deleteReview;
-    window.updateReview = updateReview;
+    // window.deleteReview = deleteReview;
+    // window.updateReview = updateReview;
     // window.fetchReview = fetchReview;
     // window.createReservation = createReservation
     // window.deleteReservation = deleteReservation

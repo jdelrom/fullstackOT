@@ -4,13 +4,14 @@ class Api::RestaurantsController < ApplicationController
         
         if params[:search]
             
-            @restaurants = Restaurant.search(params[:search]).includes(:reservations, :rates_reviews)
+            @restaurants = Restaurant.search(params[:search]).includes(:reservations, :rates_reviews, :favorites)
             
             render :index
         else
             
-            @restaurants = Restaurant.all.includes(:reservations, :rates_reviews)
+            @restaurants = Restaurant.all.includes(:reservations, :rates_reviews, :favorites)
             render :index
+            
         end
     end
 

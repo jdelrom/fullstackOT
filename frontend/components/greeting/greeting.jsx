@@ -39,7 +39,7 @@ class Greeting extends React.Component {
 
     componentDidMount() {
         
-        this.props.fetchRestaurants()
+        // this.props.fetchRestaurants()
         
     }
     

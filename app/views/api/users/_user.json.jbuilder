@@ -15,5 +15,7 @@ json.reviews do
             json.set! review.id, review
         end
     end
+
+json.favorites user.favorites
 # end
 # json.restaurants user.reservations.pluck(:restaurant_id)

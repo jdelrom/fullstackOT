@@ -3,7 +3,7 @@ class Api::FavoritesController < ApplicationController
 
     def create
         @favorite = Favorite.new(favorite_params)
-        @favorite.user_id = current_user.id
+        # @favorite.user_id = current_user.id
 
         if @favorite.save!
             render :show
@@ -14,8 +14,14 @@ class Api::FavoritesController < ApplicationController
     end
 
     def index
-        @favorites = Favorite.where(restaurant_id: params(:restaurant_id))
+        # @favorites = Favorite.where(restaurant_id: params(:restaurant_id))
+        @favorites = Favorite.all
         render :index
+    end
+
+    def show
+        @favorite = Favorite.find_by(id: params[:id])
+        render :show
     end
 
     def destroy
