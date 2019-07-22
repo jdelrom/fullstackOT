@@ -1,6 +1,7 @@
 import { RECEIVE_RESTAURANTS, RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
 import {RECEIVE_RESERVATION, REMOVE_RESERVATION } from '../actions/reservation_actions';
 import {RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
+import { RECEIVE_FAVORITE, REMOVE_FAVORITE } from '../actions/favorite_actions'
 import { merge, remove } from 'lodash';
 
 const restaurantsReducer = (state = {}, action) => {
@@ -38,6 +39,23 @@ const restaurantsReducer = (state = {}, action) => {
             // delete nwState['reviews'][action.id.id]
             nwState[action.id.restaurant_id]['reviews'] = filter
             return nwState
+
+        case RECEIVE_FAVORITE:
+            const nuevoState = merge({}, state);
+            debugger
+            nuevoState[action.favorite.restaurant_id]['favorites'].push(action.favorite)
+            return merge({}, state, nuevoState);
+
+        case REMOVE_FAVORITE:
+            const nuevState = merge({}, state);
+
+            let nfilter = nuevState[action.id.restaurant_id]['favorites'].filter(obj => {
+                if (obj.id !== action.id.id) return obj;
+            })
+            debugger
+            nuevState[action.id.restaurant_id]['favorites'] = nfilter
+            return nuevState
+
         default:
             return state
     }

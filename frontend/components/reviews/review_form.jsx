@@ -105,6 +105,7 @@ class ReviewForm extends React.Component {
             for (let i = 0; i < restReviews.length; i++) {
                 
                 if (restReviews[i].user_id === userId) {
+                    
                     revForm = (
                         <div className='review-form-container'>
                             <form onSubmit={this.handleEdit} className='review-form'>
@@ -129,7 +130,9 @@ class ReviewForm extends React.Component {
                     )
                     
                 } else {
+                    
                     revForm = (
+                        
                         <div className='review-form-container'>
                             <form onSubmit={this.handleSubmit} className='review-form'>
                                 <div onClick={this.handleChange('rating')} className="stars">

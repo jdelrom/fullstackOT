@@ -13,14 +13,15 @@ export const receiveRestaurants = (restaurants) => {
     })
 }
 
-export const receiveRestaurant = ({restaurant, reservations, reviews}) => 
+export const receiveRestaurant = ({restaurant, reservations, reviews, favorites}) => 
     {   
         return (
         {
             type: RECEIVE_RESTAURANT,
             restaurant,
             reservations,
-            reviews
+            reviews,
+            favorites
         })}
 
 export const fetchRestaurants = () => (dispatch) => {

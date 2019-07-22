@@ -11,14 +11,15 @@ class Api::RestaurantsController < ApplicationController
             
             @restaurants = Restaurant.all.includes(:reservations, :rates_reviews, :favorites)
             render :index
-            
+
         end
     end
 
     def show
         
-        @restaurant = Restaurant.includes(:reservations, :rates_reviews).find(params[:id])
+        @restaurant = Restaurant.includes(:reservations, :rates_reviews, :favorites).find(params[:id])
         render :show
+        
     end
     
     private

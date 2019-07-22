@@ -10,6 +10,10 @@ const usersReducer = (state = {}, action) => {
                 [action.currentUser.id]: action.currentUser
             }
             return merge({}, state, newState)
+
+        case RECEIVE_FAVORITE:
+
+        
         case RECEIVE_RESERVATION:
             
             const nwInfo = {[action.reservation.restaurant_id]: action.reservation.id }

@@ -11,7 +11,8 @@ export const mSP = (state, ownProps) => {
         {
             restaurant: state.entities.restaurants[ownProps.match.params.id] || {},
             reservations: state.entities.restaurants.reservations,
-            reviews: state.entities.reviews
+            reviews: state.entities.reviews,
+            favorites: state.entities.favorites
         }
     )
     

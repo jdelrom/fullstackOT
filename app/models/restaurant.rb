@@ -25,13 +25,14 @@ class Restaurant < ApplicationRecord
     
     has_many :rates_reviews,
         class_name: :RatesReview
+    
+    has_many :favorites,
+        class_name: :Favorite
 
     has_many :users,
         through: :reservations,
         source: :user
 
-    has_many :favorites,
-        class_name: :Favorite
         
     has_many_attached :photos
 

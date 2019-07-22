@@ -70,7 +70,7 @@ class ReservationForm extends React.Component {
         let content;
         
         if (this.props.loggedIn) {
-        if (this.props.restaurant && this.props.restaurant.reservations) {
+            if (this.props.restaurant && this.props.restaurant.reservations) {
                 
                 // for (let i = 0; i < this.props.reservations.length; i++) {
                 //     let rezzo = this.props.reservations[i]

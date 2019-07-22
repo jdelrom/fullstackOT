@@ -11,6 +11,15 @@ json.reservations do
         end
     end
 end
+
+json.favorites do
+    @restaurant.favorites.each do |favorite|
+        json.set! favorite.id do
+            json.partial! 'api/favorites/favorite', favorite: favorite 
+        end
+    end
+end
+
 json.reviews do
 #   json.review_ids @restaurant.reviews.map(&:id)
     @restaurant.rates_reviews.each do |review|
@@ -19,4 +28,5 @@ json.reviews do
         end
     end
 end
+
 

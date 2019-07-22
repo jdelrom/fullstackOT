@@ -6,13 +6,15 @@ import {merge} from 'lodash'
 const reservationReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
+        case RECEIVE_RESTAURANT:
+            return action.reservations
         case RECEIVE_RESERVATION:
             
             return merge({}, state, {[action.reservation.id]: action.reservation} )
         case REMOVE_RESERVATION:
             
             const newState = merge({}, state);
-            delete newState[action.id]
+            delete newState[action.id.id]
             return newState;
         // case RECEIVE_RESTAURANT:
         //     return action.data.reservations;

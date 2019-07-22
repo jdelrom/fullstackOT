@@ -1,5 +1,5 @@
 export const createFavorite = ( favorite ) => {
-    // debugger
+   
     return $.ajax({
         method: 'POST',
         url: '/api/favorites/',
@@ -8,7 +8,7 @@ export const createFavorite = ( favorite ) => {
 }
 
 export const fetchFavorite = (id) => {
-    // debugger
+    
     return $.ajax({
         method: 'GET',
         url: `/api/favorites/${id}`

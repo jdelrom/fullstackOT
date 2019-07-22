@@ -16,6 +16,10 @@ json.reviews do
         end
     end
 
-json.favorites user.favorites
+json.favorites do 
+    user.favorites.each do |favorite|
+        json.set! favorite.restaurant_id, favorite.id
+    end
+end
 # end
 # json.restaurants user.reservations.pluck(:restaurant_id)

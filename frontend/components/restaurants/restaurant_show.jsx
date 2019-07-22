@@ -5,6 +5,7 @@ import RestShowNavContainer from './restaurant_background/restaurant_show_nav_co
 import ReviewForm from '../reviews/review_form';
 import Footer from '../footer/footer';
 import Reviews from '../reviews/reviews';
+import Favorites from '../favorites/favorite';
 import { times } from 'lodash';
 
 class RestaurantShow extends React.Component {
@@ -37,6 +38,7 @@ class RestaurantShow extends React.Component {
         // let faStars = _.times(this.props.restaurant.rating, () => {
         //     return (<i className="fa fa-star"></i>)
         // })
+        // let favorites = <Favorites restaurant={this.props.restaurants} />
         let bookings;
         if (this.props.restaurant) {
             
@@ -59,7 +61,6 @@ class RestaurantShow extends React.Component {
         } else {
             reviewList = <div></div>
         } 
-        
         return (
            <>
             <div className='rest-show-uncle'>
@@ -135,6 +136,7 @@ class RestaurantShow extends React.Component {
                             </div>
                         </div>
                     {form}
+                    <Favorites />
                 </div>
             <Footer />
             </div>
