@@ -27,19 +27,25 @@ export const receiveRestaurant = ({restaurant, reservations, reviews, favorites}
 export const fetchRestaurants = () => (dispatch) => {
     return RestaurantApiUtil.fetchRestaurants().then(restaurants => {
         return dispatch(receiveRestaurants(restaurants))
-    })
-}
+    });
+};
 
 export const fetchRestaurant = (id) => (dispatch) => {
     return RestaurantApiUtil.fetchRestaurant(id).then(restaurant => {
         return dispatch(receiveRestaurant(restaurant))
-    })
-}
+    });
+};
 
 export const searchRestaurants = (search) => (dispatch) => {
     
     return RestaurantApiUtil.searchRestaurants(search).then(response => {
         
         return dispatch(receiveRestaurants(response));
-    })
-}
+    });
+};
+
+export const zomatoRestaurants = () => (dispatch) => {
+    return RestaurantApiUtil.zomatoRestaurants().then(response => {
+        return dispatch(receiveRestaurant(response))
+    });
+};

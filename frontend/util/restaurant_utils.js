@@ -20,3 +20,12 @@ export const searchRestaurants = (search) => {
         data: search
     })
 }
+
+export const zomatoRestaurants = () => {
+
+    return $.ajax({
+        method: 'GET',
+        url: 'https://developers.zomato.com/api/v2.1/locations?query=New%20York%20City&count=25'
+
+    })
+}

@@ -17,7 +17,6 @@
 #
 
 class Restaurant < ApplicationRecord
-    # include PgSearch
     validates :name, :aboutme, :address, :city, :zipcode, :phone, :capacity, :tag, presence: true
     
     has_many :reservations,
@@ -36,21 +35,7 @@ class Restaurant < ApplicationRecord
         
     has_many_attached :photos
 
-    # pg_search_scope :find_by_type, against: [
-    #     :name, 
-    #     :aboutme, 
-    #     :address, 
-    #     :city, 
-    #     :zipcode, 
-    #     :phone, 
-    #     :capacity, 
-    #     :tag
-    # ], using: {
-    #         tsearch: { 
-    #             prefix: true,
-    #             any_word: true,
-    #         }
-    #     }
+    
 
     def self.search(params)
         str = "%#{params}%"
