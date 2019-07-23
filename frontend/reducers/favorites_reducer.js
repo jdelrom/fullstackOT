@@ -7,16 +7,15 @@ const favoriteReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_RESTAURANT:
-            // debugger 
             return action.favorites
         case RECEIVE_FAVORITE:
-            debugger
+            
             return merge({}, state, {
                 [action.favorite.id]: action.favorite
             })
         case REMOVE_FAVORITE:
             const newState = merge({}, state);
-            debugger
+            
             delete newState[action.id.id]
             return newState;
         default:

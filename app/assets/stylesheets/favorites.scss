@@ -1,0 +1,61 @@
+.tool-tip-unfavorite {
+    visibility: hidden;
+}
+
+.tool-tip-favorite {
+    visibility: hidden;
+}
+
+
+.favorite-container {
+    cursor: pointer;
+    
+    button {
+        border: none;
+        outline: none;
+
+        i {
+            font-size: 20px;
+            
+            p {
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+
+        i:hover {
+
+            .tool-tip-unfavorite {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.favorite-selected {
+    cursor: pointer;
+}
+
+
+.favorite-unselected {
+    cursor: pointer;
+
+}
+
+.favorite-form {
+
+    button {
+
+        i:hover {
+
+            .tool-tip-favorite{
+                
+                visibility: visible;
+
+            }
+        }
+        
+    }
+      
+    
+}
