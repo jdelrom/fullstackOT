@@ -87,7 +87,12 @@ class RestaurantShow extends React.Component {
                                         <li>
                                             Reviews
                                         </li>
-                                        {bookings}
+                                        <li>
+                                            {bookings}
+                                        </li>
+                                        <li>
+                                            <Favorites />
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -136,7 +141,7 @@ class RestaurantShow extends React.Component {
                             </div>
                         </div>
                     {form}
-                    <Favorites />
+                    
                 </div>
             <Footer />
             </div>
@@ -146,26 +151,3 @@ class RestaurantShow extends React.Component {
 }
 
 export default RestaurantShow;
-{/* <div className='rest-reservation-container'>
-    <div className='rest-show-h2'><h2>Make a reservation</h2></div> 
-    <div className="rest-reserve-options">
-    <div className='rest-reserve-party-container'>
-        <label for="rest-reserve-party-select">Party Size</label>
-        <select name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
-            <option value="2 people">For 2</option>
-        </select>
-    </div>
-    <dir className="rest-reserve-datetime-container">
-        <div className="rest-reserve-date-container">  
-            <label for="rest-reserve-date">Date</label>
-            <input className='rest-reserve-date' type="date" />
-        </div> 
-        <div className="rest-reserve-time-container">
-            <label for="rest-reserve-time">Time</label>
-            <select className="rest-reserve-time" > 
-                <option value="7pM">7:00 PM</option>
-            </select>
-         </div>
-    </dir>
-</div>
-</div> */}

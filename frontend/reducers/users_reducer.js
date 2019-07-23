@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_RESERVATION, REMOVE_RESERVATION } from '../actions/reservation_actions';
+import { RECEIVE_FAVORITE, REMOVE_FAVORITE } from '../actions/favorite_actions'
 import { merge } from 'lodash';
 
 const usersReducer = (state = {}, action) => {
@@ -12,8 +13,15 @@ const usersReducer = (state = {}, action) => {
             return merge({}, state, newState)
 
         case RECEIVE_FAVORITE:
-
-        
+            const newState2 = merge({}, state);
+            newState2[action.favorite.user_id].favorites[action.favorite.restaurant_id] = action.favorite.id
+            
+            return newState2;
+        case REMOVE_FAVORITE:
+            const newState3 = merge({}, state);
+            debugger
+            delete newState3[action.id.user_id].favorites[action.id.restaurant_id];
+            return newState3;
         case RECEIVE_RESERVATION:
             
             const nwInfo = {[action.reservation.restaurant_id]: action.reservation.id }

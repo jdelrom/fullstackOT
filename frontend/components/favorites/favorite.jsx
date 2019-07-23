@@ -30,24 +30,24 @@ export const mDP = (dispatch) => ({
 class Favorites extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            user_id: this.props.currentUser.id,
-            restaurant_id: this.props.restaurant.id
-        } 
-        
+        if (this.props.loggedIn) {
+            this.state = {
+                user_id: this.props.currentUser.id,
+                restaurant_id: this.props.restaurant.id
+            } 
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({
-            user_id: this.props.userId,
-            restaurant_id: this.props.restaurant.id
-        })
-        debugger
+        // this.setState({
+        //     user_id: this.props.userId,
+        //     restaurant_id: this.props.restaurant.id
+        // })
         this.props.createFavorite(this.state)
-        this.setState({user_id: null, restaurant_id: null})
+        // this.setState({user_id: null, restaurant_id: null})
     }
 
     handleChange(e) {
@@ -58,34 +58,40 @@ class Favorites extends React.Component {
     render() {
         const { createFavorite, deleteFavorite, restaurant, loggedIn, userId, userFavorites, currentUser } = this.props;
 
-        // debugger
         let selectFavorite;
         if (loggedIn) {
-            // debugger
             if (restaurant && restaurant.favorites) {
-                debugger
+                
                 if (currentUser.favorites && currentUser.favorites[restaurant.id]) {
-                    debugger
+                    
                     selectFavorite = ( 
                         <div className='favorite-container'>
                             
-                                <button onClick={() => deleteFavorite(userFavorites[restaurant.id]).then(this.setState({user_Id: null, restaurant_id: null}) )} className='favorite-selected'>Unfavorite</button>
+                            <button onClick={() => deleteFavorite(userFavorites[restaurant.id]).then(this.setState({ user_Id: currentUser.id, restaurant_id: restaurant.id }))} className='favorite-selected'>
+                                <i className="fas fa-thumbs-up">
+                                    <p className='tool-tip-unfavorite'>Unfavorite?</p>
+                                </i>
+                            </button>
                             
                         </div>
                     )
                 } else {
-                    debugger
+                    
                     selectFavorite = (
                         <div className='favorite-container'>
                             <form onSubmit={this.handleSubmit} className='favorite-form'>
-                                <button className='favorite-unselected'>Favorite?</button>
+                                <button className='favorite-unselected'>
+                                    <i className="far fa-thumbs-up">
+                                        <p className='tool-tip-favorite'>Favorite?</p>
+                                    </i>
+                                </button>
                             </form>
                         </div>
                     )
                 }
             }
         }
-        debugger
+        
         return (
             <>
                 {selectFavorite}

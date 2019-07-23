@@ -42,7 +42,7 @@ const restaurantsReducer = (state = {}, action) => {
 
         case RECEIVE_FAVORITE:
             const nuevoState = merge({}, state);
-            debugger
+            
             nuevoState[action.favorite.restaurant_id]['favorites'].push(action.favorite)
             return merge({}, state, nuevoState);
 
@@ -52,7 +52,7 @@ const restaurantsReducer = (state = {}, action) => {
             let nfilter = nuevState[action.id.restaurant_id]['favorites'].filter(obj => {
                 if (obj.id !== action.id.id) return obj;
             })
-            debugger
+            
             nuevState[action.id.restaurant_id]['favorites'] = nfilter
             return nuevState
 
