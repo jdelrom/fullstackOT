@@ -29,6 +29,7 @@ div.logo {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    margin-left: 35px;
 }
 
 .logo-links > li {
@@ -354,5 +355,9 @@ button {
 }
 
 .root {
-    margin: 0 35px;
+    /* margin: 0 35px; */
+}
+
+.static-nav-bar1 {
+    margin-right: 35px;
 }

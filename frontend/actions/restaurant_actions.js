@@ -6,7 +6,7 @@ export const RECEIVE_ZOMATO = 'RECEIVE_ZOMATO';
 
 
 export const receiveRestaurants = (restaurants) => {
-    debugger
+    
     return (
     {
         type: RECEIVE_RESTAURANTS,
@@ -55,9 +55,9 @@ export const searchRestaurants = (search) => (dispatch) => {
 };
 
 export const zomatoRestaurants = () => (dispatch) => {
-    debugger
+    
     return RestaurantApiUtil.zomatoRestaurants().then(response => {
-        debugger
+        
         return dispatch(receiveZomato(response))
     });
 };

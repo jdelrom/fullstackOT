@@ -58,7 +58,7 @@ class Restaurant extends React.Component {
         }
         
         let zomatoRest = this.props.zomatoRestaurants();
-        debugger
+         
         return (
             <>
             <NavbarContainer />

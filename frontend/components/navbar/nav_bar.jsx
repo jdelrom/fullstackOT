@@ -100,7 +100,7 @@ render() {
                     </a>
                 </li>
             </ul> 
-            <div>
+            <div className='static-nav-bar1'>
                 {/* <div className='search-bar-in-nav'>
                     {searchBar}
                 </div> */}
