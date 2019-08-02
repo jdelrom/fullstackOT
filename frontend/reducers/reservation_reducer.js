@@ -7,7 +7,7 @@ const reservationReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_RESTAURANT:
-            debugger
+            
             return action.reservations
         case RECEIVE_RESERVATION:
             

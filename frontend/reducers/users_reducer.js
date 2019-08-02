@@ -19,7 +19,7 @@ const usersReducer = (state = {}, action) => {
             return newState2;
         case REMOVE_FAVORITE:
             const newState3 = merge({}, state);
-            debugger
+            
             delete newState3[action.id.user_id].favorites[action.id.restaurant_id];
             return newState3;
         case RECEIVE_RESERVATION:

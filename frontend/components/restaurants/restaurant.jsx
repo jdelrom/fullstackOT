@@ -56,7 +56,7 @@ class Restaurant extends React.Component {
                 </>
             )
         }
-        debugger
+        
         let zomatoRest = this.props.zomatoRestaurants();
         debugger
         return (

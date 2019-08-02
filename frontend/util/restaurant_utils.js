@@ -25,7 +25,28 @@ export const zomatoRestaurants = () => {
 
     return $.ajax({
         method: 'GET',
-        url: 'https://developers.zomato.com/api/v2.1/locations?query=New%20York%20City&count=25'
+        url: 'https://cors-anywhere.herokuapp.com/developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&count=30&sort=rating&order=asc',
+        dataType: 'JSON',
+        headers: {
+            "user-key": "82c5ddec753d58490249ad45629c7669"
+        }
+    });
+};
 
-    })
-}
+// export const zomatoRestaurants = () => {
+//     let url = "https://developers.zomato.com/api/v2.1/locations?query=New%20York&count=25";
+//     url += '?' + $.param({
+//         'user-key': "82c5ddec753d58490249ad45629c7669"
+//     });
+//     $.ajax({
+//         url: url,
+//         method: 'GET',
+//         dataType: 'JSON',
+//         success: function (data) {
+//             console.log(data)
+//         },
+//         error: function (err) {
+//             console.log('error:' + err)
+//         }
+//     })
+// }

@@ -2,10 +2,11 @@ import * as RestaurantApiUtil from '../util/restaurant_utils'
 
 export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
+export const RECEIVE_ZOMATO = 'RECEIVE_ZOMATO';
 
 
 export const receiveRestaurants = (restaurants) => {
-    
+    debugger
     return (
     {
         type: RECEIVE_RESTAURANTS,
@@ -23,6 +24,15 @@ export const receiveRestaurant = ({restaurant, reservations, reviews, favorites}
             reviews,
             favorites
         })}
+
+export const receiveZomato = ({restaurants}) => {
+    return (
+        {
+            type: RECEIVE_ZOMATO,
+            restaurants
+        }
+    )
+}
 
 export const fetchRestaurants = () => (dispatch) => {
     return RestaurantApiUtil.fetchRestaurants().then(restaurants => {
@@ -45,7 +55,9 @@ export const searchRestaurants = (search) => (dispatch) => {
 };
 
 export const zomatoRestaurants = () => (dispatch) => {
+    debugger
     return RestaurantApiUtil.zomatoRestaurants().then(response => {
-        return dispatch(receiveRestaurant(response))
+        debugger
+        return dispatch(receiveZomato(response))
     });
 };

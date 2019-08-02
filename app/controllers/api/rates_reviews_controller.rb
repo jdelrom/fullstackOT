@@ -1,6 +1,6 @@
 class Api::RatesReviewsController < ApplicationController
-    # before_action :ensure_logged_in
-    # before_action :ensure_auth_user, only: [:destroy, :update]
+    before_action :ensure_logged_in
+    before_action :ensure_auth_user, only: [:destroy, :update]
 
     def index
         @rates_reviews = RatesReview.all
