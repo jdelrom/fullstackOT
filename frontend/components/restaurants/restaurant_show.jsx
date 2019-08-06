@@ -43,7 +43,9 @@ class RestaurantShow extends React.Component {
         if (this.props.restaurant) {
             
             if (this.props.restaurant.reservations) {
+                
                 if (this.props.restaurant.reservations.length > 0 )
+                
                 bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
             } else {
                 return null;

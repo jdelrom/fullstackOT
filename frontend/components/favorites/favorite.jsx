@@ -66,26 +66,28 @@ class Favorites extends React.Component {
                     
                     selectFavorite = ( 
                         <div className='favorite-container'>
-                            
-                            <button onClick={() => deleteFavorite(userFavorites[restaurant.id]).then(this.setState({ user_Id: currentUser.id, restaurant_id: restaurant.id }))} className='favorite-selected'>
-                                <i className="fas fa-thumbs-up">
-                                    <p className='tool-tip-unfavorite'>Unfavorite?</p>
-                                </i>
-                            </button>
-                            
+                            <div className='unfav-div-holder'>
+                                <button onClick={() => deleteFavorite(userFavorites[restaurant.id]).then(this.setState({ user_Id: currentUser.id, restaurant_id: restaurant.id }))} className='favorite-selected'>
+                                    <i className="fas fa-thumbs-up">
+                                        <p className='tool-tip-unfavorite'>Unfavorite?</p>
+                                    </i>
+                                </button>
+                            </div>
                         </div>
                     )
                 } else {
                     
                     selectFavorite = (
                         <div className='favorite-container'>
-                            <form onSubmit={this.handleSubmit} className='favorite-form'>
-                                <button className='favorite-unselected'>
-                                    <i className="far fa-thumbs-up">
-                                        <p className='tool-tip-favorite'>Favorite?</p>
-                                    </i>
-                                </button>
-                            </form>
+                            <div className='fav-div-holder'>
+                                <form onSubmit={this.handleSubmit} className='favorite-form'>
+                                    <button className='favorite-unselected'>
+                                        <i className="far fa-thumbs-up">
+                                            <p className='tool-tip-favorite'>Favorite?</p>
+                                        </i>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     )
                 }

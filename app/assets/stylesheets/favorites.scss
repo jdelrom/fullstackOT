@@ -9,13 +9,17 @@
 
 .favorite-container {
     cursor: pointer;
+   
     
     button {
         border: none;
         outline: none;
+        padding-left: 0px;
 
         i {
             font-size: 20px;
+            padding: 0px;
+             width: 64px;
             
             p {
                 font-size: 12px;
@@ -43,8 +47,18 @@
 }
 
 .favorite-form {
+    cursor: pointer;
+    width: 64px;
 
     button {
+        border: none;
+        outline: none;
+        padding-left: 0px;
+
+        i {
+            padding: 0px;
+             width: 64px;
+        }
 
         i:hover {
 

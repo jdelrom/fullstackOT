@@ -57,7 +57,6 @@ class ReservationForm extends React.Component {
 
     handleChange(key) {
         return (e) => {
-            console.log(e.target.value)
             this.setState({ [key]: e.target.value })
         }
     }

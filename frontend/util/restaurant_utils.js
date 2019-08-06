@@ -45,10 +45,8 @@ export const zomatoRestaurants = () => {
 //         method: 'GET',
 //         dataType: 'JSON',
 //         success: function (data) {
-//             console.log(data)
 //         },
 //         error: function (err) {
-//             console.log('error:' + err)
 //         }
 //     })
 // }
