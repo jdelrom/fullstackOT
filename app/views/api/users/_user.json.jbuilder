@@ -2,6 +2,9 @@ json.extract! user, :id, :email, :fname, :lname
 
 
 # if user.reservations
+
+json.name (user.fname.capitalize + " " + user.lname.capitalize)
+
 json.reservations do
         user.reservations.each do |reservation|
             

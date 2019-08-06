@@ -7,7 +7,11 @@ const favoriteReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_RESTAURANT:
-            return action.favorites
+            if (action.favorites === undefined) {
+                return state;
+            } else {
+                return action.favorites
+            }
         case RECEIVE_FAVORITE:
             
             return merge({}, state, {

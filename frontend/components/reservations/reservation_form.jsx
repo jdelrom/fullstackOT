@@ -5,18 +5,23 @@ import {createReservation, deleteReservation } from '../../actions/reservation_a
 
 export const mSP = (state, ownProps) => {
     
+    let userName;
     let usRes;
     if (state.session.id !== null) {
         usRes = state.entities.users[state.session.id].reservations
+        userName = state.entities.users[state.session.id].name
     } else {
         usRes = {}
+        userName = null;
     }
+
     return (
         { 
             restaurant: state.entities.restaurants[ownProps.match.params.id],
             userReservations: usRes,
             userId: state.session.id,
-            loggedIn: Boolean(state.session.id)
+            loggedIn: Boolean(state.session.id),
+            userName: userName
         }
     )
 }
@@ -52,6 +57,7 @@ class ReservationForm extends React.Component {
 
     handleChange(key) {
         return (e) => {
+            console.log(e.target.value)
             this.setState({ [key]: e.target.value })
         }
     }
@@ -82,7 +88,11 @@ class ReservationForm extends React.Component {
                         content = (
                             <div>
                                 <div className='rest-reservation-container2'>
-                                    <div className='rest-show-h2'><h2>Make a reservation</h2></div>
+                                    <div className='username-div'>
+                                        <p className='username-label'> {this.props.userName},</p>
+                                        <p className='username-label-2'>your reservation has been made!</p>
+                                    </div>
+                                    {/* <div className='rest-show-h2'><h2>Make a reservation</h2></div>
                                     <div className="rest-reserve-options">
                                         <div className='rest-reserve-party-container'>
                                             <label for="rest-reserve-party-select">Party Size</label>
@@ -98,7 +108,7 @@ class ReservationForm extends React.Component {
                                                 <option name='10' value="10">For 10</option>
                                             </select>
                                         </div>
-                                        <dir className="rest-reserve-datetime-container">
+                                        <div className="rest-reserve-datetime-container">
                                             <div className="rest-reserve-date-container">
                                                 <label for="rest-reserve-date">Date</label>
                                                 <input onChange={this.handleChange('reservation_date')} className='rest-reserve-date' type="date" />
@@ -119,9 +129,9 @@ class ReservationForm extends React.Component {
                                                     <option value="10:00 PM">10:00 PM</option>
                                                 </select>
                                             </div>
-                                        </dir>
-                                        <button onClick={() => this.props.deleteReservation(this.props.userReservations[this.props.restaurant.id])} type='submit'>Delete Reservation</button>
-                                    </div>
+                                        </div>
+                                    </div> */}
+                                    <button className='delete-reservation-button' onClick={() => this.props.deleteReservation(this.props.userReservations[this.props.restaurant.id])} type='submit'>Delete Reservation</button>
                                 </div>
                             </div>
                         )
@@ -134,7 +144,8 @@ class ReservationForm extends React.Component {
                                     <div className="rest-reserve-options">
                                         <div className='rest-reserve-party-container'>
                                             <label htmlFor="rest-reserve-party-select">Party Size</label>
-                                            <select defaultValue='2' onClick={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+                                            <select onChange={this.handleChange('party_size')} name="rest-reserve-party-select" id="rest-reserve-party-select" className="rest-reserve-party-select">
+                                                <option selected disabled hidden value="">Select Party Size</option>
                                                 <option name='2' value="2" >For 2</option>
                                                 <option name='3' value="3">For 3</option>
                                                 <option name='4' value="4">For 4</option>
@@ -153,7 +164,8 @@ class ReservationForm extends React.Component {
                                             </div>
                                             <div className="rest-reserve-time-container">
                                                 <label htmlFor="rest-reserve-time">Time</label>
-                                                <select defaultValue='12:00 PM' onClick={this.handleChange('reservation_time')} className="rest-reserve-time" >
+                                                <select onChange={this.handleChange('reservation_time')} className="rest-reserve-time" >
+                                                    <option selected disabled hidden value="">Select Time</option>
                                                     <option value="12:00 PM" >12:00 PM</option>
                                                     <option value="1:00 PM">1:00 PM</option>
                                                     <option value="2:00 PM">2:00 PM</option>

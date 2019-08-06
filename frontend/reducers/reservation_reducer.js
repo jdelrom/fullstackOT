@@ -8,7 +8,11 @@ const reservationReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_RESTAURANT:
             
-            return action.reservations
+            if (action.reservations === undefined) {
+                return state;
+            } else {
+                return action.reservations 
+            }
         case RECEIVE_RESERVATION:
             
             return merge({}, state, {[action.reservation.id]: action.reservation} )
