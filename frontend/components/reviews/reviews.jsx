@@ -1,7 +1,28 @@
 import React from 'react';
 import ReviewForm from './review_form';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { times } from 'lodash';
 
+// export const mSP = (state, ownProps) => {
+//    
+//     return (
+//         {
+//             restaurant: state.entities.restaurants[ownProps.match.params.id],
+//             loggedIn: Boolean(state.session.id),
+//             userId: state.session.id,
+//             restReviews: Object.values(state.entities.restaurants[ownProps.match.params.id].reviews),
+//         }
+//     )
+    
+// }
+
+// export const mDP = (dispatch) => ({
+//     createReview: (review) => dispatch(createReview(review)),
+//     deleteReview: (id) => dispatch(deleteReview(id)),
+//     updateReview: (review) => dispatch(updateReview(review)),
+//     openModal: (modal) => dispatch(openModal(modal))
+// })
 
 class Reviews extends React.Component {
     constructor(props) {
@@ -10,10 +31,29 @@ class Reviews extends React.Component {
 
 
     render() {
-        const { review } = this.props;
+        const { review, currentUser } = this.props;
         let faStars = _.times(review.rating, () => {
             return (<i className="fa fa-star"></i>)
         })
+        
+        let editForm;
+        if (review.user_id === currentUser) {
+            
+            editForm = (
+                <button className='edit-button' onClick={() => this.props.openModal('editReview', this.props.review)}>Edit Review</button>
+            )
+        }
+
+        // for (let i = 0; i < restReviews.length; i++) {
+
+            // if (review.user_id === userId) {
+            //     editForm = (
+            //         <button className='edit-button' onClick={() => this.props.openModal('edit-review')}>Edit Review</button>
+            //     )
+            // }
+        // }
+
+
         
         
         return (
@@ -32,106 +72,22 @@ class Reviews extends React.Component {
                                 <p className='review-p'>Overall: {review.rating}</p>
                                 <p>
                                     {faStars}
-                                    {/* <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i> */}
                                 </p>
 
                             </div>   
 
                             <p>{review.review}</p>
+                            <div>
+                                {editForm}
+                            </div>
                         </div>
                     </div>
-                    {/* <div className="review-user">
-                        <div className='reivew-username'>
-                            <p>Tiffany Lynn</p>
-                        </div>
-                        <div className='review-body'>
-                            <h2>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </h2>
-                                <h3>Overall 4 - Food 4 - Service 4 - Ambience 4</h3>
-
-                            
-                            <p>WOW!</p>
-                        </div>
-                    </div>
-                    <div className="review-user">
-                        <div className='reivew-username'>
-                            <p>Sara May</p>
-                        </div>
-                        <div className='review-body'>
-                            <h2>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </h2>
-                                <h3>Overall 4 - Food 4 - Service 4 - Ambience 4</h3>
-
-                            
-                            <p>OMG!</p>
-                        </div>
-                    </div>
-                    <div className="review-user">
-                        <div className='reivew-username'>
-                            <p>David Al</p>
-                        </div>
-                        <div className='review-body'>
-                            <h2>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </h2>
-                                <h3>Overall 4 - Food 4 - Service 4 - Ambience 4</h3>
-
-                            
-                            <p>Cool Story!</p>
-                        </div>
-                    </div>
-                    <div className="review-user">
-                        <div className='reivew-username'>
-                            <p>Ali Mannu</p>
-                        </div>
-                        <div className='review-body'>
-                            <h2>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </h2>
-                                <h3>Overall 4 - Food 4 - Service 4 - Ambience 4</h3>
-
-                            
-                            <p>YAHHHSS!</p>
-                        </div>
-                    </div>
-                    <div className="review-user">
-                        <div className='reivew-username'>
-                            <p>Sennacy Opal</p>
-                        </div>
-                        <div className='review-body'>
-                            <h2>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </h2>
-                                <h3>Overall 4 - Food 4 - Service 4 - Ambience 4</h3>
-
-                            
-                            <p>PuRrRrRr!</p>
-                        </div>
-                    </div> */}
+                   
                 </div>
             </div>
         )
     }
 }
 
-export default Reviews;
+export default (Reviews);
+// withRouter(connect(mSP, mDP)

@@ -14,12 +14,17 @@ class RestaurantShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchRestaurant(this.props.match.params.id)
+        
+        this.props.fetchRestaurants();
         
     }
 
     render() {
         const {reviews, restaurant} = this.props;
+        
+        if (this.props.restaurant === undefined) {
+            return null
+        }
         
         let amountStars = 0;
         let faStars;
@@ -40,24 +45,25 @@ class RestaurantShow extends React.Component {
         // })
         // let favorites = <Favorites restaurant={this.props.restaurants} />
         let bookings;
-        if (this.props.restaurant) {
-            
+        
+        if (this.props.restaurant !== undefined) {
             if (this.props.restaurant.reservations) {
-                
-                if (this.props.restaurant.reservations.length > 0 )
-                
-                bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
+                if (this.props.restaurant.reservations.length >= 0 )
+                    bookings = <li>Bookings at this restaurant today: {this.props.restaurant.reservations.length}</li>
             } else {
-                return null;
-            }
-        }
+                return null // bookings = <li>Bookings at this restaurant today: 0; </li>
+            }}
         
         let reviewList;
         if (this.props.reviews !== undefined) {
             let reviewItems = Object.values(this.props.reviews)
             reviewList = reviewItems.map(item => {
                 return (
-                    <Reviews review={item} />
+                    
+                    <Reviews review={item} 
+                        currentUser={this.props.currentUser}
+                        openModal={this.props.openModal} 
+                        />
                 )
             })
         } else {
@@ -73,26 +79,26 @@ class RestaurantShow extends React.Component {
                             <div className="rest-show-nav-container">
                                 <nav className='rest-show-nav'>
                                     <ul className='rest-show-ul-nav'>
-                                        <li>
+                                        <li key='1'>
                                           
-                                                <label htmlFor="restaurant-info">
-                                                    Overview
-                                                </label>
+                                        <label htmlFor="restaurant-info">
+                                            Overview
+                                        </label>
                                          
                                         </li>
-                                        <li>
+                                        <li key='2'>
                                             Photos
                                         </li>
-                                        <li>
+                                        <li key='3'> 
                                             Menu
                                         </li>
-                                        <li>
+                                        <li key='4'>
                                             Reviews
                                         </li>
-                                        <li>
+                                        <li key='5'>
                                             {bookings}
                                         </li>
-                                        <li>
+                                        <li key='6'>
                                             <Favorites />
                                         </li>
                                     </ul>
@@ -101,7 +107,7 @@ class RestaurantShow extends React.Component {
                             <div id='restaurant-info' name='restaurant-info' className="restaurant-info">
                                 <h1 className="restaurant-info-name">{this.props.restaurant.name}</h1>
                                 <ul>
-                                    <li>
+                                    <li key='6'>
                                         {faStars}
                                         {/* <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
@@ -109,10 +115,10 @@ class RestaurantShow extends React.Component {
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star-half-o" aria-hidden="true"></i> */}
                                     </li>
-                                    <li className="restaurant-info-tag">
+                                    <li key='7' className="restaurant-info-tag">
                                         <p><i className="far fa-comment-alt"></i>
                                         </p>
-                                        <p> {this.props.restaurant.reviews.length} reviews</p>
+                                        <p> {this.props.restaurant.reviews.length} Reviews</p>
                                         <p><i className="fas fa-utensils"></i></p>               
                                         <p>{this.props.restaurant.tag}</p>    
                                     </li>
@@ -136,7 +142,7 @@ class RestaurantShow extends React.Component {
                                
                             </div>
                             <div className='show-review-form'>
-                                <ReviewForm />
+                                {/* <ReviewForm /> */}
                             </div>
                             <div className='review-list-container'>
                                 {reviewList}

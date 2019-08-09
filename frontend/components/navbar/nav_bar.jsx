@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 // import SearchBar from '../search_bar/search_bar';
 
 class Navbar extends React.Component {
@@ -67,8 +68,18 @@ render() {
                     <div id="user-dropdown" className={`dropdown-content ${toggle}`}>
                         <div className="triangle"></div>
                         <ul className="drop-down-list">
-                            <li><a href="/" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>Sign out</a></li>
-                            <li> <a href="/" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>My Profile</a></li>
+                            {/* <li><a href="" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>Sign out</a></li> */}
+                            {/* <li> <a href="" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>My Profile</a></li> */}
+                            <li>
+                                <Link to='/'> 
+                                    <a href="" className='navbar-option' onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>Sign out</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/'>
+                                    <a className='navbar-option' href="" onClick={() => this.props.logout().then(this.setState({ toggle: 'hidden' }))}>My Profile</a>
+                                </Link>
+                            </li>        
                             {/* <a href="#" onClick={() => this.props.logout()}>My Dining History</a>
                                     <a href="#" onClick={() => this.props.logout()}>My Saved Restaurants</a> */}
                         </ul>

@@ -122,7 +122,7 @@
     object-fit: fill;
 }
 
-.carousel-img > img {
+.carousel-img > a > img {
     height: 132px;
     width: 236px;
     object-fit: fill;
@@ -139,7 +139,7 @@
     padding: 8px 0px 5px 8px;
 }
 
-h1 > a {
+.carousel-anchor {
     text-decoration: none;
     color: black;
 }
@@ -148,7 +148,7 @@ h1 > a {
     font-size: 14px;
     color: #4a4848;
     padding: 5px 0 0 8px;
-    cursor: default;
+    cursor: pointer;
 }
 
 .fasend-right {
@@ -179,7 +179,10 @@ h1 > a {
     margin-top: 120px;
 }
 
-
+.carousel-link {
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 

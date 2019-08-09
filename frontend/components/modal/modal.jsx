@@ -1,20 +1,30 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import SessionFormContainer from '../session/session_form_container';
 import SignupFormContainer from '../signup/signup_form_container';
+import ReviewForm from '../reviews/review_form';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, review }) {
     if (!modal) {
         return null;
     }
     let component;
-    switch (modal) {
+    
+    switch (modal[0]) {
         case 'login':
             component = <SessionFormContainer />;
             break;
         case 'signup':
             component = <SignupFormContainer />;
+            break;
+        case 'createReview':
+            component = <ReviewForm />;
+            break;
+        case 'editReview':
+            
+            component = <ReviewForm review={modal[1]}/>;
             break;
         default:
             return null;
@@ -38,10 +48,18 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mSP = state => {
-    return {
-        modal: state.ui.modal
-    };
+const mSP = (state, ownProps) => {
+    
+    if (state.entities.restaurants[ownProps.location.pathname.slice(13)] !== undefined) {
+        return {
+            modal: state.ui.modal,
+            restaurant: state.entities.restaurants[ownProps.location.pathname.slice(13)]
+        }
+    } else {
+        return {
+            modal: state.ui.modal
+        }
+    }
 };
 
 const mDP = dispatch => {
@@ -50,4 +68,4 @@ const mDP = dispatch => {
     };
 };
 
-export default connect(mSP, mDP)(Modal);
+export default withRouter(connect(mSP, mDP)(Modal));

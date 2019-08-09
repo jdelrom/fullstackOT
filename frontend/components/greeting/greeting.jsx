@@ -38,10 +38,14 @@ class Greeting extends React.Component {
     // }
 
     componentDidMount() {
-        
+       
         // this.props.fetchRestaurants()
         
     }
+
+    // componentDidUpdate() {
+    //     this.props.fetchRestaurants();
+    // }
     
 
     render() {
