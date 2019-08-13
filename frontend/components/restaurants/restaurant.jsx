@@ -57,7 +57,7 @@ class Restaurant extends React.Component {
             )
         }
         
-        let zomatoRest = this.props.zomatoRestaurants();
+        // let zomatoRest = this.props.zomatoRestaurants();
          
         return (
             <>
