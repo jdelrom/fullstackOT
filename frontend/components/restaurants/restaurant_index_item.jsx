@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 const RestaurantIndexItem = ({restaurant}) => {
     
     // let rand = restaurant.reviews.length
-    const restReviews = Object.values(restaurant.reviews);
+    if (restaurant.reviews) {
+        const restReviews = Object.values(restaurant.reviews);
+    } else {
+        return null;
+    }
     debugger
     let amountStars = 0;
     
