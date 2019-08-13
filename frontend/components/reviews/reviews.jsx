@@ -1,5 +1,4 @@
 import React from 'react';
-import ReviewForm from './review_form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { times } from 'lodash';
@@ -27,6 +26,7 @@ import { times } from 'lodash';
 class Reviews extends React.Component {
     constructor(props) {
         super(props)
+        
     }
 
 
@@ -57,11 +57,7 @@ class Reviews extends React.Component {
         
         
         return (
-            <div className="review-parent">
-              
-                {/* <div className="review-restaurant">
-
-                </div> */}
+            <div className="review-parent">   
                 <div className="review-others">
                     <div className="review-user">
                         <div className='review-username'>
@@ -73,14 +69,16 @@ class Reviews extends React.Component {
                                 <p>
                                     {faStars}
                                 </p>
-
+                                <div> {editForm} </div>
                             </div>   
 
                             <p>{review.review}</p>
-                            <div>
-                                {editForm}
-                            </div>
+                           
                         </div>
+                        {/* <div className='edit-review-form-button'> */}
+                               
+                            
+                        {/* </div> */}
                     </div>
                    
                 </div>

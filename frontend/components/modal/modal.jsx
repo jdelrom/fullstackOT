@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import SessionFormContainer from '../session/session_form_container';
 import SignupFormContainer from '../signup/signup_form_container';
 import ReviewForm from '../reviews/review_form';
+import CreateReviewForm from '../reviews/create_review';
 
 function Modal({ modal, closeModal, review }) {
     if (!modal) {
@@ -20,7 +21,7 @@ function Modal({ modal, closeModal, review }) {
             component = <SignupFormContainer />;
             break;
         case 'createReview':
-            component = <ReviewForm />;
+            component = <CreateReviewForm />;
             break;
         case 'editReview':
             

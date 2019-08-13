@@ -11,13 +11,15 @@ export const mSP = (state, ownProps) => {
     if (Object.values(state.entities.restaurants).length === 0) {
             return null
     } else {
+        
             return (
                 {
                     restaurant: state.entities.restaurants[ownProps.match.params.id],
                     reservations: state.entities.restaurants[ownProps.match.params.id].reservations,
                     reviews: state.entities.restaurants[ownProps.match.params.id].reviews,
                     favorites: state.entities.restaurants[ownProps.match.params.id].favorites,
-                    currentUser: state.session.id
+                    currentUser: state.session.id,
+                    loggedIn: Boolean(state.session.id)
                 }
             )
         }

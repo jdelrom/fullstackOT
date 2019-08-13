@@ -227,6 +227,7 @@
     font-weight: bolder;
     flex-direction: row-reverse;
 }
+
 .tool-tip-text5 {
     visibility: hidden;
     display: flex;
@@ -293,4 +294,52 @@
     transition: background-color 200ms ease-in;
     cursor: pointer;
     margin: 5px 0;
+}
+
+.edit-review-form-button {
+  height: 100%;
+  // width: 90px;
+}
+
+.edit-button {
+    height: 30px;
+    width: 85px;
+    box-sizing: border-box;
+    background-color: #da3743;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: background-color 200ms ease-in;
+    margin-left: 20px;
+    cursor: pointer;
+    
+}
+
+.edit-button:hover {
+    background-color: #cc313b;
+    color: white;
+}
+
+.create-review-button {
+    height: 30px;
+    width: 99px;
+    box-sizing: border-box;
+    background-color: #da3743;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: background-color 200ms ease-in;
+    cursor: pointer;
+}
+
+.create-review-button:hover {
+    background-color: #cc313b;
+    color: white;
+}
+
+.create-review-container {
+  display: flex;
+  flex-direction: column;
 }

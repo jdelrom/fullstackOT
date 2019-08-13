@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { createReview, deleteReview, updateReview } from '../../actions/review_actions';
+import { deleteReview, updateReview } from '../../actions/review_actions';
 
 export const mSP = (state, ownProps) => {
     
@@ -17,7 +17,6 @@ export const mSP = (state, ownProps) => {
 }
 
 export const mDP = (dispatch) => ({
-    createReview: (review) => dispatch(createReview(review)),
     deleteReview: (id) => dispatch(deleteReview(id)),
     updateReview: (review) => dispatch(updateReview(review)),
     openModal: (modal) => dispatch(openModal(modal)),
@@ -46,8 +45,8 @@ class ReviewForm extends React.Component {
                 }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEdit = this.handleEdit.bind(this);
         this.handleRadio = this.handleRadio.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
 
@@ -60,10 +59,6 @@ class ReviewForm extends React.Component {
             review: '',
             rating: null,
         })
-    }
-    
-    componenetDidUpdate() {
-        debugger
     }
 
     handleEdit(e) {
@@ -111,13 +106,13 @@ class ReviewForm extends React.Component {
                         <form onSubmit={this.handleEdit} className='review-form'>
                             
                                 <div onClick={this.handleRadio('rating')} className="stars">
-                                    <input onClick={e => e.stopPropagation()}defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-1" id="star-1" value='1' />
+                                    <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-1" id="star-1" value='1' />
                                     <label value='1' className="star-1" htmlFor="star-1" >1</label><p className='tool-tip-text1'>Gross</p>
-                                    <input onClick={e => e.stopPropagation()}defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-2" id="star-2" value='2' />
+                                    <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-2" id="star-2" value='2' />
                                     <label value='2' className="star-2" htmlFor="star-2" >2</label><p className='tool-tip-text2'>Needs Improvement</p>
-                                    <input onClick={e => e.stopPropagation()}defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-3" value='3' id="star-3" />
+                                    <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-3" value='3' id="star-3" />
                                     <label className="star-3" htmlFor="star-3" value='3'>3</label><p className='tool-tip-text3'>It was OK</p>
-                                    <input onClick={e => e.stopPropagation()}defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-4" value='4' id="star-4" />
+                                    <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-4" value='4' id="star-4" />
                                     <label className="star-4" htmlFor="star-4" value='4'>4</label><p className='tool-tip-text4'>Pretty Good</p>
                                     <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-5" value='5' id="star-5" />
                                     <label value='5' className="star-5" htmlFor="star-5"  >5<p className='tool-tip-text5'>Great!</p></label>
@@ -126,36 +121,14 @@ class ReviewForm extends React.Component {
                             <textarea onChange={this.handleReview('review')} name='review-form-input' className='review-form-input' value={this.state.review} type="text" > </textarea>
                             <button className='review-form-button'> Edit Review </button>
                         </form>
-                            <button className='review-form-button' onClick={() => this.props.deleteReview(review.id).then(this.setState({review: '', rating: null}))}> Delete Review</button>
+                            <button className='review-form-button' onClick={() => this.props.deleteReview(review.id).then(this.props.closeModal())}> Delete Review</button>
                     </div>
                 )
                 
             } else {
-                
                 revForm = (
-                    
-                    <div className='review-form-container'>
-                        <form onSubmit={this.handleSubmit} className='review-form'>
-                            <div onClick={this.handleRadio('rating')} className="stars">
-                                <input type="radio" name="star" className="star-1" id="star-1" value='1' />
-                                <label value='1' className="star-1" htmlFor="star-1" >1</label><p className='tool-tip-text1'>Gross</p>
-                                <input type="radio" name="star" className="star-2" id="star-2" value='2'/>
-                                <label value='2' className="star-2" htmlFor="star-2" >2</label><p className='tool-tip-text2'>Needs Improvement</p>
-                                <input type="radio" name="star" className="star-3" value='3'id="star-3" />
-                                <label className="star-3" htmlFor="star-3" value='3'>3</label><p className='tool-tip-text3'>It was OK</p>
-                                <input type="radio" name="star" className="star-4" value='4' id="star-4" />
-                                <label className="star-4" htmlFor="star-4" value='4'>4</label><p className='tool-tip-text4'>Pretty Good</p>
-                                <input type="radio" name="star" className="star-5" value='5'id="star-5" />
-                                <label value='5' className="star-5" htmlFor="star-5"  >5</label><p className='tool-tip-text5'>Great!</p>
-                                <span></span>
-                            </div>
-                            <textarea placeholder='What did you think?' onChange={this.handleReview('review')} name='review-form-input' className='review-form-input' value={this.state.review}>
-                            </textarea>  
-                            <button className='review-form-button'> Submit Review </button>
-                        </form>
-                    </div>
+                    <div className='review-form-else'></div>
                 )
-                
                 }
                 
         } else {

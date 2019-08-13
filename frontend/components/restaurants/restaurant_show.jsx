@@ -2,7 +2,7 @@ import React from 'react';
 import NavbarContainer from '../navbar/nav_bar_container';
 import ReservationForm from '../reservations/reservation_form';
 import RestShowNavContainer from './restaurant_background/restaurant_show_nav_container';
-import ReviewForm from '../reviews/review_form';
+import CreateReviewForm from '../reviews/create_review';
 import Footer from '../footer/footer';
 import Reviews from '../reviews/reviews';
 import Favorites from '../favorites/favorite';
@@ -20,7 +20,7 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
-        const {reviews, restaurant} = this.props;
+        const {reviews, restaurant, loggedIn} = this.props;
         
         if (this.props.restaurant === undefined) {
             return null
@@ -30,8 +30,10 @@ class RestaurantShow extends React.Component {
         let faStars;
         
         if (this.props.reviews !== undefined) {
+            debugger
             let reviewArr = Object.values(reviews);
             for (let i = 0; i < reviewArr.length; i++) {
+                debugger
                 amountStars += reviewArr[i].rating
             }
             amountStars = Math.floor(amountStars / reviewArr.length)
@@ -68,7 +70,20 @@ class RestaurantShow extends React.Component {
             })
         } else {
             reviewList = <div></div>
-        } 
+        }
+        let createReview;
+        if (loggedIn) {
+            createReview = (
+                <div className='create-review-container'>
+                    <p>Want to write a review?</p>
+                    <button className='create-review-button'
+                        onClick={() => this.props.openModal('createReview')}>
+                            Create Review
+                    </button>
+                </div>
+            )
+        }
+        debugger
         return (
            <>
             <div className='rest-show-uncle'>
@@ -118,7 +133,7 @@ class RestaurantShow extends React.Component {
                                     <li key='7' className="restaurant-info-tag">
                                         <p><i className="far fa-comment-alt"></i>
                                         </p>
-                                        <p> {this.props.restaurant.reviews.length} Reviews</p>
+                                        <p> {Object.values(this.props.reviews).length} Reviews</p>
                                         <p><i className="fas fa-utensils"></i></p>               
                                         <p>{this.props.restaurant.tag}</p>    
                                     </li>
@@ -142,7 +157,7 @@ class RestaurantShow extends React.Component {
                                
                             </div>
                             <div className='show-review-form'>
-                                {/* <ReviewForm /> */}
+                               {createReview}
                             </div>
                             <div className='review-list-container'>
                                 {reviewList}

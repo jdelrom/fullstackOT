@@ -31,13 +31,13 @@ const restaurantsReducer = (state = {}, action) => {
             
         case REMOVE_REVIEW:
             const nwState = merge({}, state);
-
-            let filter = nwState[action.id.restaurant_id]['reviews'].filter(obj => {
+            debugger
+            let filter = Object.values(nwState[action.id.restaurant_id].reviews).filter(obj => {
                 if (obj.id !== action.id.id) return obj;
             })
 
             // delete nwState['reviews'][action.id.id]
-            nwState[action.id.restaurant_id]['reviews'] = filter
+            nwState[action.id.restaurant_id].reviews = filter
             return nwState
 
         case RECEIVE_FAVORITE:
