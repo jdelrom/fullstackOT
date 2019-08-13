@@ -38,14 +38,14 @@ class CreateReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        
         this.props.createReview(this.state).then(this.props.closeModal())
     }
 
     handleRadio(key) {
-        debugger
+        
         return (e) => {
-            debugger
+            
             this.setState({ [key]: e.target.innerText })
         }
     }

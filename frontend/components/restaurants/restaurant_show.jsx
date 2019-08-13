@@ -30,10 +30,10 @@ class RestaurantShow extends React.Component {
         let faStars;
         
         if (this.props.reviews !== undefined) {
-            debugger
+            
             let reviewArr = Object.values(reviews);
             for (let i = 0; i < reviewArr.length; i++) {
-                debugger
+                
                 amountStars += reviewArr[i].rating
             }
             amountStars = Math.floor(amountStars / reviewArr.length)
@@ -83,7 +83,7 @@ class RestaurantShow extends React.Component {
                 </div>
             )
         }
-        debugger
+        
         return (
            <>
             <div className='rest-show-uncle'>

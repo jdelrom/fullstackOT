@@ -6,21 +6,20 @@ const RestaurantIndexItem = ({restaurant}) => {
     // let rand = restaurant.reviews.length
     if (restaurant.reviews) {
         const restReviews = Object.values(restaurant.reviews);
+        let amountStars = 0;
+        for (let i = 0; i < restReviews.length; i++) {
+            amountStars += restReviews[i].rating
+        }
+    
+        amountStars = Math.floor(amountStars / restReviews.length)
+        let faStars = _.times(amountStars, () => {
+            return (<i className="fa fa-star"></i>)
+        })
     } else {
         return null;
     }
-    debugger
-    let amountStars = 0;
     
-    for (let i = 0; i < restReviews.length; i++) {
-        amountStars += restReviews[i].rating
-    }
 
-    amountStars = Math.floor(amountStars / restReviews.length)
-    let faStars = _.times(amountStars, () => {
-        return (<i className="fa fa-star"></i>)
-    })
-    
     return (
         <div className="rest-index-items-container">
             

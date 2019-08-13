@@ -21,7 +21,7 @@ const restaurantsReducer = (state = {}, action) => {
         //     return merge({}, state, newState)
         case RECEIVE_REVIEW:
             const nState = merge({}, state);
-            debugger
+            
             nState[action.review.restaurant_id].reviews[action.review.id] = action.review
             // nState[action.review.restaurant_id]['reviews'].push(action.review)
             
@@ -31,7 +31,7 @@ const restaurantsReducer = (state = {}, action) => {
             
         case REMOVE_REVIEW:
             const nwState = merge({}, state);
-            debugger
+            
             let filter = Object.values(nwState[action.id.restaurant_id].reviews).filter(obj => {
                 if (obj.id !== action.id.id) return obj;
             })
