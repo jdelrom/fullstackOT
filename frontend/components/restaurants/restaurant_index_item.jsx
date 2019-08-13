@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RestaurantIndexItem = ({restaurant}) => {
-    
+    let faStars;
+    let restReviews;
     // let rand = restaurant.reviews.length
     if (restaurant.reviews) {
-        const restReviews = Object.values(restaurant.reviews);
+        restReviews = Object.values(restaurant.reviews);
         let amountStars = 0;
         for (let i = 0; i < restReviews.length; i++) {
             amountStars += restReviews[i].rating
         }
     
         amountStars = Math.floor(amountStars / restReviews.length)
-        let faStars = _.times(amountStars, () => {
+        faStars = _.times(amountStars, () => {
             return (<i className="fa fa-star"></i>)
         })
     } else {
