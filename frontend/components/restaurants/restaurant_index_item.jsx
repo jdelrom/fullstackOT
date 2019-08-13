@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 const RestaurantIndexItem = ({restaurant}) => {
     
-    let rand = restaurant.reviews.length
+    // let rand = restaurant.reviews.length
+    const restReviews = Object.values(restaurant.reviews);
+    debugger
     let amountStars = 0;
     
-    for (let i = 0; i < restaurant.reviews.length; i++) {
-        amountStars += restaurant.reviews[i].rating
+    for (let i = 0; i < restReviews.length; i++) {
+        amountStars += restReviews[i].rating
     }
-    amountStars = Math.floor(amountStars / restaurant.reviews.length)
+
+    amountStars = Math.floor(amountStars / restReviews.length)
     let faStars = _.times(amountStars, () => {
         return (<i className="fa fa-star"></i>)
     })
@@ -30,7 +33,7 @@ const RestaurantIndexItem = ({restaurant}) => {
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i> */}
-                        ({rand})
+                        ({restReviews.length})
                     </li>
                     <li className="tag" >{restaurant.tag}</li>
                 {/* <ul className="time-slots">
