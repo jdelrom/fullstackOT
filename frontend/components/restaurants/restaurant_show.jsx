@@ -33,7 +33,7 @@ class RestaurantShow extends React.Component {
             
             let reviewArr = Object.values(reviews);
             for (let i = 0; i < reviewArr.length; i++) {
-                
+                debugger
                 amountStars += reviewArr[i].rating
             }
             amountStars = Math.floor(amountStars / reviewArr.length)

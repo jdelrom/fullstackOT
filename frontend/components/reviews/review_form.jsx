@@ -87,7 +87,7 @@ class ReviewForm extends React.Component {
 
     render() {
         const {loggedIn, review, userId } = this.props;
-        debugger
+        
         function uncheck() {
             document.getElementById("star-1").checked = false;
             document.getElementById("star-2").checked = false;

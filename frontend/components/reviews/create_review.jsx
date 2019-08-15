@@ -40,6 +40,10 @@ class CreateReviewForm extends React.Component {
         e.preventDefault();
         
         this.props.createReview(this.state).then(this.props.closeModal())
+        this.setState({
+            review: '',
+            rating: null,
+        })
     }
 
     handleRadio(key) {

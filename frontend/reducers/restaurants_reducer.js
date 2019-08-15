@@ -21,8 +21,8 @@ const restaurantsReducer = (state = {}, action) => {
         //     return merge({}, state, newState)
         case RECEIVE_REVIEW:
             const nState = merge({}, state);
-            
-            nState[action.review.restaurant_id].reviews[action.review.id] = action.review
+            debugger
+            nState[action.review.restaurant_id].reviews.push(action.review)
             // nState[action.review.restaurant_id]['reviews'].push(action.review)
             
             return merge({}, state, nState)
