@@ -31,7 +31,7 @@ class ReviewForm extends React.Component {
                     this.state = {
                         id: this.props.review.id,
                         user_id: this.props.userId,
-                        rating: null,
+                        rating: this.props.review.rating,
                         review: this.props.review.review,
                         restaurant_id: this.props.restaurant.id
                     }
@@ -87,6 +87,7 @@ class ReviewForm extends React.Component {
 
     render() {
         const {loggedIn, review, userId } = this.props;
+        debugger
         function uncheck() {
             document.getElementById("star-1").checked = false;
             document.getElementById("star-2").checked = false;
@@ -107,15 +108,17 @@ class ReviewForm extends React.Component {
                             
                                 <div onClick={this.handleRadio('rating')} className="stars">
                                     <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-1" id="star-1" value='1' />
-                                    <label value='1' className="star-1" htmlFor="star-1" >1</label><p className='tool-tip-text1'>Gross</p>
+                                    <label value='1' className="star-1" htmlFor="star-1" >1</label> <p className='tool-tip-text1'>Gross</p>
                                     <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-2" id="star-2" value='2' />
-                                    <label value='2' className="star-2" htmlFor="star-2" >2</label><p className='tool-tip-text2'>Needs Improvement</p>
+                                    <label value='2' className="star-2" htmlFor="star-2" >2</label> <p className='tool-tip-text2'>Needs Improvement</p>
                                     <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-3" value='3' id="star-3" />
-                                    <label className="star-3" htmlFor="star-3" value='3'>3</label><p className='tool-tip-text3'>It was OK</p>
+                                    <label className="star-3" htmlFor="star-3" value='3'>3</label> <p className='tool-tip-text3'>It was OK</p>
                                     <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-4" value='4' id="star-4" />
-                                    <label className="star-4" htmlFor="star-4" value='4'>4</label><p className='tool-tip-text4'>Pretty Good</p>
+                                    <label className="star-4" htmlFor="star-4" value='4'>4</label> <p className='tool-tip-text4'>Pretty Good</p>
                                     <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-5" value='5' id="star-5" />
-                                    <label value='5' className="star-5" htmlFor="star-5"  >5<p className='tool-tip-text5'>Great!</p></label>
+                                    <label value='5' className="star-5" htmlFor="star-5"  >5</label> <p className='tool-tip-text5'>Great!</p>
+                                    {/* <input onClick={e => e.stopPropagation()} defaultChecked={this.state.rating === review.rating} type="radio" name="star" className="star-5" value='5' id="star-5" />
+                                    <label value='5' className="star-5" htmlFor="star-5"  >5</label> <p className='tool-tip-text5'>Great!</p> */}
                                     <span></span>
                                 </div>
                             <textarea onChange={this.handleReview('review')} name='review-form-input' className='review-form-input' value={this.state.review} type="text" > </textarea>
