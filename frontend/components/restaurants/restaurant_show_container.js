@@ -11,7 +11,7 @@ export const mSP = (state, ownProps) => {
     if (Object.values(state.entities.restaurants).length === 0) {
             return null
     } else {
-            debugger
+            
             return (
                 {
                     restaurant: state.entities.restaurants[ownProps.match.params.id],
