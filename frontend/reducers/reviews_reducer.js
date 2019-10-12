@@ -7,13 +7,14 @@ const reviewReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_RESTAURANT:
-            
             return action.reviews
+
         case RECEIVE_REVIEW:
             
             return merge({}, state, {
                 [action.review.id]: action.review
             })
+            
         case REMOVE_REVIEW:
             const newState = merge({}, state);
             
